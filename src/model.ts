@@ -25,6 +25,7 @@
 /**
  * ConvertOptions base
  */
+// tslint:disable: completed-docs
 export class ConvertOptions {
 
     /**
@@ -78,6 +79,7 @@ export class ConvertOptions {
 /**
  * Defines conversion request
  */
+// tslint:disable: completed-docs
 export class ConvertSettings {
 
     /**
@@ -161,6 +163,7 @@ export class ConvertSettings {
 /**
  * Class for disc space information.
  */
+// tslint:disable: completed-docs
 export class DiscUsage {
 
     /**
@@ -204,6 +207,7 @@ export class DiscUsage {
 /**
  * The error details
  */
+// tslint:disable: completed-docs
 export class ErrorDetails {
 
     /**
@@ -247,6 +251,7 @@ export class ErrorDetails {
 /**
  * File versions FileVersion.
  */
+// tslint:disable: completed-docs
 export class FileVersions {
 
     /**
@@ -280,6 +285,7 @@ export class FileVersions {
 /**
  * Files list
  */
+// tslint:disable: completed-docs
 export class FilesList {
 
     /**
@@ -313,6 +319,7 @@ export class FilesList {
 /**
  * File upload result
  */
+// tslint:disable: completed-docs
 export class FilesUploadResult {
 
     /**
@@ -356,6 +363,7 @@ export class FilesUploadResult {
 /**
  * Load document options
  */
+// tslint:disable: completed-docs
 export class LoadOptions {
 
     /**
@@ -380,6 +388,7 @@ export class LoadOptions {
 /**
  * Error
  */
+// tslint:disable: completed-docs
 export class ModelError {
 
     /**
@@ -443,6 +452,7 @@ export class ModelError {
 /**
  * Object exists
  */
+// tslint:disable: completed-docs
 export class ObjectExist {
 
     /**
@@ -486,6 +496,7 @@ export class ObjectExist {
 /**
  * Storage exists
  */
+// tslint:disable: completed-docs
 export class StorageExist {
 
     /**
@@ -519,6 +530,7 @@ export class StorageExist {
 /**
  * File or folder information
  */
+// tslint:disable: completed-docs
 export class StorageFile {
 
     /**
@@ -592,6 +604,7 @@ export class StorageFile {
 /**
  * Contains single converted item. Result is provided as url to a storage
  */
+// tslint:disable: completed-docs
 export class StoredConvertedResult {
 
     /**
@@ -655,6 +668,7 @@ export class StoredConvertedResult {
 /**
  * Represents information about supported conversion for SourceFormat
  */
+// tslint:disable: completed-docs
 export class SupportedFormat {
 
     /**
@@ -698,6 +712,7 @@ export class SupportedFormat {
 /**
  * Options for settings watermark to the converted document
  */
+// tslint:disable: completed-docs
 export class WatermarkOptions {
 
     /**
@@ -841,6 +856,7 @@ export class WatermarkOptions {
 /**
  * Options for loading CAD documents
  */
+// tslint:disable: completed-docs
 export class CadLoadOptions extends LoadOptions {
 
     /**
@@ -894,6 +910,7 @@ export class CadLoadOptions extends LoadOptions {
 /**
  * Csv document load options
  */
+// tslint:disable: completed-docs
 export class CsvLoadOptions extends LoadOptions {
 
     /**
@@ -967,6 +984,7 @@ export class CsvLoadOptions extends LoadOptions {
 /**
  * Diagram document load options
  */
+// tslint:disable: completed-docs
 export class DiagramLoadOptions extends LoadOptions {
 
     /**
@@ -1000,6 +1018,7 @@ export class DiagramLoadOptions extends LoadOptions {
 /**
  * Options for loading Email documents
  */
+// tslint:disable: completed-docs
 export class EmailLoadOptions extends LoadOptions {
 
     /**
@@ -1083,6 +1102,7 @@ export class EmailLoadOptions extends LoadOptions {
 /**
  * File Version
  */
+// tslint:disable: completed-docs
 export class FileVersion extends StorageFile {
 
     /**
@@ -1126,6 +1146,7 @@ export class FileVersion extends StorageFile {
 /**
  * Options for to Html conversion
  */
+// tslint:disable: completed-docs
 export class HtmlConvertOptions extends ConvertOptions {
 
     /**
@@ -1189,6 +1210,7 @@ export class HtmlConvertOptions extends ConvertOptions {
 /**
  * Options for to Image conversion
  */
+// tslint:disable: completed-docs
 export class ImageConvertOptions extends ConvertOptions {
 
     /**
@@ -1292,6 +1314,7 @@ export class ImageConvertOptions extends ConvertOptions {
 /**
  * Image document load options
  */
+// tslint:disable: completed-docs
 export class ImageLoadOptions extends LoadOptions {
 
     /**
@@ -1325,6 +1348,7 @@ export class ImageLoadOptions extends LoadOptions {
 /**
  * One document load options
  */
+// tslint:disable: completed-docs
 export class OneLoadOptions extends LoadOptions {
 
     /**
@@ -1378,6 +1402,7 @@ export class OneLoadOptions extends LoadOptions {
 /**
  * Options for to PDF conversion
  */
+// tslint:disable: completed-docs
 export class PdfConvertOptions extends ConvertOptions {
 
     /**
@@ -1799,6 +1824,7 @@ export namespace PdfConvertOptions {
 /**
  * Pdf document load options
  */
+// tslint:disable: completed-docs
 export class PdfLoadOptions extends LoadOptions {
 
     /**
@@ -1862,6 +1888,7 @@ export class PdfLoadOptions extends LoadOptions {
 /**
  * Options for to presentation conversion
  */
+// tslint:disable: completed-docs
 export class PresentationConvertOptions extends ConvertOptions {
 
     /**
@@ -1915,6 +1942,7 @@ export class PresentationConvertOptions extends ConvertOptions {
 /**
  * Presentation document load options
  */
+// tslint:disable: completed-docs
 export class PresentationLoadOptions extends LoadOptions {
 
     /**
@@ -1988,6 +2016,7 @@ export class PresentationLoadOptions extends LoadOptions {
 /**
  * Spreadsheet сonvert options class 
  */
+// tslint:disable: completed-docs
 export class SpreadsheetConvertOptions extends ConvertOptions {
 
     /**
@@ -2051,6 +2080,7 @@ export class SpreadsheetConvertOptions extends ConvertOptions {
 /**
  * Spreadsheet document load options
  */
+// tslint:disable: completed-docs
 export class SpreadsheetLoadOptions extends LoadOptions {
 
     /**
@@ -2164,6 +2194,7 @@ export class SpreadsheetLoadOptions extends LoadOptions {
 /**
  * Svg convert options
  */
+// tslint:disable: completed-docs
 export class SvgConvertOptions extends ConvertOptions {
 
     /**
@@ -2247,6 +2278,7 @@ export class SvgConvertOptions extends ConvertOptions {
 /**
  * Txt convert options
  */
+// tslint:disable: completed-docs
 export class TxtConvertOptions extends ConvertOptions {
 
     /**
@@ -2271,6 +2303,7 @@ export class TxtConvertOptions extends ConvertOptions {
 /**
  * Txt document load options
  */
+// tslint:disable: completed-docs
 export class TxtLoadOptions extends LoadOptions {
 
     /**
@@ -2338,6 +2371,7 @@ export namespace TxtLoadOptions {
 /**
  * Options for to word processing conversion
  */
+// tslint:disable: completed-docs
 export class WordProcessingConvertOptions extends ConvertOptions {
 
     /**
@@ -2421,6 +2455,7 @@ export class WordProcessingConvertOptions extends ConvertOptions {
 /**
  * WordProcessing document load options
  */
+// tslint:disable: completed-docs
 export class WordProcessingLoadOptions extends LoadOptions {
 
     /**
@@ -2504,6 +2539,7 @@ export class WordProcessingLoadOptions extends LoadOptions {
 /**
  * XML document load options
  */
+// tslint:disable: completed-docs
 export class XmlLoadOptions extends LoadOptions {
 
     /**
@@ -2537,6 +2573,7 @@ export class XmlLoadOptions extends LoadOptions {
 /**
  * Xps convert options
  */
+// tslint:disable: completed-docs
 export class XpsConvertOptions extends ConvertOptions {
 
     /**
@@ -2660,6 +2697,7 @@ export class XpsConvertOptions extends ConvertOptions {
 /**
  * Bmp convert options
  */
+// tslint:disable: completed-docs
 export class BmpConvertOptions extends ImageConvertOptions {
 
     /**
@@ -2684,6 +2722,7 @@ export class BmpConvertOptions extends ImageConvertOptions {
 /**
  * Bmp load options
  */
+// tslint:disable: completed-docs
 export class BmpLoadOptions extends ImageLoadOptions {
 
     /**
@@ -2708,6 +2747,7 @@ export class BmpLoadOptions extends ImageLoadOptions {
 /**
  * Cgm convert options
  */
+// tslint:disable: completed-docs
 export class CgmConvertOptions extends ImageConvertOptions {
 
     /**
@@ -2732,6 +2772,7 @@ export class CgmConvertOptions extends ImageConvertOptions {
 /**
  * Dcm convert options
  */
+// tslint:disable: completed-docs
 export class DcmConvertOptions extends ImageConvertOptions {
 
     /**
@@ -2756,6 +2797,7 @@ export class DcmConvertOptions extends ImageConvertOptions {
 /**
  * Dcm load options
  */
+// tslint:disable: completed-docs
 export class DcmLoadOptions extends ImageLoadOptions {
 
     /**
@@ -2780,6 +2822,7 @@ export class DcmLoadOptions extends ImageLoadOptions {
 /**
  * Dgn load options
  */
+// tslint:disable: completed-docs
 export class DgnLoadOptions extends CadLoadOptions {
 
     /**
@@ -2804,6 +2847,7 @@ export class DgnLoadOptions extends CadLoadOptions {
 /**
  * Djvu convert options
  */
+// tslint:disable: completed-docs
 export class DjvuConvertOptions extends ImageConvertOptions {
 
     /**
@@ -2828,6 +2872,7 @@ export class DjvuConvertOptions extends ImageConvertOptions {
 /**
  * Dng convert options
  */
+// tslint:disable: completed-docs
 export class DngConvertOptions extends ImageConvertOptions {
 
     /**
@@ -2852,6 +2897,7 @@ export class DngConvertOptions extends ImageConvertOptions {
 /**
  * Dng load options
  */
+// tslint:disable: completed-docs
 export class DngLoadOptions extends ImageLoadOptions {
 
     /**
@@ -2876,6 +2922,7 @@ export class DngLoadOptions extends ImageLoadOptions {
 /**
  * Doc convert options
  */
+// tslint:disable: completed-docs
 export class DocConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -2900,6 +2947,7 @@ export class DocConvertOptions extends WordProcessingConvertOptions {
 /**
  * Doc load options
  */
+// tslint:disable: completed-docs
 export class DocLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -2924,6 +2972,7 @@ export class DocLoadOptions extends WordProcessingLoadOptions {
 /**
  * Docm convert options
  */
+// tslint:disable: completed-docs
 export class DocmConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -2948,6 +2997,7 @@ export class DocmConvertOptions extends WordProcessingConvertOptions {
 /**
  * Docm load options
  */
+// tslint:disable: completed-docs
 export class DocmLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -2972,6 +3022,7 @@ export class DocmLoadOptions extends WordProcessingLoadOptions {
 /**
  * Docx convert options
  */
+// tslint:disable: completed-docs
 export class DocxConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -2996,6 +3047,7 @@ export class DocxConvertOptions extends WordProcessingConvertOptions {
 /**
  * Docx load options
  */
+// tslint:disable: completed-docs
 export class DocxLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -3020,6 +3072,7 @@ export class DocxLoadOptions extends WordProcessingLoadOptions {
 /**
  * Dot convert options
  */
+// tslint:disable: completed-docs
 export class DotConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -3044,6 +3097,7 @@ export class DotConvertOptions extends WordProcessingConvertOptions {
 /**
  * Dot load options
  */
+// tslint:disable: completed-docs
 export class DotLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -3068,6 +3122,7 @@ export class DotLoadOptions extends WordProcessingLoadOptions {
 /**
  * Dotm convert options
  */
+// tslint:disable: completed-docs
 export class DotmConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -3092,6 +3147,7 @@ export class DotmConvertOptions extends WordProcessingConvertOptions {
 /**
  * Dotm load options
  */
+// tslint:disable: completed-docs
 export class DotmLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -3116,6 +3172,7 @@ export class DotmLoadOptions extends WordProcessingLoadOptions {
 /**
  * Dotx convert options
  */
+// tslint:disable: completed-docs
 export class DotxConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -3140,6 +3197,7 @@ export class DotxConvertOptions extends WordProcessingConvertOptions {
 /**
  * Dotx load options
  */
+// tslint:disable: completed-docs
 export class DotxLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -3164,6 +3222,7 @@ export class DotxLoadOptions extends WordProcessingLoadOptions {
 /**
  * Dwf load options
  */
+// tslint:disable: completed-docs
 export class DwfLoadOptions extends CadLoadOptions {
 
     /**
@@ -3188,6 +3247,7 @@ export class DwfLoadOptions extends CadLoadOptions {
 /**
  * Dwg load options
  */
+// tslint:disable: completed-docs
 export class DwgLoadOptions extends CadLoadOptions {
 
     /**
@@ -3212,6 +3272,7 @@ export class DwgLoadOptions extends CadLoadOptions {
 /**
  * Dxf load options
  */
+// tslint:disable: completed-docs
 export class DxfLoadOptions extends CadLoadOptions {
 
     /**
@@ -3236,6 +3297,7 @@ export class DxfLoadOptions extends CadLoadOptions {
 /**
  * Emf convert options
  */
+// tslint:disable: completed-docs
 export class EmfConvertOptions extends ImageConvertOptions {
 
     /**
@@ -3260,6 +3322,7 @@ export class EmfConvertOptions extends ImageConvertOptions {
 /**
  * Emf load options
  */
+// tslint:disable: completed-docs
 export class EmfLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3284,6 +3347,7 @@ export class EmfLoadOptions extends ImageLoadOptions {
 /**
  * Eml load options
  */
+// tslint:disable: completed-docs
 export class EmlLoadOptions extends EmailLoadOptions {
 
     /**
@@ -3308,6 +3372,7 @@ export class EmlLoadOptions extends EmailLoadOptions {
 /**
  * Emlx load options
  */
+// tslint:disable: completed-docs
 export class EmlxLoadOptions extends EmailLoadOptions {
 
     /**
@@ -3332,6 +3397,7 @@ export class EmlxLoadOptions extends EmailLoadOptions {
 /**
  * Epub convert options
  */
+// tslint:disable: completed-docs
 export class EpubConvertOptions extends XpsConvertOptions {
 
     /**
@@ -3356,6 +3422,7 @@ export class EpubConvertOptions extends XpsConvertOptions {
 /**
  * Gif convert options
  */
+// tslint:disable: completed-docs
 export class GifConvertOptions extends ImageConvertOptions {
 
     /**
@@ -3380,6 +3447,7 @@ export class GifConvertOptions extends ImageConvertOptions {
 /**
  * Gif load options
  */
+// tslint:disable: completed-docs
 export class GifLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3404,6 +3472,7 @@ export class GifLoadOptions extends ImageLoadOptions {
 /**
  * Ico convert options
  */
+// tslint:disable: completed-docs
 export class IcoConvertOptions extends ImageConvertOptions {
 
     /**
@@ -3428,6 +3497,7 @@ export class IcoConvertOptions extends ImageConvertOptions {
 /**
  * Ico load options
  */
+// tslint:disable: completed-docs
 export class IcoLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3452,6 +3522,7 @@ export class IcoLoadOptions extends ImageLoadOptions {
 /**
  * Ifc load options
  */
+// tslint:disable: completed-docs
 export class IfcLoadOptions extends CadLoadOptions {
 
     /**
@@ -3476,6 +3547,7 @@ export class IfcLoadOptions extends CadLoadOptions {
 /**
  * Igs load options
  */
+// tslint:disable: completed-docs
 export class IgsLoadOptions extends CadLoadOptions {
 
     /**
@@ -3500,6 +3572,7 @@ export class IgsLoadOptions extends CadLoadOptions {
 /**
  * J2c load options
  */
+// tslint:disable: completed-docs
 export class J2cLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3524,6 +3597,7 @@ export class J2cLoadOptions extends ImageLoadOptions {
 /**
  * J2k load options
  */
+// tslint:disable: completed-docs
 export class J2kLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3548,6 +3622,7 @@ export class J2kLoadOptions extends ImageLoadOptions {
 /**
  * Jp2 load options
  */
+// tslint:disable: completed-docs
 export class Jp2LoadOptions extends ImageLoadOptions {
 
     /**
@@ -3572,6 +3647,7 @@ export class Jp2LoadOptions extends ImageLoadOptions {
 /**
  * Jpeg load options
  */
+// tslint:disable: completed-docs
 export class JpegLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3596,6 +3672,7 @@ export class JpegLoadOptions extends ImageLoadOptions {
 /**
  * Jpf load options
  */
+// tslint:disable: completed-docs
 export class JpfLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3620,6 +3697,7 @@ export class JpfLoadOptions extends ImageLoadOptions {
 /**
  * Jpg convert options
  */
+// tslint:disable: completed-docs
 export class JpgConvertOptions extends ImageConvertOptions {
 
     /**
@@ -3653,6 +3731,7 @@ export class JpgConvertOptions extends ImageConvertOptions {
 /**
  * Jpg load options
  */
+// tslint:disable: completed-docs
 export class JpgLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3677,6 +3756,7 @@ export class JpgLoadOptions extends ImageLoadOptions {
 /**
  * Jpm load options
  */
+// tslint:disable: completed-docs
 export class JpmLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3701,6 +3781,7 @@ export class JpmLoadOptions extends ImageLoadOptions {
 /**
  * Jpx load options
  */
+// tslint:disable: completed-docs
 export class JpxLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3725,6 +3806,7 @@ export class JpxLoadOptions extends ImageLoadOptions {
 /**
  * Mht load options
  */
+// tslint:disable: completed-docs
 export class MhtLoadOptions extends EmailLoadOptions {
 
     /**
@@ -3749,6 +3831,7 @@ export class MhtLoadOptions extends EmailLoadOptions {
 /**
  * Mobi load options
  */
+// tslint:disable: completed-docs
 export class MobiLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -3773,6 +3856,7 @@ export class MobiLoadOptions extends WordProcessingLoadOptions {
 /**
  * Msg load options
  */
+// tslint:disable: completed-docs
 export class MsgLoadOptions extends EmailLoadOptions {
 
     /**
@@ -3797,6 +3881,7 @@ export class MsgLoadOptions extends EmailLoadOptions {
 /**
  * Odg convert options
  */
+// tslint:disable: completed-docs
 export class OdgConvertOptions extends ImageConvertOptions {
 
     /**
@@ -3821,6 +3906,7 @@ export class OdgConvertOptions extends ImageConvertOptions {
 /**
  * Odg load options
  */
+// tslint:disable: completed-docs
 export class OdgLoadOptions extends ImageLoadOptions {
 
     /**
@@ -3845,6 +3931,7 @@ export class OdgLoadOptions extends ImageLoadOptions {
 /**
  * Odp convert options
  */
+// tslint:disable: completed-docs
 export class OdpConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -3869,6 +3956,7 @@ export class OdpConvertOptions extends PresentationConvertOptions {
 /**
  * Odp load options
  */
+// tslint:disable: completed-docs
 export class OdpLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -3893,6 +3981,7 @@ export class OdpLoadOptions extends PresentationLoadOptions {
 /**
  * Ods convert options
  */
+// tslint:disable: completed-docs
 export class OdsConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -3917,6 +4006,7 @@ export class OdsConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Ods load options
  */
+// tslint:disable: completed-docs
 export class OdsLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -3941,6 +4031,7 @@ export class OdsLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Odt convert options
  */
+// tslint:disable: completed-docs
 export class OdtConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -3965,6 +4056,7 @@ export class OdtConvertOptions extends WordProcessingConvertOptions {
 /**
  * Odt load options
  */
+// tslint:disable: completed-docs
 export class OdtLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -3989,6 +4081,7 @@ export class OdtLoadOptions extends WordProcessingLoadOptions {
 /**
  * Ost load options
  */
+// tslint:disable: completed-docs
 export class OstLoadOptions extends EmailLoadOptions {
 
     /**
@@ -4013,6 +4106,7 @@ export class OstLoadOptions extends EmailLoadOptions {
 /**
  * Otp convert options
  */
+// tslint:disable: completed-docs
 export class OtpConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4037,6 +4131,7 @@ export class OtpConvertOptions extends PresentationConvertOptions {
 /**
  * Otp load options
  */
+// tslint:disable: completed-docs
 export class OtpLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4061,6 +4156,7 @@ export class OtpLoadOptions extends PresentationLoadOptions {
 /**
  * Ots convert options
  */
+// tslint:disable: completed-docs
 export class OtsConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -4085,6 +4181,7 @@ export class OtsConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Ots load options
  */
+// tslint:disable: completed-docs
 export class OtsLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -4109,6 +4206,7 @@ export class OtsLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Ott convert options
  */
+// tslint:disable: completed-docs
 export class OttConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -4133,6 +4231,7 @@ export class OttConvertOptions extends WordProcessingConvertOptions {
 /**
  * Ott load options
  */
+// tslint:disable: completed-docs
 export class OttLoadOptions extends WordProcessingLoadOptions {
 
     /**
@@ -4157,6 +4256,7 @@ export class OttLoadOptions extends WordProcessingLoadOptions {
 /**
  * Plt load options
  */
+// tslint:disable: completed-docs
 export class PltLoadOptions extends CadLoadOptions {
 
     /**
@@ -4181,6 +4281,7 @@ export class PltLoadOptions extends CadLoadOptions {
 /**
  * Png convert options
  */
+// tslint:disable: completed-docs
 export class PngConvertOptions extends ImageConvertOptions {
 
     /**
@@ -4205,6 +4306,7 @@ export class PngConvertOptions extends ImageConvertOptions {
 /**
  * Png load options
  */
+// tslint:disable: completed-docs
 export class PngLoadOptions extends ImageLoadOptions {
 
     /**
@@ -4229,6 +4331,7 @@ export class PngLoadOptions extends ImageLoadOptions {
 /**
  * Potm convert options
  */
+// tslint:disable: completed-docs
 export class PotmConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4253,6 +4356,7 @@ export class PotmConvertOptions extends PresentationConvertOptions {
 /**
  * Potm load options
  */
+// tslint:disable: completed-docs
 export class PotmLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4277,6 +4381,7 @@ export class PotmLoadOptions extends PresentationLoadOptions {
 /**
  * Potx convert options
  */
+// tslint:disable: completed-docs
 export class PotxConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4301,6 +4406,7 @@ export class PotxConvertOptions extends PresentationConvertOptions {
 /**
  * Potx load options
  */
+// tslint:disable: completed-docs
 export class PotxLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4325,6 +4431,7 @@ export class PotxLoadOptions extends PresentationLoadOptions {
 /**
  * Pps convert options
  */
+// tslint:disable: completed-docs
 export class PpsConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4349,6 +4456,7 @@ export class PpsConvertOptions extends PresentationConvertOptions {
 /**
  * Pps load options
  */
+// tslint:disable: completed-docs
 export class PpsLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4373,6 +4481,7 @@ export class PpsLoadOptions extends PresentationLoadOptions {
 /**
  * Ppsm convert options
  */
+// tslint:disable: completed-docs
 export class PpsmConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4397,6 +4506,7 @@ export class PpsmConvertOptions extends PresentationConvertOptions {
 /**
  * Ppsm load options
  */
+// tslint:disable: completed-docs
 export class PpsmLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4421,6 +4531,7 @@ export class PpsmLoadOptions extends PresentationLoadOptions {
 /**
  * Ppsx convert options
  */
+// tslint:disable: completed-docs
 export class PpsxConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4445,6 +4556,7 @@ export class PpsxConvertOptions extends PresentationConvertOptions {
 /**
  * Ppsx load options
  */
+// tslint:disable: completed-docs
 export class PpsxLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4469,6 +4581,7 @@ export class PpsxLoadOptions extends PresentationLoadOptions {
 /**
  * Ppt convert options
  */
+// tslint:disable: completed-docs
 export class PptConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4493,6 +4606,7 @@ export class PptConvertOptions extends PresentationConvertOptions {
 /**
  * Ppt load options
  */
+// tslint:disable: completed-docs
 export class PptLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4517,6 +4631,7 @@ export class PptLoadOptions extends PresentationLoadOptions {
 /**
  * Pptm convert options
  */
+// tslint:disable: completed-docs
 export class PptmConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4541,6 +4656,7 @@ export class PptmConvertOptions extends PresentationConvertOptions {
 /**
  * Pptm load options
  */
+// tslint:disable: completed-docs
 export class PptmLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4565,6 +4681,7 @@ export class PptmLoadOptions extends PresentationLoadOptions {
 /**
  * Pptx convert options
  */
+// tslint:disable: completed-docs
 export class PptxConvertOptions extends PresentationConvertOptions {
 
     /**
@@ -4589,6 +4706,7 @@ export class PptxConvertOptions extends PresentationConvertOptions {
 /**
  * Pptx load options
  */
+// tslint:disable: completed-docs
 export class PptxLoadOptions extends PresentationLoadOptions {
 
     /**
@@ -4613,6 +4731,7 @@ export class PptxLoadOptions extends PresentationLoadOptions {
 /**
  * Psd convert options
  */
+// tslint:disable: completed-docs
 export class PsdConvertOptions extends ImageConvertOptions {
 
     /**
@@ -4707,6 +4826,7 @@ export namespace PsdConvertOptions {
 /**
  * Psd load options
  */
+// tslint:disable: completed-docs
 export class PsdLoadOptions extends ImageLoadOptions {
 
     /**
@@ -4731,6 +4851,7 @@ export class PsdLoadOptions extends ImageLoadOptions {
 /**
  * Pst load options
  */
+// tslint:disable: completed-docs
 export class PstLoadOptions extends EmailLoadOptions {
 
     /**
@@ -4755,6 +4876,7 @@ export class PstLoadOptions extends EmailLoadOptions {
 /**
  * Rtf convert options
  */
+// tslint:disable: completed-docs
 export class RtfConvertOptions extends WordProcessingConvertOptions {
 
     /**
@@ -4788,6 +4910,7 @@ export class RtfConvertOptions extends WordProcessingConvertOptions {
 /**
  * Stl load options
  */
+// tslint:disable: completed-docs
 export class StlLoadOptions extends CadLoadOptions {
 
     /**
@@ -4812,6 +4935,7 @@ export class StlLoadOptions extends CadLoadOptions {
 /**
  * Tif load options
  */
+// tslint:disable: completed-docs
 export class TifLoadOptions extends ImageLoadOptions {
 
     /**
@@ -4836,6 +4960,7 @@ export class TifLoadOptions extends ImageLoadOptions {
 /**
  * Tiff convert options
  */
+// tslint:disable: completed-docs
 export class TiffConvertOptions extends ImageConvertOptions {
 
     /**
@@ -4881,6 +5006,7 @@ export namespace TiffConvertOptions {
 /**
  * Tiff load options
  */
+// tslint:disable: completed-docs
 export class TiffLoadOptions extends ImageLoadOptions {
 
     /**
@@ -4905,6 +5031,7 @@ export class TiffLoadOptions extends ImageLoadOptions {
 /**
  * Tsv convert options
  */
+// tslint:disable: completed-docs
 export class TsvConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -4929,6 +5056,7 @@ export class TsvConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Tsv load options
  */
+// tslint:disable: completed-docs
 export class TsvLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -4953,6 +5081,7 @@ export class TsvLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Vdw load options
  */
+// tslint:disable: completed-docs
 export class VdwLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -4977,6 +5106,7 @@ export class VdwLoadOptions extends DiagramLoadOptions {
 /**
  * Vdx load options
  */
+// tslint:disable: completed-docs
 export class VdxLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5001,6 +5131,7 @@ export class VdxLoadOptions extends DiagramLoadOptions {
 /**
  * Vsd load options
  */
+// tslint:disable: completed-docs
 export class VsdLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5025,6 +5156,7 @@ export class VsdLoadOptions extends DiagramLoadOptions {
 /**
  * Vsdm load options
  */
+// tslint:disable: completed-docs
 export class VsdmLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5049,6 +5181,7 @@ export class VsdmLoadOptions extends DiagramLoadOptions {
 /**
  * Vsdx load options
  */
+// tslint:disable: completed-docs
 export class VsdxLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5073,6 +5206,7 @@ export class VsdxLoadOptions extends DiagramLoadOptions {
 /**
  * Vss load options
  */
+// tslint:disable: completed-docs
 export class VssLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5097,6 +5231,7 @@ export class VssLoadOptions extends DiagramLoadOptions {
 /**
  * Vssm load options
  */
+// tslint:disable: completed-docs
 export class VssmLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5121,6 +5256,7 @@ export class VssmLoadOptions extends DiagramLoadOptions {
 /**
  * Vssx load options
  */
+// tslint:disable: completed-docs
 export class VssxLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5145,6 +5281,7 @@ export class VssxLoadOptions extends DiagramLoadOptions {
 /**
  * Vst load options
  */
+// tslint:disable: completed-docs
 export class VstLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5169,6 +5306,7 @@ export class VstLoadOptions extends DiagramLoadOptions {
 /**
  * Vstm load options
  */
+// tslint:disable: completed-docs
 export class VstmLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5193,6 +5331,7 @@ export class VstmLoadOptions extends DiagramLoadOptions {
 /**
  * Vstx load options
  */
+// tslint:disable: completed-docs
 export class VstxLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5217,6 +5356,7 @@ export class VstxLoadOptions extends DiagramLoadOptions {
 /**
  * Vsx load options
  */
+// tslint:disable: completed-docs
 export class VsxLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5241,6 +5381,7 @@ export class VsxLoadOptions extends DiagramLoadOptions {
 /**
  * Vtx load options
  */
+// tslint:disable: completed-docs
 export class VtxLoadOptions extends DiagramLoadOptions {
 
     /**
@@ -5265,6 +5406,7 @@ export class VtxLoadOptions extends DiagramLoadOptions {
 /**
  * Webp convert options
  */
+// tslint:disable: completed-docs
 export class WebpConvertOptions extends ImageConvertOptions {
 
     /**
@@ -5298,6 +5440,7 @@ export class WebpConvertOptions extends ImageConvertOptions {
 /**
  * Webp load options
  */
+// tslint:disable: completed-docs
 export class WebpLoadOptions extends ImageLoadOptions {
 
     /**
@@ -5322,6 +5465,7 @@ export class WebpLoadOptions extends ImageLoadOptions {
 /**
  * Wmf convert options
  */
+// tslint:disable: completed-docs
 export class WmfConvertOptions extends ImageConvertOptions {
 
     /**
@@ -5346,6 +5490,7 @@ export class WmfConvertOptions extends ImageConvertOptions {
 /**
  * Wmf load options
  */
+// tslint:disable: completed-docs
 export class WmfLoadOptions extends ImageLoadOptions {
 
     /**
@@ -5370,6 +5515,7 @@ export class WmfLoadOptions extends ImageLoadOptions {
 /**
  * Xls2003 convert options
  */
+// tslint:disable: completed-docs
 export class Xls2003ConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5394,6 +5540,7 @@ export class Xls2003ConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xls2003 load options
  */
+// tslint:disable: completed-docs
 export class Xls2003LoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5418,6 +5565,7 @@ export class Xls2003LoadOptions extends SpreadsheetLoadOptions {
 /**
  * Xls convert options
  */
+// tslint:disable: completed-docs
 export class XlsConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5442,6 +5590,7 @@ export class XlsConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xls load options
  */
+// tslint:disable: completed-docs
 export class XlsLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5466,6 +5615,7 @@ export class XlsLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Xlsb convert options
  */
+// tslint:disable: completed-docs
 export class XlsbConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5490,6 +5640,7 @@ export class XlsbConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xlsb load options
  */
+// tslint:disable: completed-docs
 export class XlsbLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5514,6 +5665,7 @@ export class XlsbLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Xlsm convert options
  */
+// tslint:disable: completed-docs
 export class XlsmConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5538,6 +5690,7 @@ export class XlsmConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xlsm load options
  */
+// tslint:disable: completed-docs
 export class XlsmLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5562,6 +5715,7 @@ export class XlsmLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Xlsx convert options
  */
+// tslint:disable: completed-docs
 export class XlsxConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5586,6 +5740,7 @@ export class XlsxConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xlsx load options
  */
+// tslint:disable: completed-docs
 export class XlsxLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5610,6 +5765,7 @@ export class XlsxLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Xltm convert options
  */
+// tslint:disable: completed-docs
 export class XltmConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5634,6 +5790,7 @@ export class XltmConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xltm load options
  */
+// tslint:disable: completed-docs
 export class XltmLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5658,6 +5815,7 @@ export class XltmLoadOptions extends SpreadsheetLoadOptions {
 /**
  * Xltx convert options
  */
+// tslint:disable: completed-docs
 export class XltxConvertOptions extends SpreadsheetConvertOptions {
 
     /**
@@ -5682,6 +5840,7 @@ export class XltxConvertOptions extends SpreadsheetConvertOptions {
 /**
  * Xltx load options
  */
+// tslint:disable: completed-docs
 export class XltxLoadOptions extends SpreadsheetLoadOptions {
 
     /**
@@ -5706,6 +5865,7 @@ export class XltxLoadOptions extends SpreadsheetLoadOptions {
 /**
  * J2c convert options
  */
+// tslint:disable: completed-docs
 export class J2cConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5730,6 +5890,7 @@ export class J2cConvertOptions extends JpgConvertOptions {
 /**
  * J2k convert options
  */
+// tslint:disable: completed-docs
 export class J2kConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5754,6 +5915,7 @@ export class J2kConvertOptions extends JpgConvertOptions {
 /**
  * Jp2 convert options
  */
+// tslint:disable: completed-docs
 export class Jp2ConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5778,6 +5940,7 @@ export class Jp2ConvertOptions extends JpgConvertOptions {
 /**
  * Jpeg convert options
  */
+// tslint:disable: completed-docs
 export class JpegConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5802,6 +5965,7 @@ export class JpegConvertOptions extends JpgConvertOptions {
 /**
  * Jpf convert options
  */
+// tslint:disable: completed-docs
 export class JpfConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5826,6 +5990,7 @@ export class JpfConvertOptions extends JpgConvertOptions {
 /**
  * Jpm convert options
  */
+// tslint:disable: completed-docs
 export class JpmConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5850,6 +6015,7 @@ export class JpmConvertOptions extends JpgConvertOptions {
 /**
  * Jpx convert options
  */
+// tslint:disable: completed-docs
 export class JpxConvertOptions extends JpgConvertOptions {
 
     /**
@@ -5874,6 +6040,7 @@ export class JpxConvertOptions extends JpgConvertOptions {
 /**
  * Tif convert options
  */
+// tslint:disable: completed-docs
 export class TifConvertOptions extends TiffConvertOptions {
 
     /**
