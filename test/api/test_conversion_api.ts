@@ -26,7 +26,7 @@ import { expect } from "chai";
 import "mocha";
 import * as TestContext from "../test_context";
 import { TestFile } from "../test_file";
-import { GetSupportedConversionTypesRequest, ConvertDocumentRequest, ConvertSettings, DocxConvertOptions } from "../../src/model";
+import { GetSupportedConversionTypesRequest, GetDocumentMetadataRequest, ConvertDocumentRequest, ConvertSettings, DocxConvertOptions } from "../../src/model";
 
 describe("test_conversion_api", () => {
     
@@ -39,10 +39,22 @@ describe("test_conversion_api", () => {
         await TestContext.cleanupTempFiles();
     });
 
+    describe("test_get_document_metadata", () => {
+
+        it("should return document metadata", () => {            
+            const api = TestContext.getInfoApi();
+            var request = new GetDocumentMetadataRequest(TestFile.FourPagesDocx.GetPath());
+            return api.getDocumentMetadata(request)
+                .then((result) => {     
+                    expect(result.pageCount).equal(4);
+                });
+        });
+    });
+
     describe("test_get_supported_conversion_types", () => {
 
         it("should return list of supported formats", () => {            
-            const api = TestContext.getConversionApi();
+            const api = TestContext.getInfoApi();
             var request = new GetSupportedConversionTypesRequest();
             return api.getSupportedConversionTypes(request)
                 .then((result) => {     
@@ -58,10 +70,10 @@ describe("test_conversion_api", () => {
     describe("test_convert_document", () => {
 
         it("convert document", () => {            
-            const api = TestContext.getConversionApi();
+            const api = TestContext.getConvertApi();
             var options = new DocxConvertOptions();
             var settings = new ConvertSettings();
-            settings.filePath =TestFile.FourPagesDocx.GetPath();
+            settings.filePath = TestFile.FourPagesDocx.GetPath();
             settings.format = "pdf";
             settings.outputPath = TestContext.OUT_FOLDER;
             settings.convertOptions = options;
@@ -77,7 +89,7 @@ describe("test_conversion_api", () => {
     describe("test_convert_document_download", () => {
 
         it("convert document download", () => {            
-            const api = TestContext.getConversionApi();
+            const api = TestContext.getConvertApi();
             var options = new DocxConvertOptions();
             var settings = new ConvertSettings();
             settings.filePath =TestFile.FourPagesDocx.GetPath();

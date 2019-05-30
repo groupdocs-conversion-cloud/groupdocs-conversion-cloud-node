@@ -21,11 +21,11 @@ var GroupDocs = require('groupdocs-conversion-cloud');
 var appSid = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
 var appKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
-// construct ConversionApi
-var conversionApi = GroupDocs.ConversionApi.fromKeys(appSid, appKey);
+// construct Api
+var api = GroupDocs.InfoApi.fromKeys(appSid, appKey);
 var request = new GroupDocs.GetSupportedConversionTypesRequest();
 // retrieve supported conversion types
-conversionApi.getSupportedConversionTypes(request)
+api.getSupportedConversionTypes(request)
     .then(function (response) {
         console.log("Supported file-formats:")
         response.forEach(function (format) {
@@ -41,19 +41,19 @@ Or compile and run same written in TypeScript:
 
 ```ts
 // load the module
-import { ConversionApi, GetSupportedConversionTypesRequest } from "groupdocs-conversion-cloud";
+import { INfoApi, GetSupportedConversionTypesRequest } from "groupdocs-conversion-cloud";
 
 // get your appSid and appKey at https://dashboard.groupdocs.cloud (free registration is required).
 const appSid: string = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
 const appKey: string = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
-// construct ConversionApi
-const conversionApi: ConversionApi = ConversionApi.fromKeys(appSid, appKey);
+// construct Api
+const api: InfoApi = InfoApi.fromKeys(appSid, appKey);
 
 const request: GetSupportedConversionTypesRequest = new GetSupportedConversionTypesRequest();
 
 // retrieve supported file-formats
-conversionApi.getSupportedConversionTypes(request)
+api.getSupportedConversionTypes(request)
     .then((result) => {
         console.log("Supported file-formats:");
         result.forEach((format) => {

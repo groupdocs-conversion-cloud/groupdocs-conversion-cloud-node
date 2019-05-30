@@ -26,14 +26,15 @@ import * as fs from "fs";
 
 import { Configuration } from "../src/configuration";
 import { Serializer } from "../src/serializer";
-import { ConversionApi, ObjectExistsRequest, UploadFileRequest, DeleteFolderRequest } from "../src/conversion_api";
+import { ConvertApi, InfoApi, ObjectExistsRequest, UploadFileRequest, DeleteFolderRequest } from "../src/conversion_api";
 import { StorageApi } from "../src/conversion_api";
 import { FileApi } from "../src/conversion_api";
 import { FolderApi } from "../src/conversion_api";
 import { TestFile } from "./test_file";
 
 
-let conversionApi: ConversionApi;
+let convertApi: ConvertApi;
+let infoApi: InfoApi;
 let storageApi: StorageApi;
 let fileApi: FileApi;
 let folderApi: FolderApi;
@@ -41,36 +42,42 @@ let folderApi: FolderApi;
 export const OUT_FOLDER: string = "converted";
 
 /**
- * Initializes ConversionApi
+ * Initializes ConvertApi
  */
-export function getConversionApi() {
-    if (!conversionApi) {
+export function getConvertApi() {
+    if (!convertApi) {
         const settings = require("./test_settings.json");
 
         const config = new Configuration(settings.AppSid, settings.AppKey);
         config.apiBaseUrl = settings.ApiBaseUrl;
         //config.debugging = true;
-        conversionApi = ConversionApi.fromConfig(config);
+        convertApi = ConvertApi.fromConfig(config);
+        infoApi = InfoApi.fromConfig(config);
         storageApi = StorageApi.fromConfig(config);
         fileApi = FileApi.fromConfig(config);
         folderApi = FolderApi.fromConfig(config);
     }
 
-    return conversionApi;
+    return convertApi;
+}
+
+export function getInfoApi() {
+    if (!convertApi) getConvertApi();
+    return infoApi;
 }
 
 export function getStorageApi() {
-    if (!conversionApi) getConversionApi();
+    if (!convertApi) getConvertApi();
     return storageApi;
 }
 
 export function getFileApi() {
-    if (!conversionApi) getConversionApi();
+    if (!convertApi) getConvertApi();
     return fileApi;
 }
 
 export function getFolderApi() {
-    if (!conversionApi) getConversionApi();
+    if (!convertApi) getConvertApi();
     return folderApi;
 }
 
@@ -78,7 +85,7 @@ export function getFolderApi() {
  * Uploads test files
  */
 export function uploadTestFiles() {    
-    getConversionApi();    
+    getConvertApi();    
     const testFiles = TestFile.GetTestFiles();
     return Promise.all(testFiles.map((file) => {
         return storageApi.objectExists(new ObjectExistsRequest(file.GetPath())).then((response) => {

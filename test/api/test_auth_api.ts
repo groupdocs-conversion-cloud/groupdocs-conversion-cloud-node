@@ -26,7 +26,7 @@ import { expect } from "chai";
 import "mocha";
 import { GetSupportedConversionTypesRequest} from "../../src/model";
 import { Configuration } from "../../src/configuration";
-import { ConversionApi } from "../../src/conversion_api";
+import { InfoApi } from "../../src/conversion_api";
 
 describe("auth_api", () => {
 
@@ -38,9 +38,9 @@ describe("auth_api", () => {
           
             const config = new Configuration(appSid, appKey);
             config.apiBaseUrl = settings.ApiBaseUrl;
-            const conversionApi = ConversionApi.fromConfig(config);
+            const api = InfoApi.fromConfig(config);
             var request = new GetSupportedConversionTypesRequest();
-            return conversionApi.getSupportedConversionTypes(request)
+            return api.getSupportedConversionTypes(request)
                 .catch((error) => {
                     expect(error.message).equal("invalid_client");
                 });

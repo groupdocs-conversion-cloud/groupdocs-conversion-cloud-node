@@ -35,24 +35,24 @@ export * from "./configuration";
 /**
  * GroupDocs.Conversion Cloud API 
  */
-export class ConversionApi {
+export class ConvertApi {
     
     /**
-     * Creates new instance of ConversionApi
+     * Creates new instance of ConvertApi
      * @param appSid Application identifier (App SID).
      * @param appKey Application private key (App Key).
      */
     public static fromKeys(appSid: string, appKey: string) {
         const config = new Configuration(appSid, appKey);
-        return new ConversionApi(config);
+        return new ConvertApi(config);
     }
 
     /**
-     * Creates new instance of ConversionApi
+     * Creates new instance of ConvertApi
      * @param config API configuration.
      */
     public static fromConfig(config: Configuration) {
-        return new ConversionApi(config);
+        return new ConvertApi(config);
     }
 
     /**
@@ -123,33 +123,6 @@ export class ConversionApi {
         };
         const response = await invokeApiMethod(requestOptions, this.configuration);
         const result =  Serializer.deserialize(response.body, "Buffer");
-        return Promise.resolve(result);
-    }
-
-    /**
-     * Returns all supported conversion types
-     * @param requestObj contains request parameters
-     */
-    public async getSupportedConversionTypes(requestObj: model.GetSupportedConversionTypesRequest): Promise<Array<model.SupportedFormat>> {
-        if (requestObj === null || requestObj === undefined) {
-            throw new Error('Required parameter "requestObj" was null or undefined when calling getSupportedConversionTypes.');
-        }
-
-        let localVarPath = this.configuration.getServerUrl() + "/conversion/formats";
-        const queryParameters: any = {};
-        
-        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filePath", requestObj.filePath);
-        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
-        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "format", requestObj.format);
-        const requestOptions: request.Options = {
-            method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
-        };
-
-        const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "Array<SupportedFormat>");
         return Promise.resolve(result);
     }
 
@@ -363,7 +336,7 @@ export class FileApi {
         }
 
         const requestOptions: request.Options = {
-            method: "POST",
+            method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
@@ -468,7 +441,7 @@ export class FolderApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         const requestOptions: request.Options = {
-            method: "POST",
+            method: "PUT",
             qs: queryParameters,
             uri: localVarPath,
             json: true,
@@ -575,6 +548,95 @@ export class FolderApi {
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
         return Promise.resolve(response);
+    }
+
+}
+/**
+ * GroupDocs.Conversion Cloud API 
+ */
+export class InfoApi {
+    
+    /**
+     * Creates new instance of InfoApi
+     * @param appSid Application identifier (App SID).
+     * @param appKey Application private key (App Key).
+     */
+    public static fromKeys(appSid: string, appKey: string) {
+        const config = new Configuration(appSid, appKey);
+        return new InfoApi(config);
+    }
+
+    /**
+     * Creates new instance of InfoApi
+     * @param config API configuration.
+     */
+    public static fromConfig(config: Configuration) {
+        return new InfoApi(config);
+    }
+
+    /**
+     * Configuration
+     */
+    private configuration: Configuration;
+
+    /**
+     * @param config Configuration.
+     */
+    private constructor(config: Configuration) {
+        this.configuration = config;
+    }
+
+    /**
+     * Returns metadata for provided document
+     * @param requestObj contains request parameters
+     */
+    public async getDocumentMetadata(requestObj: model.GetDocumentMetadataRequest): Promise<model.DocumentMetadata> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getDocumentMetadata.');
+        }
+
+        let localVarPath = this.configuration.getServerUrl() + "/conversion/info";
+        const queryParameters: any = {};
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filePath", requestObj.filePath);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
+        const requestOptions: request.Options = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.body, "DocumentMetadata");
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Returns all supported conversion types
+     * @param requestObj contains request parameters
+     */
+    public async getSupportedConversionTypes(requestObj: model.GetSupportedConversionTypesRequest): Promise<Array<model.SupportedFormat>> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getSupportedConversionTypes.');
+        }
+
+        let localVarPath = this.configuration.getServerUrl() + "/conversion/formats";
+        const queryParameters: any = {};
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filePath", requestObj.filePath);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "format", requestObj.format);
+        const requestOptions: request.Options = {
+            method: "GET",
+            qs: queryParameters,
+            uri: localVarPath,
+            json: true,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.body, "Array<SupportedFormat>");
+        return Promise.resolve(result);
     }
 
 }

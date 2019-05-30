@@ -205,6 +205,170 @@ export class DiscUsage {
 }
 
 /**
+ * Contains a document metadata 
+ */
+// tslint:disable: completed-docs
+export class DocumentMetadata {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "fileType",
+            baseName: "fileType",
+            type: "string",
+        },        
+        {
+            name: "pageCount",
+            baseName: "pageCount",
+            type: "number",
+        },        
+        {
+            name: "size",
+            baseName: "size",
+            type: "number",
+        },        
+        {
+            name: "width",
+            baseName: "width",
+            type: "number",
+        },        
+        {
+            name: "height",
+            baseName: "height",
+            type: "number",
+        },        
+        {
+            name: "horizontalResolution",
+            baseName: "horizontalResolution",
+            type: "number",
+        },        
+        {
+            name: "verticalResolution",
+            baseName: "verticalResolution",
+            type: "number",
+        },        
+        {
+            name: "bitsPerPixel",
+            baseName: "bitsPerPixel",
+            type: "number",
+        },        
+        {
+            name: "title",
+            baseName: "title",
+            type: "string",
+        },        
+        {
+            name: "author",
+            baseName: "author",
+            type: "string",
+        },        
+        {
+            name: "createdDate",
+            baseName: "createdDate",
+            type: "Date",
+        },        
+        {
+            name: "modifiedDate",
+            baseName: "modifiedDate",
+            type: "Date",
+        },        
+        {
+            name: "layers",
+            baseName: "layers",
+            type: "Array<string>",
+        },        
+        {
+            name: "isPasswordProtected",
+            baseName: "isPasswordProtected",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return DocumentMetadata.attributeTypeMap;
+    }
+
+    /**
+     * Document file type
+     */
+    public fileType: string;
+    
+    /**
+     * Gets pages count if applicable to the current document format
+     */
+    public pageCount: number;
+    
+    /**
+     * Document bytes size
+     */
+    public size: number;
+    
+    /**
+     * Returns detected width if applicable to the current document format
+     */
+    public width: number;
+    
+    /**
+     * Returns detected height if applicable to the current document format
+     */
+    public height: number;
+    
+    /**
+     * Returns detected horizontal resolution if applicable to the current document format
+     */
+    public horizontalResolution: number;
+    
+    /**
+     * Returns detected vertical resolution if applicable to the current document format
+     */
+    public verticalResolution: number;
+    
+    /**
+     * Returns detected bits per pixel if applicable to the current document format
+     */
+    public bitsPerPixel: number;
+    
+    /**
+     * Returns document title width if applicable to the current document format
+     */
+    public title: string;
+    
+    /**
+     * Returns detected document author if applicable to the current document format
+     */
+    public author: string;
+    
+    /**
+     * Returns detected document creation date if it's applicable to the current document format
+     */
+    public createdDate: Date;
+    
+    /**
+     * Returns detected document modification date if applicable to the current document format
+     */
+    public modifiedDate: Date;
+    
+    /**
+     * Returns list of layer names if applicable to the current document format
+     */
+    public layers: Array<string>;
+    
+    /**
+     * Is document password protected
+     */
+    public isPasswordProtected: boolean;
+    
+    public constructor(init?: Partial<DocumentMetadata>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * The error details
  */
 // tslint:disable: completed-docs
@@ -1256,6 +1420,26 @@ export class ImageConvertOptions extends ConvertOptions {
             name: "watermarkOptions",
             baseName: "watermarkOptions",
             type: "WatermarkOptions",
+        },        
+        {
+            name: "brightness",
+            baseName: "brightness",
+            type: "number",
+        },        
+        {
+            name: "contrast",
+            baseName: "contrast",
+            type: "number",
+        },        
+        {
+            name: "gamma",
+            baseName: "gamma",
+            type: "number",
+        },        
+        {
+            name: "flipMode",
+            baseName: "flipMode",
+            type: "ImageConvertOptions.FlipModeEnum",
         }    ];
 
     /**
@@ -1305,12 +1489,43 @@ export class ImageConvertOptions extends ConvertOptions {
      */
     public watermarkOptions: WatermarkOptions;
     
+    /**
+     * Adjust image brightness
+     */
+    public brightness: number;
+    
+    /**
+     * Adjust image contrast
+     */
+    public contrast: number;
+    
+    /**
+     * Adjust image gamma
+     */
+    public gamma: number;
+    
+    /**
+     * Image flip mode
+     */
+    public flipMode: ImageConvertOptions.FlipModeEnum;
+    
     public constructor(init?: Partial<ImageConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace ImageConvertOptions {
+    export enum FlipModeEnum {
+        None = 'None' as any,
+        FlipX = 'FlipX' as any,
+        FlipY = 'FlipY' as any,
+        FlipXY = 'FlipXY' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * Image document load options
  */
@@ -2719,6 +2934,11 @@ export class BmpConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace BmpConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Bmp load options
  */
@@ -2769,6 +2989,11 @@ export class CgmConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace CgmConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dcm convert options
  */
@@ -2794,6 +3019,11 @@ export class DcmConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DcmConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dcm load options
  */
@@ -2869,6 +3099,11 @@ export class DjvuConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DjvuConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dng convert options
  */
@@ -2894,6 +3129,11 @@ export class DngConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DngConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dng load options
  */
@@ -3319,6 +3559,11 @@ export class EmfConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace EmfConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Emf load options
  */
@@ -3444,6 +3689,11 @@ export class GifConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace GifConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Gif load options
  */
@@ -3494,6 +3744,11 @@ export class IcoConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace IcoConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ico load options
  */
@@ -3728,6 +3983,11 @@ export class JpgConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace JpgConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Jpg load options
  */
@@ -3903,6 +4163,11 @@ export class OdgConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OdgConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Odg load options
  */
@@ -4303,6 +4568,11 @@ export class PngConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PngConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Png load options
  */
@@ -5437,6 +5707,11 @@ export class WebpConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace WebpConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Webp load options
  */
@@ -5487,6 +5762,11 @@ export class WmfConvertOptions extends ImageConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace WmfConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Wmf load options
  */
@@ -5887,6 +6167,11 @@ export class J2cConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace J2cConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * J2k convert options
  */
@@ -5912,6 +6197,11 @@ export class J2kConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace J2kConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Jp2 convert options
  */
@@ -5937,6 +6227,11 @@ export class Jp2ConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace Jp2ConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Jpeg convert options
  */
@@ -5962,6 +6257,11 @@ export class JpegConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace JpegConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Jpf convert options
  */
@@ -5987,6 +6287,11 @@ export class JpfConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace JpfConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Jpm convert options
  */
@@ -6012,6 +6317,11 @@ export class JpmConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace JpmConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Jpx convert options
  */
@@ -6037,6 +6347,11 @@ export class JpxConvertOptions extends JpgConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace JpxConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Tif convert options
  */
@@ -6068,6 +6383,7 @@ export namespace TifConvertOptions {
 }
 // tslint:enable:quotemark
 const enumsMap = {
+    "ImageConvertOptions.FlipModeEnum": ImageConvertOptions.FlipModeEnum,
     "PdfConvertOptions.PdfFormatEnum": PdfConvertOptions.PdfFormatEnum,
     "PdfConvertOptions.DirectionEnum": PdfConvertOptions.DirectionEnum,
     "PdfConvertOptions.NonFullScreenPageModeEnum": PdfConvertOptions.NonFullScreenPageModeEnum,
@@ -6085,6 +6401,7 @@ const typeMap = {
             ConvertOptions,
             ConvertSettings,
             DiscUsage,
+            DocumentMetadata,
             ErrorDetails,
             FileVersions,
             FilesList,
@@ -6264,32 +6581,6 @@ export class ConvertDocumentRequest {
     
     public constructor(convertSettings: ConvertSettings) {        
         this.convertSettings = convertSettings;
-    }
-}
-
-/**
- * Request model for GetSupportedConversionTypes operation.
- */
-export class GetSupportedConversionTypesRequest {
-    /**
-     * Absolute path to a document in the storage
-     */
-    public filePath: string;
-
-    /**
-     * StorageName which contains the document
-     */
-    public storageName: string;
-
-    /**
-     * If provided only supported conversions for specified format will be returned
-     */
-    public format: string;
-    
-    public constructor(filePath?: string, storageName?: string, format?: string) {        
-        this.filePath = filePath;
-        this.storageName = storageName;
-        this.format = format;
     }
 }
 
@@ -6574,6 +6865,52 @@ export class MoveFolderRequest {
         this.destPath = destPath;
         this.srcStorageName = srcStorageName;
         this.destStorageName = destStorageName;
+    }
+}
+
+/**
+ * Request model for GetDocumentMetadata operation.
+ */
+export class GetDocumentMetadataRequest {
+    /**
+     * Absolute path to a document in the storage
+     */
+    public filePath: string;
+
+    /**
+     * StorageName which contains the document
+     */
+    public storageName: string;
+    
+    public constructor(filePath?: string, storageName?: string) {        
+        this.filePath = filePath;
+        this.storageName = storageName;
+    }
+}
+
+/**
+ * Request model for GetSupportedConversionTypes operation.
+ */
+export class GetSupportedConversionTypesRequest {
+    /**
+     * Absolute path to a document in the storage
+     */
+    public filePath: string;
+
+    /**
+     * StorageName which contains the document
+     */
+    public storageName: string;
+
+    /**
+     * If provided only supported conversions for specified format will be returned
+     */
+    public format: string;
+    
+    public constructor(filePath?: string, storageName?: string, format?: string) {        
+        this.filePath = filePath;
+        this.storageName = storageName;
+        this.format = format;
     }
 }
 
