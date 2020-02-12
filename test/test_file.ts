@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2019 Aspose Pty Ltd
+* Copyright (c) 2003-2020 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ export class TestFile {
      * DOCX file with one page
      */
     public static OnePageDocx: TestFile =
-        new TestFile("one-page.docx", "words\\docx\\");
+        new TestFile("one-page.docx", "WordProcessing\\");
 
     /**
      * DOCX file that should not exists in storage
@@ -43,49 +43,13 @@ export class TestFile {
      * Password-protected DOCX file
      */
     public static PasswordProtectedDocx: TestFile =
-        new TestFile("password-protected.docx", "words\\docx\\", "password");
-
-    /**
-     * VSD file with two hidden pages
-     */
-    public static TwoHiddenPagesVsd: TestFile =
-        new TestFile("two-hidden-pages.vsd", "diagram\\vsd\\");
-
-    /**
-     * XLSX file with hidden rown and columns
-     */
-    public static WithHiddenRowsAndColumns: TestFile =
-        new TestFile("with-hidden-rows-and-columns.xlsx", "cells\\xlsx\\");
-
-    /**
-     * DWF file
-     */
-    public static ThreeLayoutsDwf: TestFile =
-        new TestFile("three-layouts.dwf", "cad\\dwf\\");
-
-    /**
-     * MPP
-     */
-    public static ProjectMpp: TestFile =
-        new TestFile("sample.mpp", "project\\mpp\\");
-
-    /**
-     * PPTX which uses custom font
-     */
-    public static UsesCustomFontPptx: TestFile =
-        new TestFile("uses-custom-font.pptx", "slides\\pptx\\");
-
-    /**
-     * TTF font
-     */
-    public static FontTtf: TestFile =
-        new TestFile("foo.ttf", "font\\ttf\\");
+        new TestFile("password-protected.docx", "WordProcessing\\", "password");
 
     /**
      * DOCX file with four pages
      */
     public static FourPagesDocx: TestFile =
-        new TestFile("four-pages.docx", "words\\docx\\");
+        new TestFile("four-pages.docx", "WordProcessing\\");
 
     /**
      * File name
@@ -124,12 +88,6 @@ export class TestFile {
         return [
             TestFile.OnePageDocx,
             TestFile.PasswordProtectedDocx,
-            TestFile.TwoHiddenPagesVsd,
-            TestFile.WithHiddenRowsAndColumns,
-            TestFile.ThreeLayoutsDwf,
-            TestFile.ProjectMpp,
-            TestFile.UsesCustomFontPptx,
-            TestFile.FontTtf,
             TestFile.FourPagesDocx
         ];
     }

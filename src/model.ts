@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2019 Aspose Pty Ltd
+* Copyright (c) 2003-2020 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -1105,6 +1105,11 @@ export class CsvLoadOptions extends LoadOptions {
             name: "convertDateTimeData",
             baseName: "convertDateTimeData",
             type: "boolean",
+        },        
+        {
+            name: "encoding",
+            baseName: "encoding",
+            type: "string",
         }    ];
 
     /**
@@ -1138,6 +1143,11 @@ export class CsvLoadOptions extends LoadOptions {
      * Indicates whether the string in the file is converted to date. Default is True
      */
     public convertDateTimeData: boolean;
+    
+    /**
+     * File encoding
+     */
+    public encoding: string;
     
     public constructor(init?: Partial<CsvLoadOptions>) {
         super(init);
@@ -1218,6 +1228,16 @@ export class EmailLoadOptions extends LoadOptions {
             name: "displayBccEmailAddress",
             baseName: "displayBccEmailAddress",
             type: "boolean",
+        },        
+        {
+            name: "timeZoneOffset",
+            baseName: "timeZoneOffset",
+            type: "string",
+        },        
+        {
+            name: "convertAttachments",
+            baseName: "convertAttachments",
+            type: "boolean",
         }    ];
 
     /**
@@ -1256,6 +1276,16 @@ export class EmailLoadOptions extends LoadOptions {
      * Option to display or hide \"Bcc\" email address. Default: false
      */
     public displayBccEmailAddress: boolean;
+    
+    /**
+     * Gets or sets the Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the localtime and UTC.
+     */
+    public timeZoneOffset: string;
+    
+    /**
+     * Option to convert attachments in source email or not. Default: false.
+     */
+    public convertAttachments: boolean;
     
     public constructor(init?: Partial<EmailLoadOptions>) {
         super(init);
@@ -1740,8 +1770,8 @@ export class PdfConvertOptions extends ConvertOptions {
             type: "boolean",
         },        
         {
-            name: "hideMenubar",
-            baseName: "hideMenubar",
+            name: "hideMenuBar",
+            baseName: "hideMenuBar",
             type: "boolean",
         },        
         {
@@ -1768,21 +1798,6 @@ export class PdfConvertOptions extends ConvertOptions {
             name: "pageMode",
             baseName: "pageMode",
             type: "PdfConvertOptions.PageModeEnum",
-        },        
-        {
-            name: "bookmarksOutlineLevel",
-            baseName: "bookmarksOutlineLevel",
-            type: "number",
-        },        
-        {
-            name: "headingsOutlineLevels",
-            baseName: "headingsOutlineLevels",
-            type: "number",
-        },        
-        {
-            name: "expandedOutlineLevels",
-            baseName: "expandedOutlineLevels",
-            type: "number",
         },        
         {
             name: "rotate",
@@ -1920,7 +1935,7 @@ export class PdfConvertOptions extends ConvertOptions {
     /**
      * Specify whether menu bar should be hidden when document is active. Default: false.
      */
-    public hideMenubar: boolean;
+    public hideMenuBar: boolean;
     
     /**
      * Specifying whether toolbar should be hidden when document is active. Default: false.
@@ -1946,21 +1961,6 @@ export class PdfConvertOptions extends ConvertOptions {
      * Sets page mode, specifying how document should be displayed when opened.
      */
     public pageMode: PdfConvertOptions.PageModeEnum;
-    
-    /**
-     * Specifies the default level in the document outline at which to display Word bookmarks. Default is 0. Valid range is 0 to 9.
-     */
-    public bookmarksOutlineLevel: number;
-    
-    /**
-     * Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline. Default is 0. Valid range is 0 to 9.
-     */
-    public headingsOutlineLevels: number;
-    
-    /**
-     * Specifies how many levels in the document outline to show expanded when the file is viewed. Default is 0. Valid range is 0 to 9. Note that this options will not work when saving to XPS.
-     */
-    public expandedOutlineLevels: number;
     
     /**
      * Rotate page
@@ -2539,6 +2539,11 @@ export class TxtLoadOptions extends LoadOptions {
             name: "leadingSpacesOptions",
             baseName: "leadingSpacesOptions",
             type: "TxtLoadOptions.LeadingSpacesOptionsEnum",
+        },        
+        {
+            name: "encoding",
+            baseName: "encoding",
+            type: "string",
         }    ];
 
     /**
@@ -2562,6 +2567,11 @@ export class TxtLoadOptions extends LoadOptions {
      * Gets or sets preferred option of a leading space handling. Default value is ConvertToIndent.
      */
     public leadingSpacesOptions: TxtLoadOptions.LeadingSpacesOptionsEnum;
+    
+    /**
+     * Gets or sets the encoding that will be used when loading Txt document. Can be null. Default is null.
+     */
+    public encoding: string;
     
     public constructor(init?: Partial<TxtLoadOptions>) {
         super(init);
@@ -2706,6 +2716,21 @@ export class WordProcessingLoadOptions extends LoadOptions {
             name: "hideComments",
             baseName: "hideComments",
             type: "boolean",
+        },        
+        {
+            name: "bookmarksOutlineLevel",
+            baseName: "bookmarksOutlineLevel",
+            type: "number",
+        },        
+        {
+            name: "headingsOutlineLevels",
+            baseName: "headingsOutlineLevels",
+            type: "number",
+        },        
+        {
+            name: "expandedOutlineLevels",
+            baseName: "expandedOutlineLevels",
+            type: "number",
         }    ];
 
     /**
@@ -2744,6 +2769,21 @@ export class WordProcessingLoadOptions extends LoadOptions {
      * Hide comments
      */
     public hideComments: boolean;
+    
+    /**
+     * Specifies the default level in the document outline at which to display Word bookmarks. Default is 0. Valid range is 0 to 9.
+     */
+    public bookmarksOutlineLevel: number;
+    
+    /**
+     * Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline. Default is 0. Valid range is 0 to 9.
+     */
+    public headingsOutlineLevels: number;
+    
+    /**
+     * Specifies how many levels in the document outline to show expanded when the file is viewed. Default is 0. Valid range is 0 to 9. Note that this options will not work when saving to XPS.
+     */
+    public expandedOutlineLevels: number;
     
     public constructor(init?: Partial<WordProcessingLoadOptions>) {
         super(init);

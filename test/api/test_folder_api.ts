@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2019 Aspose Pty Ltd
+* Copyright (c) 2003-2020 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -47,7 +47,7 @@ describe("folder_api", () => {
     describe("test_folder_api", () => {
 
         it("TestGetFilesList", async () => {  
-            var request = new GetFilesListRequest("cad");
+            var request = new GetFilesListRequest("WordProcessing");
             var response = await TestContext.getFolderApi().getFilesList(request);
             expect(response.value.length).greaterThan(0);
         });

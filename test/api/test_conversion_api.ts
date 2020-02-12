@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2019 Aspose Pty Ltd
+* Copyright (c) 2003-2020 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,12 @@ import { expect } from "chai";
 import "mocha";
 import * as TestContext from "../test_context";
 import { TestFile } from "../test_file";
-import { GetSupportedConversionTypesRequest, GetDocumentMetadataRequest, ConvertDocumentRequest, ConvertSettings, DocxConvertOptions } from "../../src/model";
+import { GetSupportedConversionTypesRequest,
+        GetDocumentMetadataRequest,
+        ConvertDocumentRequest,
+        ConvertSettings,
+        PdfConvertOptions,
+        JpgConvertOptions } from "../../src/model";
 
 describe("test_conversion_api", () => {
     
@@ -71,16 +76,16 @@ describe("test_conversion_api", () => {
 
         it("convert document", () => {            
             const api = TestContext.getConvertApi();
-            var options = new DocxConvertOptions();
+            var options = new JpgConvertOptions();
             var settings = new ConvertSettings();
             settings.filePath = TestFile.FourPagesDocx.GetPath();
-            settings.format = "pdf";
+            settings.format = "jpg";
             settings.outputPath = TestContext.OUT_FOLDER;
             settings.convertOptions = options;
             var request = new ConvertDocumentRequest(settings);
             return api.convertDocument(request)
                 .then((result) => {     
-                    expect(result.length).equal(1);
+                    expect(result.length).equal(4);
                     expect(result[0].size).greaterThan(0);
                 });
         });
@@ -90,7 +95,7 @@ describe("test_conversion_api", () => {
 
         it("convert document download", () => {            
             const api = TestContext.getConvertApi();
-            var options = new DocxConvertOptions();
+            var options = new PdfConvertOptions();
             var settings = new ConvertSettings();
             settings.filePath =TestFile.FourPagesDocx.GetPath();
             settings.format = "pdf";
