@@ -32,13 +32,13 @@
   },
   "dependencies": {
     "@types/request": "^2.48.4",
-    "request": "^2.81.0",
+    "request": "^2.88.2",
     "request-debug": "^0.2.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.7",
+    "@types/chai": "^4.2.9",
     "@types/mocha": "^2.2.44",
-    "@types/node": "^10.17.13",
+    "@types/node": "^10.17.15",
     "asposestoragecloud": "^1.0.5",
     "chai": "^4.2.0",
     "mocha": "^4.0.1",
