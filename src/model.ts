@@ -413,6 +413,74 @@ export class ErrorDetails {
 }
 
 /**
+ * Represents field label 
+ */
+// tslint:disable: completed-docs
+export class FieldLabel {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "field",
+            baseName: "field",
+            type: "FieldLabel.FieldEnum",
+        },        
+        {
+            name: "label",
+            baseName: "label",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return FieldLabel.attributeTypeMap;
+    }
+
+    /**
+     * The field name
+     */
+    public field: FieldLabel.FieldEnum;
+    
+    /**
+     * The label e.g. \"Sender\"
+     */
+    public label: string;
+    
+    public constructor(init?: Partial<FieldLabel>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace FieldLabel {
+    export enum FieldEnum {
+        Start = 'Start' as any,
+        TabField = 'TabField' as any,
+        Subject = 'Subject' as any,
+        ShowTimeAs = 'ShowTimeAs' as any,
+        Sent = 'Sent' as any,
+        RequiredAttendees = 'RequiredAttendees' as any,
+        RecurrencePattern = 'RecurrencePattern' as any,
+        Recurrence = 'Recurrence' as any,
+        PageHeader = 'PageHeader' as any,
+        Organizer = 'Organizer' as any,
+        Location = 'Location' as any,
+        Importance = 'Importance' as any,
+        From = 'From' as any,
+        End = 'End' as any,
+        Bcc = 'Bcc' as any,
+        Attachments = 'Attachments' as any,
+        To = 'To' as any,
+    }
+}
+// tslint:enable:quotemark
+/**
  * File versions FileVersion.
  */
 // tslint:disable: completed-docs
@@ -1238,6 +1306,16 @@ export class EmailLoadOptions extends LoadOptions {
             name: "convertAttachments",
             baseName: "convertAttachments",
             type: "boolean",
+        },        
+        {
+            name: "fieldLabels",
+            baseName: "fieldLabels",
+            type: "Array<FieldLabel>",
+        },        
+        {
+            name: "preserveOriginalDate",
+            baseName: "preserveOriginalDate",
+            type: "boolean",
         }    ];
 
     /**
@@ -1286,6 +1364,16 @@ export class EmailLoadOptions extends LoadOptions {
      * Option to convert attachments in source email or not. Default: false.
      */
     public convertAttachments: boolean;
+    
+    /**
+     * The mapping between email message field and field text representation
+     */
+    public fieldLabels: Array<FieldLabel>;
+    
+    /**
+     * Defines whether need to keep original date header string in mail message when saving or not (Default value is true)
+     */
+    public preserveOriginalDate: boolean;
     
     public constructor(init?: Partial<EmailLoadOptions>) {
         super(init);
@@ -1358,6 +1446,11 @@ export class HtmlConvertOptions extends ConvertOptions {
             type: "boolean",
         },        
         {
+            name: "fixedLayoutShowBorders",
+            baseName: "fixedLayoutShowBorders",
+            type: "boolean",
+        },        
+        {
             name: "zoom",
             baseName: "zoom",
             type: "number",
@@ -1386,6 +1479,11 @@ export class HtmlConvertOptions extends ConvertOptions {
     public fixedLayout: boolean;
     
     /**
+     * Show page borders when converting to fixed layout. Default is True
+     */
+    public fixedLayoutShowBorders: boolean;
+    
+    /**
      * Specifies the zoom level in percentage. Default is 100.
      */
     public zoom: number;
@@ -1396,6 +1494,40 @@ export class HtmlConvertOptions extends ConvertOptions {
     public watermarkOptions: WatermarkOptions;
     
     public constructor(init?: Partial<HtmlConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Html document load options
+ */
+// tslint:disable: completed-docs
+export class HtmlLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "pageNumbering",
+            baseName: "pageNumbering",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(HtmlLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Enable or disable generation of page numbering in converted document. Default: false
+     */
+    public pageNumbering: boolean;
+    
+    public constructor(init?: Partial<HtmlLoadOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -6423,6 +6555,7 @@ export namespace TifConvertOptions {
 }
 // tslint:enable:quotemark
 const enumsMap = {
+    "FieldLabel.FieldEnum": FieldLabel.FieldEnum,
     "ImageConvertOptions.FlipModeEnum": ImageConvertOptions.FlipModeEnum,
     "PdfConvertOptions.PdfFormatEnum": PdfConvertOptions.PdfFormatEnum,
     "PdfConvertOptions.DirectionEnum": PdfConvertOptions.DirectionEnum,
@@ -6443,6 +6576,7 @@ const typeMap = {
             DiscUsage,
             DocumentMetadata,
             ErrorDetails,
+            FieldLabel,
             FileVersions,
             FilesList,
             FilesUploadResult,
@@ -6460,6 +6594,7 @@ const typeMap = {
             EmailLoadOptions,
             FileVersion,
             HtmlConvertOptions,
+            HtmlLoadOptions,
             ImageConvertOptions,
             ImageLoadOptions,
             OneLoadOptions,
