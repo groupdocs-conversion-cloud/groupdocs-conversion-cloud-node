@@ -69,12 +69,4 @@ api.getSupportedConversionTypes(request)
 ## Licensing
 GroupDocs.Conversion Cloud Node.js SDK licensed under [MIT License](LICENSE).
 
-## Resources
-+ [**Website**](https://www.groupdocs.cloud)
-+ [**Product Home**](https://products.groupdocs.cloud/conversion)
-+ [**Documentation**](https://docs.groupdocs.cloud/display/conversioncloud/Home)
-+ [**Free Support Forum**](https://forum.groupdocs.cloud/c/conversion)
-+ [**Blog**](https://blog.groupdocs.cloud/category/conversion)
-
-## Contact Us
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/conversion).
+[Home](https://www.groupdocs.cloud/) | [Product Page](https://products.groupdocs.cloud/conversion/nodejs) | [Docs](https://docs.groupdocs.cloud/conversion/) | [Demos](https://products.groupdocs.app/conversion/family) | [API Reference](https://apireference.groupdocs.cloud/conversion/) | [Examples](https://github.com/groupdocs-conversion-cloud/groupdocs-conversion-cloud-node) | [Blog](https://blog.groupdocs.cloud/category/conversion/) | [Free Support](https://forum.groupdocs.cloud/c/conversion) | [Free Trial](https://purchase.groupdocs.cloud/trial)
