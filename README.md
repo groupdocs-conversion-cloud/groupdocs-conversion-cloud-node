@@ -1,4 +1,5 @@
 # GroupDocs.Conversion Cloud Node.js SDK
+
 Node.js module for communicating with the GroupDocs.Conversion Cloud API
 
 ## Installation
@@ -7,7 +8,7 @@ A package `groupdocs-conversion-cloud` is available at [npmjs.com](https://www.n
 
 ```shell
 npm install groupdocs-conversion-cloud
-```    
+```
 
 ## Getting Started
 
@@ -65,8 +66,17 @@ api.getSupportedConversionTypes(request)
     });
 ```
 
-
 ## Licensing
+
 GroupDocs.Conversion Cloud Node.js SDK licensed under [MIT License](LICENSE).
 
-[Home](https://www.groupdocs.cloud/) | [Product Page](https://products.groupdocs.cloud/conversion/nodejs) | [Docs](https://docs.groupdocs.cloud/conversion/) | [Demos](https://products.groupdocs.app/conversion/family) | [API Reference](https://apireference.groupdocs.cloud/conversion/) | [Examples](https://github.com/groupdocs-conversion-cloud/groupdocs-conversion-cloud-node-samples) | [Blog](https://blog.groupdocs.cloud/category/conversion/) | [Free Support](https://forum.groupdocs.cloud/c/conversion) | [Free Trial](https://purchase.groupdocs.cloud/trial)
+## Resources
++[**Website**](https://www.groupdocs.cloud)
++[**Product Home**](https://products.groupdocs.cloud/conversion)
++[**Documentation**](https://docs.groupdocs.cloud/conversion)
++[**Free Support Forum**](https://forum.groupdocs.cloud/c/conversion)
++[**Blog**](https://blog.groupdocs.cloud/category/conversion)
+
+## Contact Us
+
+Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.groupdocs.cloud/c/conversion).

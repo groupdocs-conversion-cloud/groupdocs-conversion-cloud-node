@@ -6760,6 +6760,38 @@ export class ConvertDocumentRequest {
 }
 
 /**
+ * Request model for ConvertDocumentDirect operation.
+ */
+export class ConvertDocumentDirectRequest {
+    /**
+     * Requested conversion format
+     */
+    public format: string;
+
+    /**
+     * Input file to convert
+     */
+    public file: Buffer;
+
+    /**
+     * Page start conversion from
+     */
+    public fromPage: number;
+
+    /**
+     * Number of pages to convert
+     */
+    public pagesCount: number;
+    
+    public constructor(format: string, file: Buffer, fromPage?: number, pagesCount?: number) {        
+        this.format = format;
+        this.file = file;
+        this.fromPage = fromPage;
+        this.pagesCount = pagesCount;
+    }
+}
+
+/**
  * Request model for CopyFile operation.
  */
 export class CopyFileRequest {

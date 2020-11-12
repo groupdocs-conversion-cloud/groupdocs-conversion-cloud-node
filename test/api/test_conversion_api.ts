@@ -29,6 +29,7 @@ import { TestFile } from "../test_file";
 import { GetSupportedConversionTypesRequest,
         GetDocumentMetadataRequest,
         ConvertDocumentRequest,
+        ConvertDocumentDirectRequest,
         ConvertSettings,
         PdfConvertOptions,
         JpgConvertOptions } from "../../src/model";
@@ -108,4 +109,19 @@ describe("test_conversion_api", () => {
         });          
     });
     
+    describe("test_convert_document_direct", () => {
+
+        it("convert document direct", () => {            
+            const api = TestContext.getConvertApi();
+            var format = "pdf";
+            let filebuf = TestContext.getTestFileBuffer(TestFile.FourPagesDocx);
+
+            var request = new ConvertDocumentDirectRequest(format, filebuf);
+            return api.convertDocumentDirect(request)
+                .then((result) => {     
+                    expect(result.length).greaterThan(0);
+                });
+        });          
+    });
+
 });

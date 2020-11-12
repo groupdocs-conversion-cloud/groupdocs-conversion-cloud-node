@@ -126,6 +126,54 @@ export class ConvertApi {
         return Promise.resolve(result);
     }
 
+    /**
+     * Converts input document file to format specified
+     * @param requestObj contains request parameters
+     */
+    public async convertDocumentDirect(requestObj: model.ConvertDocumentDirectRequest): Promise<Buffer> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling convertDocumentDirect.');
+        }
+
+        let localVarPath = this.configuration.getServerUrl() + "/conversion";
+        const queryParameters: any = {};
+        const formParams: any = {};
+
+        // verify required parameter 'requestObj.format' is not null or undefined
+        if (requestObj.format === null || requestObj.format === undefined) {
+            throw new Error('Required parameter "requestObj.format" was null or undefined when calling convertDocumentDirect.');
+        }
+
+        // verify required parameter 'requestObj.file' is not null or undefined
+        if (requestObj.file === null || requestObj.file === undefined) {
+            throw new Error('Required parameter "requestObj.file" was null or undefined when calling convertDocumentDirect.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "format", requestObj.format);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fromPage", requestObj.fromPage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "pagesCount", requestObj.pagesCount);
+        if (requestObj.file !== undefined) {
+            formParams.File = {                
+                value: requestObj.file,
+                options: {
+                  filename: "file.name",
+                },
+            };
+        }
+
+        const requestOptions: request.Options = {
+            method: "PUT",
+            qs: queryParameters,
+            uri: localVarPath,
+            encoding: null,
+        };
+
+        (requestOptions as any).formData = formParams;        
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.body, "Buffer");
+        return Promise.resolve(result);
+    }
+
 }
 /**
  * GroupDocs.Conversion Cloud API 
