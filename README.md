@@ -60,10 +60,13 @@ npm install groupdocs-conversion-cloud
 // Get your application information from https://dashboard.groupdocs.cloud
 global.conversion_cloud = require("groupdocs-conversion-cloud");
 
-global.appSid = "XXXX-XXXX-XXXX-XXXX"; 
-global.appKey = "XXXXXXXXXXXXXXXX"; 
+// Get Client Id and Client Secret from https://dashboard.groupdocs.cloud
+const myClientId: string = "";
+const myClientSecret: string = "";
 
-global.convertApi = conversion_cloud.ConvertApi.fromKeys(appSid, appKey);
+// Create instance of the API
+const configuration: Configuration = conversion_cloud.Configuration(myClientId, myClientSecret);
+const convertApi: ConvertApi = conversion_cloud.ConvertApi.fromConfig(configuration);
 
 let settings = new conversion_cloud.ConvertSettings();
 settings.filePath = "WordProcessing/four-pages.docx";
