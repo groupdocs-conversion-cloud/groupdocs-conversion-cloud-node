@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2020 Aspose Pty Ltd
+* Copyright (c) 2003-2021 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -115,6 +115,11 @@ export class ConvertSettings {
             name: "outputPath",
             baseName: "outputPath",
             type: "string",
+        },        
+        {
+            name: "fontsPath",
+            baseName: "fontsPath",
+            type: "string",
         }    ];
 
     /**
@@ -153,6 +158,11 @@ export class ConvertSettings {
      * Gets or sets converted file save path
      */
     public outputPath: string;
+    
+    /**
+     * The path to directory containing custom fonts in storage
+     */
+    public fontsPath: string;
     
     public constructor(init?: Partial<ConvertSettings>) {
         
@@ -967,6 +977,16 @@ export class WatermarkOptions {
             type: "number",
         },        
         {
+            name: "bold",
+            baseName: "bold",
+            type: "boolean",
+        },        
+        {
+            name: "italic",
+            baseName: "italic",
+            type: "boolean",
+        },        
+        {
             name: "color",
             baseName: "color",
             type: "string",
@@ -1033,6 +1053,16 @@ export class WatermarkOptions {
      * Watermark font name if text watermark is applied
      */
     public fontSize: number;
+    
+    /**
+     * Watermark font bold style if text watermark is applied
+     */
+    public bold: boolean;
+    
+    /**
+     * Watermark font italic style if text watermark is applied
+     */
+    public italic: boolean;
     
     /**
      * Watermark font color if text watermark is applied
