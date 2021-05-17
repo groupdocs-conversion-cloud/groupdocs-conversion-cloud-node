@@ -99,9 +99,17 @@ async function invokeApiMethodInternal(requestOptions: request.Options, config: 
                             bodyContent = JSON.parse(bodyContent.toString("utf8"));
                         }
                         if (bodyContent.error) {
-                            reject({ message: bodyContent.error, code: response.statusCode });
-                        } else if (bodyContent.Error) {
-                            reject({ message: bodyContent.Error.Message, code: response.statusCode });
+                            if (bodyContent.error.message) {
+                                reject({ message: bodyContent.error.message, code: bodyContent.error.code });
+                            } else {
+                                reject({ message: bodyContent.error, code: response.statusCode });
+                            }
+                        } else {
+                            if (bodyContent.message) {
+                                reject({ message: bodyContent.message, code: bodyContent.code });
+                            } else {
+                                reject({ message: bodyContent, code: response.statusCode });
+                            }                            
                         }
                     } catch (error) {
                         reject({ message: "Error while parse server error: " + error });

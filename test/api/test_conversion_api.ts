@@ -57,6 +57,15 @@ describe("test_conversion_api", () => {
         });
     });
 
+    it("test_get_info_returns_file_not_found", async () => {
+        try {
+            let response = await TestContext.getInfoApi().getDocumentMetadata(new GetDocumentMetadataRequest(TestFile.NotExist.GetPath()));
+            expect(response.pageCount).equal(1);
+        } catch (error) {
+            expect(error.message).to.be.a('string').and.satisfy((msg: string) => msg.startsWith('AmazonS3 Storage exception: The specified key does not exist.'));
+        }
+    });                 
+
     describe("test_get_supported_conversion_types", () => {
 
         it("should return list of supported formats", () => {            
