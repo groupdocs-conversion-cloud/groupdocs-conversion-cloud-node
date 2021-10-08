@@ -1030,6 +1030,11 @@ export class WatermarkOptions {
             name: "image",
             baseName: "image",
             type: "string",
+        },        
+        {
+            name: "autoAlign",
+            baseName: "autoAlign",
+            type: "boolean",
         }    ];
 
     /**
@@ -1108,6 +1113,11 @@ export class WatermarkOptions {
      * Image watermark
      */
     public image: string;
+    
+    /**
+     * Auto scale the watermark. If the value is true the font size and the position is automatically calculated to fit the page size.
+     */
+    public autoAlign: boolean;
     
     public constructor(init?: Partial<WatermarkOptions>) {
         
@@ -2794,6 +2804,11 @@ export class WordProcessingConvertOptions extends ConvertOptions {
             name: "watermarkOptions",
             baseName: "watermarkOptions",
             type: "WatermarkOptions",
+        },        
+        {
+            name: "pdfRecognitionMode",
+            baseName: "pdfRecognitionMode",
+            type: "WordProcessingConvertOptions.PdfRecognitionModeEnum",
         }    ];
 
     /**
@@ -2833,12 +2848,26 @@ export class WordProcessingConvertOptions extends ConvertOptions {
      */
     public watermarkOptions: WatermarkOptions;
     
+    /**
+     * Recognition mode when converting from pdf
+     */
+    public pdfRecognitionMode: WordProcessingConvertOptions.PdfRecognitionModeEnum;
+    
     public constructor(init?: Partial<WordProcessingConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace WordProcessingConvertOptions {
+    export enum PdfRecognitionModeEnum {
+        Textbox = 'Textbox' as any,
+        Flow = 'Flow' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * WordProcessing document load options
  */
@@ -3386,6 +3415,11 @@ export class DocConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DocConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Doc load options
  */
@@ -3436,6 +3470,11 @@ export class DocmConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DocmConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Docm load options
  */
@@ -3486,6 +3525,11 @@ export class DocxConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DocxConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Docx load options
  */
@@ -3536,6 +3580,11 @@ export class DotConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DotConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dot load options
  */
@@ -3586,6 +3635,11 @@ export class DotmConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DotmConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dotm load options
  */
@@ -3636,6 +3690,11 @@ export class DotxConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DotxConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dotx load options
  */
@@ -4520,6 +4579,11 @@ export class OdtConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OdtConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Odt load options
  */
@@ -4695,6 +4759,11 @@ export class OttConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OttConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ott load options
  */
@@ -5379,6 +5448,11 @@ export class RtfConvertOptions extends WordProcessingConvertOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace RtfConvertOptions {
+}
+// tslint:enable:quotemark
 /**
  * Stl load options
  */
@@ -6595,6 +6669,7 @@ const enumsMap = {
     "PdfConvertOptions.RotateEnum": PdfConvertOptions.RotateEnum,
     "TxtLoadOptions.TrailingSpacesOptionsEnum": TxtLoadOptions.TrailingSpacesOptionsEnum,
     "TxtLoadOptions.LeadingSpacesOptionsEnum": TxtLoadOptions.LeadingSpacesOptionsEnum,
+    "WordProcessingConvertOptions.PdfRecognitionModeEnum": WordProcessingConvertOptions.PdfRecognitionModeEnum,
     "PsdConvertOptions.ColorModeEnum": PsdConvertOptions.ColorModeEnum,
     "PsdConvertOptions.CompressionMethodEnum": PsdConvertOptions.CompressionMethodEnum,
     "TiffConvertOptions.CompressionEnum": TiffConvertOptions.CompressionEnum,
