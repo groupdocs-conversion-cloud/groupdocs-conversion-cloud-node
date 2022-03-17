@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2021 Aspose Pty Ltd
+* Copyright (c) 2003-2022 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -26,18 +26,20 @@ import { expect } from "chai";
 import "mocha";
 import * as TestContext from "../test_context";
 import { TestFile } from "../test_file";
-import { GetSupportedConversionTypesRequest,
+import {
+        GetSupportedConversionTypesRequest,
         GetDocumentMetadataRequest,
         ConvertDocumentRequest,
         ConvertDocumentDirectRequest,
         ConvertSettings,
         PdfConvertOptions,
-        JpgConvertOptions } from "../../src/model";
+        JpgConvertOptions,         
+        DocxLoadOptions} from "../../src/model";
 
 describe("test_conversion_api", () => {
     
     before(async () => {
-        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
+        //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
         await TestContext.uploadTestFiles();
     });
 
@@ -133,4 +135,22 @@ describe("test_conversion_api", () => {
         });          
     });
 
+    describe("test_convert_document_direct_options", () => {
+
+        it("convert document direct options", () => {            
+            const api = TestContext.getConvertApi();
+            var format = "pdf";
+            let filebuf = TestContext.getTestFileBuffer(TestFile.PasswordProtectedDocx);
+
+            let loadOptions = new DocxLoadOptions();
+            loadOptions.format = "docx";
+            loadOptions.password = TestFile.PasswordProtectedDocx.password;
+
+            var request = new ConvertDocumentDirectRequest(format, filebuf, undefined, undefined, loadOptions);
+            return api.convertDocumentDirect(request)
+                .then((result) => {     
+                    expect(result.length).greaterThan(0);
+                });
+        });          
+    });    
 });

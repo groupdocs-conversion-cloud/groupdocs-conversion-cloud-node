@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2021 Aspose Pty Ltd
+* Copyright (c) 2003-2022 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -159,6 +159,14 @@ export class ConvertApi {
                   filename: "file.name",
                 },
             };
+        }
+
+        if (requestObj.loadOptions !== undefined) {
+            formParams.loadOptions = JSON.stringify(requestObj.loadOptions);
+        }
+
+        if (requestObj.convertOptions !== undefined) {
+            formParams.convertOptions = JSON.stringify(requestObj.convertOptions);
         }
 
         const requestOptions: request.Options = {

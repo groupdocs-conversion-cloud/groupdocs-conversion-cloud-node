@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2021 Aspose Pty Ltd
+* Copyright (c) 2003-2022 Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ import { TestFile } from "../test_file";
 describe("storage_api", () => {
     
     before(async () => {
-        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
+        //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
         await TestContext.uploadTestFiles();
     });
 

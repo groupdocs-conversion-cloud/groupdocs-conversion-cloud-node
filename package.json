@@ -1,6 +1,6 @@
 {
   "name": "groupdocs-conversion-cloud",
-  "version": "21.12.0",
+  "version": "22.3.0",
   "description": "GroupDocs.Conversion Cloud SDK for Node.js",
   "homepage": "https://products.groupdocs.cloud/conversion",
   "author": {
@@ -40,7 +40,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.8",
     "chai": "^4.2.0",
-    "mocha": "^7.0.1",
+    "mocha": "^9.2.1",
     "ts-node": "^8.6.2",
     "tslint": "^5.17.0",
     "typescript": "^3.7.5"
