@@ -2326,6 +2326,50 @@ export class PdfLoadOptions extends LoadOptions {
 }
 
 /**
+ * Options for loading personal storage documents.
+ */
+// tslint:disable: completed-docs
+export class PersonalStorageLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "folder",
+            baseName: "folder",
+            type: "string",
+        },        
+        {
+            name: "depth",
+            baseName: "depth",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(PersonalStorageLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Folder which to be processed Default is Inbox
+     */
+    public folder: string;
+    
+    /**
+     * Controls how many levels in depth to perform conversion
+     */
+    public depth: number;
+    
+    public constructor(init?: Partial<PersonalStorageLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for to presentation conversion
  */
 // tslint:disable: completed-docs
@@ -6759,6 +6803,7 @@ const typeMap = {
             OneLoadOptions,
             PdfConvertOptions,
             PdfLoadOptions,
+            PersonalStorageLoadOptions,
             PresentationConvertOptions,
             PresentationLoadOptions,
             SpreadsheetConvertOptions,
