@@ -90,6 +90,11 @@ export class ConvertOptions {
             name: "pages",
             baseName: "pages",
             type: "Array<number>",
+        },        
+        {
+            name: "watermarkOptions",
+            baseName: "watermarkOptions",
+            type: "WatermarkOptions",
         }    ];
 
     /**
@@ -113,6 +118,11 @@ export class ConvertOptions {
      * Convert specific pages. The list contains the page indexes of the pages to be converted
      */
     public pages: Array<number>;
+    
+    /**
+     * Watermark specific options
+     */
+    public watermarkOptions: WatermarkOptions;
     
     public constructor(init?: Partial<ConvertOptions>) {
         
@@ -1351,6 +1361,80 @@ export class DiagramLoadOptions extends LoadOptions {
 }
 
 /**
+ * Ebook convert options
+ */
+// tslint:disable: completed-docs
+export class EBookConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "pageSize",
+            baseName: "pageSize",
+            type: "EBookConvertOptions.PageSizeEnum",
+        },        
+        {
+            name: "pageOrientation",
+            baseName: "pageOrientation",
+            type: "EBookConvertOptions.PageOrientationEnum",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(EBookConvertOptions.attributeTypeMap);
+    }
+
+    /**
+     * Specifies page size
+     */
+    public pageSize: EBookConvertOptions.PageSizeEnum;
+    
+    /**
+     * Specifies page orientation
+     */
+    public pageOrientation: EBookConvertOptions.PageOrientationEnum;
+    
+    public constructor(init?: Partial<EBookConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace EBookConvertOptions {
+    export enum PageSizeEnum {
+        Default = 'Default' as any,
+        A3 = 'A3' as any,
+        Statement = 'Statement' as any,
+        Quarto = 'Quarto' as any,
+        Paper11x17 = 'Paper11x17' as any,
+        Paper10x14 = 'Paper10x14' as any,
+        Letter = 'Letter' as any,
+        Legal = 'Legal' as any,
+        Ledger = 'Ledger' as any,
+        Folio = 'Folio' as any,
+        Executive = 'Executive' as any,
+        EnvelopeDL = 'EnvelopeDL' as any,
+        Custom = 'Custom' as any,
+        B5 = 'B5' as any,
+        B4 = 'B4' as any,
+        A5 = 'A5' as any,
+        A4 = 'A4' as any,
+        Tabloid = 'Tabloid' as any,
+    }
+    export enum PageOrientationEnum {
+        Default = 'Default' as any,
+        Landscape = 'Landscape' as any,
+        Portrait = 'Portrait' as any,
+    }
+}
+// tslint:enable:quotemark
+/**
  * Options for loading Email documents
  */
 // tslint:disable: completed-docs
@@ -1519,114 +1603,6 @@ export class FileVersion extends StorageFile {
 }
 
 /**
- * Options for to Html conversion
- */
-// tslint:disable: completed-docs
-export class HtmlConvertOptions extends ConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "usePdf",
-            baseName: "usePdf",
-            type: "boolean",
-        },        
-        {
-            name: "fixedLayout",
-            baseName: "fixedLayout",
-            type: "boolean",
-        },        
-        {
-            name: "fixedLayoutShowBorders",
-            baseName: "fixedLayoutShowBorders",
-            type: "boolean",
-        },        
-        {
-            name: "zoom",
-            baseName: "zoom",
-            type: "number",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(HtmlConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * If true, the input firstly is converted to PDF and after that to desired format
-     */
-    public usePdf: boolean;
-    
-    /**
-     * If true fixed layout will be used e.g. absolutely positioned html elements Default:  true
-     */
-    public fixedLayout: boolean;
-    
-    /**
-     * Show page borders when converting to fixed layout. Default is True
-     */
-    public fixedLayoutShowBorders: boolean;
-    
-    /**
-     * Specifies the zoom level in percentage. Default is 100.
-     */
-    public zoom: number;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
-    
-    public constructor(init?: Partial<HtmlConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Html document load options
- */
-// tslint:disable: completed-docs
-export class HtmlLoadOptions extends LoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "pageNumbering",
-            baseName: "pageNumbering",
-            type: "boolean",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(HtmlLoadOptions.attributeTypeMap);
-    }
-
-    /**
-     * Enable or disable generation of page numbering in converted document. Default: false
-     */
-    public pageNumbering: boolean;
-    
-    public constructor(init?: Partial<HtmlLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Options for to Image conversion
  */
 // tslint:disable: completed-docs
@@ -1670,11 +1646,6 @@ export class ImageConvertOptions extends ConvertOptions {
             name: "usePdf",
             baseName: "usePdf",
             type: "boolean",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
         },        
         {
             name: "brightness",
@@ -1738,11 +1709,6 @@ export class ImageConvertOptions extends ConvertOptions {
      * If true, the input firstly is converted to PDF and after that to desired format
      */
     public usePdf: boolean;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
     
     /**
      * Adjust image brightness
@@ -1864,6 +1830,31 @@ export class OneLoadOptions extends LoadOptions {
     public password: string;
     
     public constructor(init?: Partial<OneLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Page description langusge convert options
+ */
+// tslint:disable: completed-docs
+export class PDLConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(PDLConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<PDLConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -2028,11 +2019,6 @@ export class PdfConvertOptions extends ConvertOptions {
             name: "rotate",
             baseName: "rotate",
             type: "PdfConvertOptions.RotateEnum",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
         }    ];
 
     /**
@@ -2191,11 +2177,6 @@ export class PdfConvertOptions extends ConvertOptions {
      * Rotate page
      */
     public rotate: PdfConvertOptions.RotateEnum;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
     
     public constructor(init?: Partial<PdfConvertOptions>) {
         super(init);
@@ -2388,11 +2369,6 @@ export class PresentationConvertOptions extends ConvertOptions {
             name: "zoom",
             baseName: "zoom",
             type: "number",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
         }    ];
 
     /**
@@ -2411,11 +2387,6 @@ export class PresentationConvertOptions extends ConvertOptions {
      * Specifies the zoom level in percentage. Default is 100. Default zoom is supported till Microsoft Powerpoint 2010. Starting from Microsoft Powerpoint 2013 default zoom is no longer set to document, instead it appears to use the zoom factor of the last document that was opened.
      */
     public zoom: number;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
     
     public constructor(init?: Partial<PresentationConvertOptions>) {
         super(init);
@@ -2521,11 +2492,6 @@ export class SpreadsheetConvertOptions extends ConvertOptions {
             name: "usePdf",
             baseName: "usePdf",
             type: "boolean",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
         }    ];
 
     /**
@@ -2549,11 +2515,6 @@ export class SpreadsheetConvertOptions extends ConvertOptions {
      * If true, the input firstly is converted to PDF and after that to desired format
      */
     public usePdf: boolean;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
     
     public constructor(init?: Partial<SpreadsheetConvertOptions>) {
         super(init);
@@ -2676,90 +2637,6 @@ export class SpreadsheetLoadOptions extends LoadOptions {
 }
 
 /**
- * Svg convert options
- */
-// tslint:disable: completed-docs
-export class SvgConvertOptions extends ConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "width",
-            baseName: "width",
-            type: "number",
-        },        
-        {
-            name: "height",
-            baseName: "height",
-            type: "number",
-        },        
-        {
-            name: "grayscale",
-            baseName: "grayscale",
-            type: "boolean",
-        },        
-        {
-            name: "rotateAngle",
-            baseName: "rotateAngle",
-            type: "number",
-        },        
-        {
-            name: "usePdf",
-            baseName: "usePdf",
-            type: "boolean",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(SvgConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Desired image width after conversion
-     */
-    public width: number;
-    
-    /**
-     * Desired image height after conversion
-     */
-    public height: number;
-    
-    /**
-     * Convert to grayscale image
-     */
-    public grayscale: boolean;
-    
-    /**
-     * Image rotation angle 
-     */
-    public rotateAngle: number;
-    
-    /**
-     * If true, the input firstly is converted to PDF and after that to desired format
-     */
-    public usePdf: boolean;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
-    
-    public constructor(init?: Partial<SvgConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Txt convert options
  */
 // tslint:disable: completed-docs
@@ -2863,6 +2740,104 @@ export namespace TxtLoadOptions {
 }
 // tslint:enable:quotemark
 /**
+ * Options for to Html conversion
+ */
+// tslint:disable: completed-docs
+export class WebConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "usePdf",
+            baseName: "usePdf",
+            type: "boolean",
+        },        
+        {
+            name: "fixedLayout",
+            baseName: "fixedLayout",
+            type: "boolean",
+        },        
+        {
+            name: "fixedLayoutShowBorders",
+            baseName: "fixedLayoutShowBorders",
+            type: "boolean",
+        },        
+        {
+            name: "zoom",
+            baseName: "zoom",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(WebConvertOptions.attributeTypeMap);
+    }
+
+    /**
+     * If true, the input firstly is converted to PDF and after that to desired format
+     */
+    public usePdf: boolean;
+    
+    /**
+     * If true fixed layout will be used e.g. absolutely positioned html elements Default:  true
+     */
+    public fixedLayout: boolean;
+    
+    /**
+     * Show page borders when converting to fixed layout. Default is True
+     */
+    public fixedLayoutShowBorders: boolean;
+    
+    /**
+     * Specifies the zoom level in percentage. Default is 100.
+     */
+    public zoom: number;
+    
+    public constructor(init?: Partial<WebConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Html document load options
+ */
+// tslint:disable: completed-docs
+export class WebLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "pageNumbering",
+            baseName: "pageNumbering",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(WebLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Enable or disable generation of page numbering in converted document. Default: false
+     */
+    public pageNumbering: boolean;
+    
+    public constructor(init?: Partial<WebLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for to word processing conversion
  */
 // tslint:disable: completed-docs
@@ -2896,11 +2871,6 @@ export class WordProcessingConvertOptions extends ConvertOptions {
             name: "zoom",
             baseName: "zoom",
             type: "number",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
         },        
         {
             name: "pdfRecognitionMode",
@@ -2949,11 +2919,6 @@ export class WordProcessingConvertOptions extends ConvertOptions {
      * Specifies the zoom level in percentage. Default is 100. Default zoom is supported till Microsoft Word 2010. Starting from Microsoft Word 2013 default zoom is no longer set to document, instead it appears to use the zoom factor of the last document that was opened.
      */
     public zoom: number;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
     
     /**
      * Recognition mode when converting from pdf
@@ -3159,130 +3124,6 @@ export class XmlLoadOptions extends LoadOptions {
 }
 
 /**
- * Xps convert options
- */
-// tslint:disable: completed-docs
-export class XpsConvertOptions extends ConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "width",
-            baseName: "width",
-            type: "number",
-        },        
-        {
-            name: "height",
-            baseName: "height",
-            type: "number",
-        },        
-        {
-            name: "dpi",
-            baseName: "dpi",
-            type: "number",
-        },        
-        {
-            name: "password",
-            baseName: "password",
-            type: "string",
-        },        
-        {
-            name: "marginTop",
-            baseName: "marginTop",
-            type: "number",
-        },        
-        {
-            name: "marginBottom",
-            baseName: "marginBottom",
-            type: "number",
-        },        
-        {
-            name: "marginLeft",
-            baseName: "marginLeft",
-            type: "number",
-        },        
-        {
-            name: "marginRight",
-            baseName: "marginRight",
-            type: "number",
-        },        
-        {
-            name: "usePdf",
-            baseName: "usePdf",
-            type: "boolean",
-        },        
-        {
-            name: "watermarkOptions",
-            baseName: "watermarkOptions",
-            type: "WatermarkOptions",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XpsConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Desired page width in pixels after conversion
-     */
-    public width: number;
-    
-    /**
-     * Desired page height in pixels after conversion
-     */
-    public height: number;
-    
-    /**
-     * Desired page DPI after conversion. The default resolution is: 96dpi
-     */
-    public dpi: number;
-    
-    /**
-     * Set this property if you want to protect the converted document with a password
-     */
-    public password: string;
-    
-    /**
-     * Desired page top margin in pixels after conversion
-     */
-    public marginTop: number;
-    
-    /**
-     * Desired page bottom margin in pixels after conversion
-     */
-    public marginBottom: number;
-    
-    /**
-     * Desired page left margin in pixels after conversion
-     */
-    public marginLeft: number;
-    
-    /**
-     * Desired page right margin in pixels after conversion
-     */
-    public marginRight: number;
-    
-    /**
-     * If true, the input firstly is converted to PDF and after that to desired format
-     */
-    public usePdf: boolean;
-    
-    /**
-     * Watermark specific options
-     */
-    public watermarkOptions: WatermarkOptions;
-    
-    public constructor(init?: Partial<XpsConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Bmp convert options
  */
 // tslint:disable: completed-docs
@@ -3337,36 +3178,6 @@ export class BmpLoadOptions extends ImageLoadOptions {
     }        
 }
 
-/**
- * Cgm convert options
- */
-// tslint:disable: completed-docs
-export class CgmConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(CgmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<CgmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace CgmConvertOptions {
-}
-// tslint:enable:quotemark
 /**
  * Dcm convert options
  */
@@ -4037,31 +3848,6 @@ export class EmlxLoadOptions extends EmailLoadOptions {
     }
 
     public constructor(init?: Partial<EmlxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Epub convert options
- */
-// tslint:disable: completed-docs
-export class EpubConvertOptions extends XpsConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(EpubConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<EpubConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -6802,6 +6588,8 @@ export namespace TifConvertOptions {
 // tslint:enable:quotemark
 const enumsMap = {
     "FieldLabel.FieldEnum": FieldLabel.FieldEnum,
+    "EBookConvertOptions.PageSizeEnum": EBookConvertOptions.PageSizeEnum,
+    "EBookConvertOptions.PageOrientationEnum": EBookConvertOptions.PageOrientationEnum,
     "ImageConvertOptions.FlipModeEnum": ImageConvertOptions.FlipModeEnum,
     "PdfConvertOptions.PdfFormatEnum": PdfConvertOptions.PdfFormatEnum,
     "PdfConvertOptions.DirectionEnum": PdfConvertOptions.DirectionEnum,
@@ -6841,13 +6629,13 @@ const typeMap = {
             CadLoadOptions,
             CsvLoadOptions,
             DiagramLoadOptions,
+            EBookConvertOptions,
             EmailLoadOptions,
             FileVersion,
-            HtmlConvertOptions,
-            HtmlLoadOptions,
             ImageConvertOptions,
             ImageLoadOptions,
             OneLoadOptions,
+            PDLConvertOptions,
             PdfConvertOptions,
             PdfLoadOptions,
             PersonalStorageLoadOptions,
@@ -6855,16 +6643,15 @@ const typeMap = {
             PresentationLoadOptions,
             SpreadsheetConvertOptions,
             SpreadsheetLoadOptions,
-            SvgConvertOptions,
             TxtConvertOptions,
             TxtLoadOptions,
+            WebConvertOptions,
+            WebLoadOptions,
             WordProcessingConvertOptions,
             WordProcessingLoadOptions,
             XmlLoadOptions,
-            XpsConvertOptions,
             BmpConvertOptions,
             BmpLoadOptions,
-            CgmConvertOptions,
             DcmConvertOptions,
             DcmLoadOptions,
             DgnLoadOptions,
@@ -6890,7 +6677,6 @@ const typeMap = {
             EmfLoadOptions,
             EmlLoadOptions,
             EmlxLoadOptions,
-            EpubConvertOptions,
             GifConvertOptions,
             GifLoadOptions,
             IcoConvertOptions,
