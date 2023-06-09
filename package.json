@@ -1,6 +1,6 @@
 {
   "name": "groupdocs-conversion-cloud",
-  "version": "23.4.0",
+  "version": "23.6.0",
   "description": "GroupDocs.Conversion Cloud SDK for Node.js",
   "homepage": "https://products.groupdocs.cloud/conversion",
   "author": {
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@types/request": "*",
+    "jsonwebtoken": "*",
     "request": "^2.88.2",
     "request-debug": "^0.2.0"
   },
