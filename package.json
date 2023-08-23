@@ -1,6 +1,6 @@
 {
   "name": "groupdocs-conversion-cloud",
-  "version": "23.7.0",
+  "version": "23.8.0",
   "description": "GroupDocs.Conversion Cloud SDK for Node.js",
   "homepage": "https://products.groupdocs.cloud/conversion",
   "author": {
@@ -26,20 +26,23 @@
     "clean": "rimraf ./lib && rimraf ./node_modules",
     "lint": "npm install --no-save && tslint src/{,**/}*.ts test/{,**/}*.ts -t verbose --project ./tsconfig.json",
     "test": "npm install --no-save && mocha -r ts-node/register test/**/*.ts --timeout 60000 --reporter spec",
+    "test1": "npm install --no-save && mocha -r ts-node/register test/**/test_conversion_api.ts --timeout 60000 --reporter spec",
     "build:dev": "rimraf ./lib && npm install --no-save && tsc --build ./tsconfig-dev.json",
     "build:lib": "rimraf ./lib && npm install --no-save && tsc --build ./tsconfig.json",
     "build:package": "npm pack"
   },
   "dependencies": {
-    "@types/request": "*",
-    "jsonwebtoken": "*",
-    "request": "^2.88.2",
-    "request-debug": "^0.2.0"
+    "axios": "1.3.0",
+    "form-data": "*",
+    "jsonwebtoken": "9.0.1",
+    "qs": "6.11.2"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
+    "@types/jsonwebtoken": "9.0.1",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.19.15",
+    "@types/qs": "^6.9.7",
     "chai": "^4.2.0",
     "mocha": "^10.2.0",
     "ts-node": "^8.6.2",

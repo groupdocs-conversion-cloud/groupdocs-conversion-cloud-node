@@ -32,10 +32,10 @@ describe("auth_api", () => {
 
     describe("test_auth_error", () => {
         it("should throw when app sid not found", () => {    
-            const settings = require("../test_settings.json");
+            
             const appSid = "test";
             const appKey = "test";
-          
+            const settings = require("./../test_settings.json");
             const config = new Configuration(appSid, appKey);
             config.apiBaseUrl = settings.ApiBaseUrl;
             const api = InfoApi.fromConfig(config);

@@ -22,8 +22,8 @@
 * SOFTWARE.
 */
 
-import request = require("request");
-
+import axios = require("axios");
+import FormData = require("form-data");
 import { addQueryParameterToUrl, invokeApiMethod } from "./api_client";
 import { Configuration } from "./configuration";
 import * as model from "./model";
@@ -84,16 +84,15 @@ export class ConvertApi {
             throw new Error('Required parameter "requestObj.convertSettings" was null or undefined when calling convertDocument.');
         }
         
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "POST",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
-            body: Serializer.serialize(requestObj.convertSettings, requestObj.convertSettings.constructor.name === "Object" ? "ConvertSettings" : requestObj.convertSettings.constructor.name),
+            params: queryParameters,
+            url: localVarPath,
+            data: Serializer.serialize(requestObj.convertSettings, requestObj.convertSettings.constructor.name === "Object" ? "ConvertSettings" : requestObj.convertSettings.constructor.name),
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "Array<StoredConvertedResult>");
+        const result =  Serializer.deserialize(response.data, "Array<StoredConvertedResult>");
         return Promise.resolve(result);
     }
 
@@ -114,15 +113,14 @@ export class ConvertApi {
             throw new Error('Required parameter "requestObj.convertSettings" was null or undefined when calling convertDocument.');
         }        
 
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "POST",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
-            body: Serializer.serialize(requestObj.convertSettings, requestObj.convertSettings.constructor.name === "Object" ? "ConvertSettings" : requestObj.convertSettings.constructor.name),
+            params: queryParameters,
+            url: localVarPath,
+            data: Serializer.serialize(requestObj.convertSettings, requestObj.convertSettings.constructor.name === "Object" ? "ConvertSettings" : requestObj.convertSettings.constructor.name),
         };
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "Buffer");
+        const result =  Serializer.deserialize(response.data, "Buffer");
         return Promise.resolve(result);
     }
 
@@ -137,7 +135,7 @@ export class ConvertApi {
 
         let localVarPath = this.configuration.getServerUrl() + "/conversion";
         const queryParameters: any = {};
-        const formParams: any = {};
+        const formParams = new FormData();
 
         // verify required parameter 'requestObj.format' is not null or undefined
         if (requestObj.format === null || requestObj.format === undefined) {
@@ -153,32 +151,28 @@ export class ConvertApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fromPage", requestObj.fromPage);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "pagesCount", requestObj.pagesCount);
         if (requestObj.file !== undefined) {
-            formParams.File = {                
-                value: requestObj.file,
-                options: {
-                  filename: "file.name",
-                },
-            };
+            formParams.append("File", requestObj.file, { filename: "file.name" });
         }
 
         if (requestObj.loadOptions !== undefined) {
-            formParams.loadOptions = JSON.stringify(requestObj.loadOptions);
+            formParams.append("loadOptions", JSON.stringify(requestObj.loadOptions));
         }
 
         if (requestObj.convertOptions !== undefined) {
-            formParams.convertOptions = JSON.stringify(requestObj.convertOptions);
+            formParams.append("convertOptions", JSON.stringify(requestObj.convertOptions));
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            encoding: null,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "arraybuffer",
+            responseEncoding: null,
+            data: formParams,
         };
 
-        (requestOptions as any).formData = formParams;        
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "Buffer");
+        const result =  Serializer.deserialize(response.data, "Buffer");
         return Promise.resolve(result);
     }
 
@@ -222,7 +216,7 @@ export class FileApi {
      * Copy file
      * @param requestObj contains request parameters
      */
-    public async copyFile(requestObj: model.CopyFileRequest): Promise<request.Response> {
+    public async copyFile(requestObj: model.CopyFileRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling copyFile.');
         }
@@ -245,11 +239,11 @@ export class FileApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -260,7 +254,7 @@ export class FileApi {
      * Delete file
      * @param requestObj contains request parameters
      */
-    public async deleteFile(requestObj: model.DeleteFileRequest): Promise<request.Response> {
+    public async deleteFile(requestObj: model.DeleteFileRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling deleteFile.');
         }
@@ -276,11 +270,11 @@ export class FileApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "DELETE",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -307,15 +301,16 @@ export class FileApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            encoding: null,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "arraybuffer",
+            responseEncoding: null,
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "Buffer");
+        const result =  Serializer.deserialize(response.data, "Buffer");
         return Promise.resolve(result);
     }
 
@@ -323,7 +318,7 @@ export class FileApi {
      * Move file
      * @param requestObj contains request parameters
      */
-    public async moveFile(requestObj: model.MoveFileRequest): Promise<request.Response> {
+    public async moveFile(requestObj: model.MoveFileRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling moveFile.');
         }
@@ -346,11 +341,11 @@ export class FileApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -369,7 +364,7 @@ export class FileApi {
         let localVarPath = this.configuration.getServerUrl() + "/conversion/storage/file/{path}"
             .replace("{" + "path" + "}", String(requestObj.path));
         const queryParameters: any = {};
-        const formParams: any = {};
+        const formParams = new FormData();
 
         // verify required parameter 'requestObj.path' is not null or undefined
         if (requestObj.path === null || requestObj.path === undefined) {
@@ -383,24 +378,19 @@ export class FileApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         if (requestObj.file !== undefined) {
-            formParams.File = {                
-                value: requestObj.file,
-                options: {
-                  filename: "file.name",
-                },
-            };
+            formParams.append("File", requestObj.file, { filename: "file.name" });
         }
 
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
+            data: formParams,
         };
 
-        (requestOptions as any).formData = formParams;        
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "FilesUploadResult");
+        const result =  Serializer.deserialize(response.data, "FilesUploadResult");
         return Promise.resolve(result);
     }
 
@@ -444,7 +434,7 @@ export class FolderApi {
      * Copy folder
      * @param requestObj contains request parameters
      */
-    public async copyFolder(requestObj: model.CopyFolderRequest): Promise<request.Response> {
+    public async copyFolder(requestObj: model.CopyFolderRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling copyFolder.');
         }
@@ -466,11 +456,11 @@ export class FolderApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destPath", requestObj.destPath);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -481,7 +471,7 @@ export class FolderApi {
      * Create the folder
      * @param requestObj contains request parameters
      */
-    public async createFolder(requestObj: model.CreateFolderRequest): Promise<request.Response> {
+    public async createFolder(requestObj: model.CreateFolderRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling createFolder.');
         }
@@ -496,11 +486,11 @@ export class FolderApi {
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -511,7 +501,7 @@ export class FolderApi {
      * Delete folder
      * @param requestObj contains request parameters
      */
-    public async deleteFolder(requestObj: model.DeleteFolderRequest): Promise<request.Response> {
+    public async deleteFolder(requestObj: model.DeleteFolderRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling deleteFolder.');
         }
@@ -527,11 +517,11 @@ export class FolderApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "recursive", requestObj.recursive);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "DELETE",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -557,15 +547,15 @@ export class FolderApi {
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "FilesList");
+        const result =  Serializer.deserialize(response.data, "FilesList");
         return Promise.resolve(result);
     }
 
@@ -573,7 +563,7 @@ export class FolderApi {
      * Move folder
      * @param requestObj contains request parameters
      */
-    public async moveFolder(requestObj: model.MoveFolderRequest): Promise<request.Response> {
+    public async moveFolder(requestObj: model.MoveFolderRequest): Promise<axios.AxiosResponse> {
         if (requestObj === null || requestObj === undefined) {
             throw new Error('Required parameter "requestObj" was null or undefined when calling moveFolder.');
         }
@@ -595,11 +585,11 @@ export class FolderApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destPath", requestObj.destPath);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "srcStorageName", requestObj.srcStorageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "destStorageName", requestObj.destStorageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "PUT",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
@@ -656,15 +646,15 @@ export class InfoApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filePath", requestObj.filePath);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "DocumentMetadata");
+        const result =  Serializer.deserialize(response.data, "DocumentMetadata");
         return Promise.resolve(result);
     }
 
@@ -683,15 +673,15 @@ export class InfoApi {
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "filePath", requestObj.filePath);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "format", requestObj.format);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "Array<SupportedFormat>");
+        const result =  Serializer.deserialize(response.data, "Array<SupportedFormat>");
         return Promise.resolve(result);
     }
 
@@ -740,15 +730,15 @@ export class LicenseApi {
         const localVarPath = this.configuration.getServerUrl() + "/conversion/consumption";
         const queryParameters: any = {};
         
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "ConsumptionResult");
+        const result =  Serializer.deserialize(response.data, "ConsumptionResult");
         return Promise.resolve(result);
     }
 
@@ -801,15 +791,15 @@ export class StorageApi {
         const queryParameters: any = {};
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "DiscUsage");
+        const result =  Serializer.deserialize(response.data, "DiscUsage");
         return Promise.resolve(result);
     }
 
@@ -832,15 +822,15 @@ export class StorageApi {
         }
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "FileVersions");
+        const result =  Serializer.deserialize(response.data, "FileVersions");
         return Promise.resolve(result);
     }
 
@@ -864,15 +854,15 @@ export class StorageApi {
         
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "storageName", requestObj.storageName);
         localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "versionId", requestObj.versionId);
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "ObjectExist");
+        const result =  Serializer.deserialize(response.data, "ObjectExist");
         return Promise.resolve(result);
     }
 
@@ -894,15 +884,15 @@ export class StorageApi {
             throw new Error('Required parameter "requestObj.storageName" was null or undefined when calling storageExists.');
         }
         
-        const requestOptions: request.Options = {
+        const requestOptions: axios.AxiosRequestConfig = {
             method: "GET",
-            qs: queryParameters,
-            uri: localVarPath,
-            json: true,
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
         };
 
         const response = await invokeApiMethod(requestOptions, this.configuration);
-        const result =  Serializer.deserialize(response.body, "StorageExist");
+        const result =  Serializer.deserialize(response.data, "StorageExist");
         return Promise.resolve(result);
     }
 

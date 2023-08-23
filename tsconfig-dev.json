@@ -17,7 +17,9 @@
             "scripthost"
         ],
         "outDir": "lib",
-        "rootDir": "./"
+        "rootDir": "./",        
+        "types": ["node"],
+        "typeRoots": ["./node_modules/@types"]
     },
     "include": [
         "src/**/*",

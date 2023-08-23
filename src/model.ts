@@ -22,6 +22,97 @@
 * SOFTWARE.
 */
 
+// tslint:disable: completed-docs
+export class ApiError {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "code",
+            baseName: "code",
+            type: "string",
+        },        
+        {
+            name: "message",
+            baseName: "message",
+            type: "string",
+        },        
+        {
+            name: "description",
+            baseName: "description",
+            type: "string",
+        },        
+        {
+            name: "dateTime",
+            baseName: "dateTime",
+            type: "Date",
+        },        
+        {
+            name: "innerError",
+            baseName: "innerError",
+            type: "ApiError",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return ApiError.attributeTypeMap;
+    }
+
+    public code: string;
+    
+    public message: string;
+    
+    public description: string;
+    
+    public dateTime: Date;
+    
+    public innerError: ApiError;
+    
+    public constructor(init?: Partial<ApiError>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable: completed-docs
+export class ApiErrorResponse {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "requestId",
+            baseName: "requestId",
+            type: "string",
+        },        
+        {
+            name: "error",
+            baseName: "error",
+            type: "ApiError",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return ApiErrorResponse.attributeTypeMap;
+    }
+
+    public requestId: string;
+    
+    public error: ApiError;
+    
+    public constructor(init?: Partial<ApiErrorResponse>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
 /**
  * Metered license consumption information
  */
@@ -6608,6 +6699,8 @@ const enumsMap = {
 };
 
 const typeMap = {
+            ApiError,
+            ApiErrorResponse,
             ConsumptionResult,
             ConvertOptions,
             ConvertSettings,
