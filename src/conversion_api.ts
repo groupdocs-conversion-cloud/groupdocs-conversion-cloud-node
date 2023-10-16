@@ -742,6 +742,27 @@ export class LicenseApi {
         return Promise.resolve(result);
     }
 
+    /**
+     * Get license information
+     * @param requestObj contains request parameters
+     */
+    public async getLicenseInfo(): Promise<model.LicenseInfo> {
+
+        const localVarPath = this.configuration.getServerUrl() + "/conversion/license";
+        const queryParameters: any = {};
+        
+        const requestOptions: axios.AxiosRequestConfig = {
+            method: "GET",
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.data, "LicenseInfo");
+        return Promise.resolve(result);
+    }
+
 }
 /**
  * GroupDocs.Conversion Cloud API 

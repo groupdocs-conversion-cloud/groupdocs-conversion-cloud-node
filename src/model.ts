@@ -748,6 +748,40 @@ export class FilesUploadResult {
 }
 
 /**
+ * Current license information
+ */
+// tslint:disable: completed-docs
+export class LicenseInfo {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "isLicensed",
+            baseName: "isLicensed",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return LicenseInfo.attributeTypeMap;
+    }
+
+    /**
+     * True, if license was applied and valid, otherwise False
+     */
+    public isLicensed: boolean;
+    
+    public constructor(init?: Partial<LicenseInfo>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Load document options
  */
 // tslint:disable: completed-docs
@@ -6711,6 +6745,7 @@ const typeMap = {
             FileVersions,
             FilesList,
             FilesUploadResult,
+            LicenseInfo,
             LoadOptions,
             ModelError,
             ObjectExist,
