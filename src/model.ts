@@ -1368,90 +1368,6 @@ export class CadLoadOptions extends LoadOptions {
 }
 
 /**
- * Csv document load options
- */
-// tslint:disable: completed-docs
-export class CsvLoadOptions extends LoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "separator",
-            baseName: "separator",
-            type: "string",
-        },        
-        {
-            name: "isMultiEncoded",
-            baseName: "isMultiEncoded",
-            type: "boolean",
-        },        
-        {
-            name: "hasFormula",
-            baseName: "hasFormula",
-            type: "boolean",
-        },        
-        {
-            name: "convertNumericData",
-            baseName: "convertNumericData",
-            type: "boolean",
-        },        
-        {
-            name: "convertDateTimeData",
-            baseName: "convertDateTimeData",
-            type: "boolean",
-        },        
-        {
-            name: "encoding",
-            baseName: "encoding",
-            type: "string",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(CsvLoadOptions.attributeTypeMap);
-    }
-
-    /**
-     * Delimiter of a Csv file
-     */
-    public separator: string;
-    
-    /**
-     * True means the file contains several encodings
-     */
-    public isMultiEncoded: boolean;
-    
-    /**
-     * Indicates whether text is formula if it starts with \"=\"
-     */
-    public hasFormula: boolean;
-    
-    /**
-     * Indicates whether the string in the file is converted to numeric. Default is True
-     */
-    public convertNumericData: boolean;
-    
-    /**
-     * Indicates whether the string in the file is converted to date. Default is True
-     */
-    public convertDateTimeData: boolean;
-    
-    /**
-     * File encoding
-     */
-    public encoding: string;
-    
-    public constructor(init?: Partial<CsvLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Diagram document load options
  */
 // tslint:disable: completed-docs
@@ -3298,6 +3214,90 @@ export class BmpLoadOptions extends ImageLoadOptions {
     }
 
     public constructor(init?: Partial<BmpLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Csv document load options
+ */
+// tslint:disable: completed-docs
+export class CsvLoadOptions extends SpreadsheetLoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "separator",
+            baseName: "separator",
+            type: "string",
+        },        
+        {
+            name: "isMultiEncoded",
+            baseName: "isMultiEncoded",
+            type: "boolean",
+        },        
+        {
+            name: "hasFormula",
+            baseName: "hasFormula",
+            type: "boolean",
+        },        
+        {
+            name: "convertNumericData",
+            baseName: "convertNumericData",
+            type: "boolean",
+        },        
+        {
+            name: "convertDateTimeData",
+            baseName: "convertDateTimeData",
+            type: "boolean",
+        },        
+        {
+            name: "encoding",
+            baseName: "encoding",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(CsvLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Delimiter of a Csv file
+     */
+    public separator: string;
+    
+    /**
+     * True means the file contains several encodings
+     */
+    public isMultiEncoded: boolean;
+    
+    /**
+     * Indicates whether text is formula if it starts with \"=\"
+     */
+    public hasFormula: boolean;
+    
+    /**
+     * Indicates whether the string in the file is converted to numeric. Default is True
+     */
+    public convertNumericData: boolean;
+    
+    /**
+     * Indicates whether the string in the file is converted to date. Default is True
+     */
+    public convertDateTimeData: boolean;
+    
+    /**
+     * File encoding
+     */
+    public encoding: string;
+    
+    public constructor(init?: Partial<CsvLoadOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -6755,7 +6755,6 @@ const typeMap = {
             SupportedFormat,
             WatermarkOptions,
             CadLoadOptions,
-            CsvLoadOptions,
             DiagramLoadOptions,
             EBookConvertOptions,
             EmailLoadOptions,
@@ -6780,6 +6779,7 @@ const typeMap = {
             XmlLoadOptions,
             BmpConvertOptions,
             BmpLoadOptions,
+            CsvLoadOptions,
             DcmConvertOptions,
             DcmLoadOptions,
             DgnLoadOptions,
