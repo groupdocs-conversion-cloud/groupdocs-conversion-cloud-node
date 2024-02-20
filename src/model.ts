@@ -2060,6 +2060,16 @@ export class PdfConvertOptions extends ConvertOptions {
             name: "rotate",
             baseName: "rotate",
             type: "PdfConvertOptions.RotateEnum",
+        },        
+        {
+            name: "pageSize",
+            baseName: "pageSize",
+            type: "PdfConvertOptions.PageSizeEnum",
+        },        
+        {
+            name: "pageOrientation",
+            baseName: "pageOrientation",
+            type: "PdfConvertOptions.PageOrientationEnum",
         }    ];
 
     /**
@@ -2219,6 +2229,16 @@ export class PdfConvertOptions extends ConvertOptions {
      */
     public rotate: PdfConvertOptions.RotateEnum;
     
+    /**
+     * Specifies page size
+     */
+    public pageSize: PdfConvertOptions.PageSizeEnum;
+    
+    /**
+     * Specifies page orientation
+     */
+    public pageOrientation: PdfConvertOptions.PageOrientationEnum;
+    
     public constructor(init?: Partial<PdfConvertOptions>) {
         super(init);
         Object.assign(this, init);
@@ -2280,6 +2300,31 @@ export namespace PdfConvertOptions {
         On90 = 'On90' as any,
         On180 = 'On180' as any,
         On270 = 'On270' as any,
+    }
+    export enum PageSizeEnum {
+        Default = 'Default' as any,
+        A3 = 'A3' as any,
+        Statement = 'Statement' as any,
+        Quarto = 'Quarto' as any,
+        Paper11x17 = 'Paper11x17' as any,
+        Paper10x14 = 'Paper10x14' as any,
+        Letter = 'Letter' as any,
+        Legal = 'Legal' as any,
+        Ledger = 'Ledger' as any,
+        Folio = 'Folio' as any,
+        Executive = 'Executive' as any,
+        EnvelopeDL = 'EnvelopeDL' as any,
+        Custom = 'Custom' as any,
+        B5 = 'B5' as any,
+        B4 = 'B4' as any,
+        A5 = 'A5' as any,
+        A4 = 'A4' as any,
+        Tabloid = 'Tabloid' as any,
+    }
+    export enum PageOrientationEnum {
+        Default = 'Default' as any,
+        Landscape = 'Landscape' as any,
+        Portrait = 'Portrait' as any,
     }
 }
 // tslint:enable:quotemark
@@ -6722,6 +6767,8 @@ const enumsMap = {
     "PdfConvertOptions.PageLayoutEnum": PdfConvertOptions.PageLayoutEnum,
     "PdfConvertOptions.PageModeEnum": PdfConvertOptions.PageModeEnum,
     "PdfConvertOptions.RotateEnum": PdfConvertOptions.RotateEnum,
+    "PdfConvertOptions.PageSizeEnum": PdfConvertOptions.PageSizeEnum,
+    "PdfConvertOptions.PageOrientationEnum": PdfConvertOptions.PageOrientationEnum,
     "TxtLoadOptions.TrailingSpacesOptionsEnum": TxtLoadOptions.TrailingSpacesOptionsEnum,
     "TxtLoadOptions.LeadingSpacesOptionsEnum": TxtLoadOptions.LeadingSpacesOptionsEnum,
     "WordProcessingConvertOptions.PdfRecognitionModeEnum": WordProcessingConvertOptions.PdfRecognitionModeEnum,
