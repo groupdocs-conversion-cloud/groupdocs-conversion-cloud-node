@@ -1324,19 +1324,19 @@ export class CadLoadOptions extends LoadOptions {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            name: "width",
-            baseName: "width",
-            type: "number",
-        },        
-        {
-            name: "height",
-            baseName: "height",
-            type: "number",
-        },        
-        {
             name: "layoutNames",
             baseName: "layoutNames",
             type: "Array<string>",
+        },        
+        {
+            name: "backgroundColor",
+            baseName: "backgroundColor",
+            type: "string",
+        },        
+        {
+            name: "drawType",
+            baseName: "drawType",
+            type: "CadLoadOptions.DrawTypeEnum",
         }    ];
 
     /**
@@ -1347,19 +1347,19 @@ export class CadLoadOptions extends LoadOptions {
     }
 
     /**
-     * Set desired page width for converting CAD document
-     */
-    public width: number;
-    
-    /**
-     * Set desired page height for converting CAD document
-     */
-    public height: number;
-    
-    /**
      * Render specific CAD layouts
      */
     public layoutNames: Array<string>;
+    
+    /**
+     * Gets or sets a background color.
+     */
+    public backgroundColor: string;
+    
+    /**
+     * Gets or sets type of drawing.
+     */
+    public drawType: CadLoadOptions.DrawTypeEnum;
     
     public constructor(init?: Partial<CadLoadOptions>) {
         super(init);
@@ -1367,6 +1367,15 @@ export class CadLoadOptions extends LoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace CadLoadOptions {
+    export enum DrawTypeEnum {
+        UseDrawColor = 'UseDrawColor' as any,
+        UseObjectColor = 'UseObjectColor' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * Diagram document load options
  */
@@ -3265,6 +3274,36 @@ export class BmpLoadOptions extends ImageLoadOptions {
 }
 
 /**
+ * Cf2 load options
+ */
+// tslint:disable: completed-docs
+export class Cf2LoadOptions extends CadLoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(Cf2LoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<Cf2LoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace Cf2LoadOptions {
+}
+// tslint:enable:quotemark
+/**
  * Csv document load options
  */
 // tslint:disable: completed-docs
@@ -3428,6 +3467,11 @@ export class DgnLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DgnLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Djvu convert options
  */
@@ -3868,6 +3912,41 @@ export class DwfLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DwfLoadOptions {
+}
+// tslint:enable:quotemark
+/**
+ * Dwfx load options
+ */
+// tslint:disable: completed-docs
+export class DwfxLoadOptions extends CadLoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(DwfxLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<DwfxLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DwfxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dwg load options
  */
@@ -3893,6 +3972,41 @@ export class DwgLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DwgLoadOptions {
+}
+// tslint:enable:quotemark
+/**
+ * Dwt load options
+ */
+// tslint:disable: completed-docs
+export class DwtLoadOptions extends CadLoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(DwtLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<DwtLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DwtLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dxf load options
  */
@@ -3918,6 +4032,11 @@ export class DxfLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DxfLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Emf convert options
  */
@@ -4158,6 +4277,11 @@ export class IfcLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace IfcLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Igs load options
  */
@@ -4183,6 +4307,11 @@ export class IgsLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace IgsLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * J2c load options
  */
@@ -4912,6 +5041,11 @@ export class PltLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PltLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Png convert options
  */
@@ -5576,6 +5710,11 @@ export class StlLoadOptions extends CadLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace StlLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Tif load options
  */
@@ -6758,6 +6897,7 @@ export namespace TifConvertOptions {
 // tslint:enable:quotemark
 const enumsMap = {
     "FieldLabel.FieldEnum": FieldLabel.FieldEnum,
+    "CadLoadOptions.DrawTypeEnum": CadLoadOptions.DrawTypeEnum,
     "EBookConvertOptions.PageSizeEnum": EBookConvertOptions.PageSizeEnum,
     "EBookConvertOptions.PageOrientationEnum": EBookConvertOptions.PageOrientationEnum,
     "ImageConvertOptions.FlipModeEnum": ImageConvertOptions.FlipModeEnum,
@@ -6826,6 +6966,7 @@ const typeMap = {
             XmlLoadOptions,
             BmpConvertOptions,
             BmpLoadOptions,
+            Cf2LoadOptions,
             CsvLoadOptions,
             DcmConvertOptions,
             DcmLoadOptions,
@@ -6846,7 +6987,9 @@ const typeMap = {
             DotxConvertOptions,
             DotxLoadOptions,
             DwfLoadOptions,
+            DwfxLoadOptions,
             DwgLoadOptions,
+            DwtLoadOptions,
             DxfLoadOptions,
             EmfConvertOptions,
             EmfLoadOptions,
