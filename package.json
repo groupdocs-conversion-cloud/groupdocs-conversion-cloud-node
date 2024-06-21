@@ -32,7 +32,7 @@
     "build:package": "npm pack"
   },
   "dependencies": {
-    "axios": "1.6.2",
+    "axios": "1.7.5",
     "form-data": "*",
     "jsonwebtoken": "9.0.1",
     "qs": "6.11.2"
