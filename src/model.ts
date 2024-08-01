@@ -924,6 +924,116 @@ export class ObjectExist {
 }
 
 /**
+ * Operation status result
+ */
+// tslint:disable: completed-docs
+export class OperationResult {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "id",
+            baseName: "id",
+            type: "string",
+        },        
+        {
+            name: "method",
+            baseName: "method",
+            type: "OperationResult.MethodEnum",
+        },        
+        {
+            name: "status",
+            baseName: "status",
+            type: "OperationResult.StatusEnum",
+        },        
+        {
+            name: "created",
+            baseName: "created",
+            type: "Date",
+        },        
+        {
+            name: "started",
+            baseName: "started",
+            type: "Date",
+        },        
+        {
+            name: "failed",
+            baseName: "failed",
+            type: "Date",
+        },        
+        {
+            name: "canceled",
+            baseName: "canceled",
+            type: "Date",
+        },        
+        {
+            name: "finished",
+            baseName: "finished",
+            type: "Date",
+        },        
+        {
+            name: "result",
+            baseName: "result",
+            type: "Array<StoredConvertedResult>",
+        },        
+        {
+            name: "error",
+            baseName: "error",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return OperationResult.attributeTypeMap;
+    }
+
+    public id: string;
+    
+    public method: OperationResult.MethodEnum;
+    
+    public status: OperationResult.StatusEnum;
+    
+    public created: Date;
+    
+    public started: Date;
+    
+    public failed: Date;
+    
+    public canceled: Date;
+    
+    public finished: Date;
+    
+    public result: Array<StoredConvertedResult>;
+    
+    public error: string;
+    
+    public constructor(init?: Partial<OperationResult>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OperationResult {
+    export enum MethodEnum {
+        Convert = 'Convert' as any,
+        ConvertAndSave = 'ConvertAndSave' as any,
+    }
+    export enum StatusEnum {
+        Created = 'Created' as any,
+        Started = 'Started' as any,
+        Failed = 'Failed' as any,
+        Canceled = 'Canceled' as any,
+        Finished = 'Finished' as any,
+    }
+}
+// tslint:enable:quotemark
+/**
  * Storage exists
  */
 // tslint:disable: completed-docs
@@ -1505,11 +1615,6 @@ export class EmailLoadOptions extends LoadOptions {
             type: "boolean",
         },        
         {
-            name: "displayEmailAddress",
-            baseName: "displayEmailAddress",
-            type: "boolean",
-        },        
-        {
             name: "displayToEmailAddress",
             baseName: "displayToEmailAddress",
             type: "boolean",
@@ -1561,11 +1666,6 @@ export class EmailLoadOptions extends LoadOptions {
      * Option to display or hide \"from\" email address. Default: true
      */
     public displayFromEmailAddress: boolean;
-    
-    /**
-     * Option to display or hide email address. Default: true
-     */
-    public displayEmailAddress: boolean;
     
     /**
      * Option to display or hide \"to\" email address. Default: true
@@ -6897,6 +6997,8 @@ export namespace TifConvertOptions {
 // tslint:enable:quotemark
 const enumsMap = {
     "FieldLabel.FieldEnum": FieldLabel.FieldEnum,
+    "OperationResult.MethodEnum": OperationResult.MethodEnum,
+    "OperationResult.StatusEnum": OperationResult.StatusEnum,
     "CadLoadOptions.DrawTypeEnum": CadLoadOptions.DrawTypeEnum,
     "EBookConvertOptions.PageSizeEnum": EBookConvertOptions.PageSizeEnum,
     "EBookConvertOptions.PageOrientationEnum": EBookConvertOptions.PageOrientationEnum,
@@ -6936,6 +7038,7 @@ const typeMap = {
             LoadOptions,
             ModelError,
             ObjectExist,
+            OperationResult,
             StorageExist,
             StorageFile,
             StoredConvertedResult,
@@ -7099,6 +7202,80 @@ const typeMap = {
 };
 
 export {enumsMap, typeMap};
+
+/**
+ * Request model for GetOperationResult operation.
+ */
+export class GetOperationResultRequest {
+    /**
+     * Gets or sets id
+     */
+    public id: string;
+    
+    public constructor(id: string) {        
+        this.id = id;
+    }
+}
+
+/**
+ * Request model for GetOperationStatus operation.
+ */
+export class GetOperationStatusRequest {
+    /**
+     * Gets or sets id
+     */
+    public id: string;
+    
+    public constructor(id: string) {        
+        this.id = id;
+    }
+}
+
+/**
+ * Request model for StartConvert operation.
+ */
+export class StartConvertRequest {
+    /**
+     * Requested conversion format
+     */
+    public format: string;
+
+    /**
+     * Input file to convert
+     */
+    public file: Buffer;
+
+    /**
+     * Page start conversion from
+     */
+    public fromPage: number;
+
+    /**
+     * Number of pages to convert
+     */
+    public pagesCount: number;
+    
+    public constructor(format: string, file: Buffer, fromPage?: number, pagesCount?: number) {        
+        this.format = format;
+        this.file = file;
+        this.fromPage = fromPage;
+        this.pagesCount = pagesCount;
+    }
+}
+
+/**
+ * Request model for StartConvertAndSave operation.
+ */
+export class StartConvertAndSaveRequest {
+    /**
+     * Conversion settings
+     */
+    public convertSettings: ConvertSettings;
+    
+    public constructor(convertSettings: ConvertSettings) {        
+        this.convertSettings = convertSettings;
+    }
+}
 
 /**
  * Request model for ConvertDocument operation.

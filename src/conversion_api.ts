@@ -35,6 +35,176 @@ export * from "./configuration";
 /**
  * GroupDocs.Conversion Cloud API 
  */
+export class AsyncApi {
+    
+    /**
+     * Creates new instance of AsyncApi
+     * @param appSid Application identifier (App SID).
+     * @param appKey Application private key (App Key).
+     */
+    public static fromKeys(appSid: string, appKey: string) {
+        const config = new Configuration(appSid, appKey);
+        return new AsyncApi(config);
+    }
+
+    /**
+     * Creates new instance of AsyncApi
+     * @param config API configuration.
+     */
+    public static fromConfig(config: Configuration) {
+        return new AsyncApi(config);
+    }
+
+    /**
+     * Configuration
+     */
+    private configuration: Configuration;
+
+    /**
+     * @param config Configuration.
+     */
+    private constructor(config: Configuration) {
+        this.configuration = config;
+    }
+
+    /**
+     * Get async operation result
+     * @param requestObj contains request parameters
+     */
+    public async getOperationResult(requestObj: model.GetOperationResultRequest): Promise<Buffer> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getOperationResult.');
+        }
+
+        let localVarPath = this.configuration.getServerUrl() + "/conversion/async/result";
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.id' is not null or undefined
+        if (requestObj.id === null || requestObj.id === undefined) {
+            throw new Error('Required parameter "requestObj.id" was null or undefined when calling getOperationResult.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "id", requestObj.id);
+        const requestOptions: axios.AxiosRequestConfig = {
+            method: "GET",
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "arraybuffer",
+            responseEncoding: null,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.data, "Buffer");
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Get async operation status
+     * @param requestObj contains request parameters
+     */
+    public async getOperationStatus(requestObj: model.GetOperationStatusRequest): Promise<model.OperationResult> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling getOperationStatus.');
+        }
+
+        let localVarPath = this.configuration.getServerUrl() + "/conversion/async";
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.id' is not null or undefined
+        if (requestObj.id === null || requestObj.id === undefined) {
+            throw new Error('Required parameter "requestObj.id" was null or undefined when calling getOperationStatus.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "id", requestObj.id);
+        const requestOptions: axios.AxiosRequestConfig = {
+            method: "GET",
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.data, "OperationResult");
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Starts async conversion specified input document, from request body, to format specified
+     * @param requestObj contains request parameters
+     */
+    public async startConvert(requestObj: model.StartConvertRequest): Promise<string> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling startConvert.');
+        }
+
+        let localVarPath = this.configuration.getServerUrl() + "/conversion/async";
+        const queryParameters: any = {};
+        const formParams = new FormData();
+
+        // verify required parameter 'requestObj.format' is not null or undefined
+        if (requestObj.format === null || requestObj.format === undefined) {
+            throw new Error('Required parameter "requestObj.format" was null or undefined when calling startConvert.');
+        }
+
+        // verify required parameter 'requestObj.file' is not null or undefined
+        if (requestObj.file === null || requestObj.file === undefined) {
+            throw new Error('Required parameter "requestObj.file" was null or undefined when calling startConvert.');
+        }
+        
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "format", requestObj.format);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "fromPage", requestObj.fromPage);
+        localVarPath = addQueryParameterToUrl(localVarPath, queryParameters, "pagesCount", requestObj.pagesCount);
+        if (requestObj.file !== undefined) {
+            formParams.append("File", requestObj.file, { filename: "file.name" });
+        }
+
+        const requestOptions: axios.AxiosRequestConfig = {
+            method: "PUT",
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
+            data: formParams,
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.data, "string");
+        return Promise.resolve(result);
+    }
+
+    /**
+     * Starts async conversion specified input document to format specified in the convertSettings with specified options
+     * @param requestObj contains request parameters
+     */
+    public async startConvertAndSave(requestObj: model.StartConvertAndSaveRequest): Promise<string> {
+        if (requestObj === null || requestObj === undefined) {
+            throw new Error('Required parameter "requestObj" was null or undefined when calling startConvertAndSave.');
+        }
+
+        const localVarPath = this.configuration.getServerUrl() + "/conversion/async";
+        const queryParameters: any = {};
+
+        // verify required parameter 'requestObj.convertSettings' is not null or undefined
+        if (requestObj.convertSettings === null || requestObj.convertSettings === undefined) {
+            throw new Error('Required parameter "requestObj.convertSettings" was null or undefined when calling startConvertAndSave.');
+        }
+        
+        const requestOptions: axios.AxiosRequestConfig = {
+            method: "POST",
+            params: queryParameters,
+            url: localVarPath,
+            responseType: "json",
+            data: Serializer.serialize(requestObj.convertSettings, requestObj.convertSettings.constructor.name === "Object" ? "ConvertSettings" : requestObj.convertSettings.constructor.name),
+        };
+
+        const response = await invokeApiMethod(requestOptions, this.configuration);
+        const result =  Serializer.deserialize(response.data, "string");
+        return Promise.resolve(result);
+    }
+
+}
+/**
+ * GroupDocs.Conversion Cloud API 
+ */
 export class ConvertApi {
     
     /**
