@@ -3012,6 +3012,21 @@ export class WebLoadOptions extends LoadOptions {
             name: "pageNumbering",
             baseName: "pageNumbering",
             type: "boolean",
+        },        
+        {
+            name: "encoding",
+            baseName: "encoding",
+            type: "string",
+        },        
+        {
+            name: "usePdf",
+            baseName: "usePdf",
+            type: "boolean",
+        },        
+        {
+            name: "renderingMode",
+            baseName: "renderingMode",
+            type: "WebLoadOptions.RenderingModeEnum",
         }    ];
 
     /**
@@ -3026,12 +3041,36 @@ export class WebLoadOptions extends LoadOptions {
      */
     public pageNumbering: boolean;
     
+    /**
+     * Get or sets the encoding to be used when loading the web document. If the property is null the encoding will be determined from document character set attribute
+     */
+    public encoding: string;
+    
+    /**
+     * Use pdf for the conversion. Default: false
+     */
+    public usePdf: boolean;
+    
+    /**
+     * Controls how HTML content is rendered. Default: AbsolutePositioning
+     */
+    public renderingMode: WebLoadOptions.RenderingModeEnum;
+    
     public constructor(init?: Partial<WebLoadOptions>) {
         super(init);
         Object.assign(this, init);
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace WebLoadOptions {
+    export enum RenderingModeEnum {
+        Flow = 'Flow' as any,
+        AbsolutePositioning = 'AbsolutePositioning' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * Options for to word processing conversion
  */
@@ -7013,6 +7052,7 @@ const enumsMap = {
     "PdfConvertOptions.PageOrientationEnum": PdfConvertOptions.PageOrientationEnum,
     "TxtLoadOptions.TrailingSpacesOptionsEnum": TxtLoadOptions.TrailingSpacesOptionsEnum,
     "TxtLoadOptions.LeadingSpacesOptionsEnum": TxtLoadOptions.LeadingSpacesOptionsEnum,
+    "WebLoadOptions.RenderingModeEnum": WebLoadOptions.RenderingModeEnum,
     "WordProcessingConvertOptions.PdfRecognitionModeEnum": WordProcessingConvertOptions.PdfRecognitionModeEnum,
     "WordProcessingConvertOptions.PageSizeEnum": WordProcessingConvertOptions.PageSizeEnum,
     "WordProcessingConvertOptions.PageOrientationEnum": WordProcessingConvertOptions.PageOrientationEnum,
