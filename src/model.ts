@@ -1,7 +1,7 @@
 /*
 * The MIT License (MIT)
 *
-* Copyright (c) 2003-2024 Aspose Pty Ltd
+* Copyright (c) Aspose Pty Ltd
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -1816,6 +1816,11 @@ export class ImageConvertOptions extends ConvertOptions {
             name: "flipMode",
             baseName: "flipMode",
             type: "ImageConvertOptions.FlipModeEnum",
+        },        
+        {
+            name: "backgroundColor",
+            baseName: "backgroundColor",
+            type: "string",
         }    ];
 
     /**
@@ -1879,6 +1884,11 @@ export class ImageConvertOptions extends ConvertOptions {
      * Image flip mode
      */
     public flipMode: ImageConvertOptions.FlipModeEnum;
+    
+    /**
+     * Gets or sets a background color.
+     */
+    public backgroundColor: string;
     
     public constructor(init?: Partial<ImageConvertOptions>) {
         super(init);
