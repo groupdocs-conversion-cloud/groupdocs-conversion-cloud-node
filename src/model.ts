@@ -132,6 +132,11 @@ export class ConsumptionResult {
             name: "quantity",
             baseName: "quantity",
             type: "number",
+        },        
+        {
+            name: "billedApiCalls",
+            baseName: "billedApiCalls",
+            type: "number",
         }    ];
 
     /**
@@ -150,6 +155,11 @@ export class ConsumptionResult {
      * Amount of MBs processed
      */
     public quantity: number;
+    
+    /**
+     * Billed API calls number
+     */
+    public billedApiCalls: number;
     
     public constructor(init?: Partial<ConsumptionResult>) {
         
