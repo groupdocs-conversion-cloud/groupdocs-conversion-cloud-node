@@ -2620,6 +2620,41 @@ export class PresentationLoadOptions extends LoadOptions {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
+            name: "preserveDocumentStructure",
+            baseName: "preserveDocumentStructure",
+            type: "boolean",
+        },        
+        {
+            name: "clearCustomDocumentProperties",
+            baseName: "clearCustomDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "clearBuiltInDocumentProperties",
+            baseName: "clearBuiltInDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "depth",
+            baseName: "depth",
+            type: "number",
+        },        
+        {
+            name: "convertOwned",
+            baseName: "convertOwned",
+            type: "boolean",
+        },        
+        {
+            name: "convertOwner",
+            baseName: "convertOwner",
+            type: "boolean",
+        },        
+        {
+            name: "showHiddenSlides",
+            baseName: "showHiddenSlides",
+            type: "boolean",
+        },        
+        {
             name: "defaultFont",
             baseName: "defaultFont",
             type: "string",
@@ -2635,14 +2670,14 @@ export class PresentationLoadOptions extends LoadOptions {
             type: "string",
         },        
         {
-            name: "hideComments",
-            baseName: "hideComments",
-            type: "boolean",
+            name: "commentsPosition",
+            baseName: "commentsPosition",
+            type: "PresentationLoadOptions.CommentsPositionEnum",
         },        
         {
-            name: "showHiddenSlides",
-            baseName: "showHiddenSlides",
-            type: "boolean",
+            name: "notesPosition",
+            baseName: "notesPosition",
+            type: "PresentationLoadOptions.NotesPositionEnum",
         }    ];
 
     /**
@@ -2652,6 +2687,41 @@ export class PresentationLoadOptions extends LoadOptions {
         return super.getAttributeTypeMap().concat(PresentationLoadOptions.attributeTypeMap);
     }
 
+    /**
+     * Determines whether the document structure should be preserved when converting     to PDF (default is false).
+     */
+    public preserveDocumentStructure: boolean;
+    
+    /**
+     * Value indicating whether custom document properties should be cleared.
+     */
+    public clearCustomDocumentProperties: boolean;
+    
+    /**
+     * Value indicating whether built in document properties should be cleared.
+     */
+    public clearBuiltInDocumentProperties: boolean;
+    
+    /**
+     * Implements GroupDocs.Conversion.Contracts.IDocumentsContainerLoadOptions.Depth     Default: 1
+     */
+    public depth: number;
+    
+    /**
+     * Implements GroupDocs.Conversion.Contracts.IDocumentsContainerLoadOptions.ConvertOwned     Default is false
+     */
+    public convertOwned: boolean;
+    
+    /**
+     * Implements GroupDocs.Conversion.Contracts.IDocumentsContainerLoadOptions.ConvertOwner     Default is true
+     */
+    public convertOwner: boolean;
+    
+    /**
+     * Show hidden slides.
+     */
+    public showHiddenSlides: boolean;
+    
     /**
      * Default font for rendering the presentation. The following font will be used if a presentation font is missing.
      */
@@ -2668,14 +2738,14 @@ export class PresentationLoadOptions extends LoadOptions {
     public password: string;
     
     /**
-     * Hide comments
+     * Represents the way comments are printed with the slide. Default is None.
      */
-    public hideComments: boolean;
+    public commentsPosition: PresentationLoadOptions.CommentsPositionEnum;
     
     /**
-     * Show hidden slides
+     * Represents the way notes are printed with the slide. Default is None.
      */
-    public showHiddenSlides: boolean;
+    public notesPosition: PresentationLoadOptions.NotesPositionEnum;
     
     public constructor(init?: Partial<PresentationLoadOptions>) {
         super(init);
@@ -2683,6 +2753,21 @@ export class PresentationLoadOptions extends LoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PresentationLoadOptions {
+    export enum CommentsPositionEnum {
+        None = 'None' as any,
+        Bottom = 'Bottom' as any,
+        Right = 'Right' as any,
+    }
+    export enum NotesPositionEnum {
+        None = 'None' as any,
+        BottomTruncated = 'BottomTruncated' as any,
+        BottomFull = 'BottomFull' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * Spreadsheet сonvert options class 
  */
@@ -2788,9 +2873,9 @@ export class SpreadsheetLoadOptions extends LoadOptions {
             type: "string",
         },        
         {
-            name: "hideComments",
-            baseName: "hideComments",
-            type: "boolean",
+            name: "printComments",
+            baseName: "printComments",
+            type: "SpreadsheetLoadOptions.PrintCommentsEnum",
         }    ];
 
     /**
@@ -2841,9 +2926,9 @@ export class SpreadsheetLoadOptions extends LoadOptions {
     public password: string;
     
     /**
-     * Hide comments
+     * Represents the way comments are printed with the sheet. Default is PrintNoComments.
      */
-    public hideComments: boolean;
+    public printComments: SpreadsheetLoadOptions.PrintCommentsEnum;
     
     public constructor(init?: Partial<SpreadsheetLoadOptions>) {
         super(init);
@@ -2851,6 +2936,17 @@ export class SpreadsheetLoadOptions extends LoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace SpreadsheetLoadOptions {
+    export enum PrintCommentsEnum {
+        PrintInPlace = 'PrintInPlace' as any,
+        PrintNoComments = 'PrintNoComments' as any,
+        PrintSheetEnd = 'PrintSheetEnd' as any,
+        PrintWithThreadedComments = 'PrintWithThreadedComments' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * Txt convert options
  */
@@ -3546,6 +3642,11 @@ export class CsvLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace CsvLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dcm convert options
  */
@@ -4890,6 +4991,11 @@ export class OdpLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OdpLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ods convert options
  */
@@ -4940,6 +5046,11 @@ export class OdsLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OdsLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Odt convert options
  */
@@ -5070,6 +5181,11 @@ export class OtpLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OtpLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ots convert options
  */
@@ -5120,6 +5236,11 @@ export class OtsLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OtsLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ott convert options
  */
@@ -5310,6 +5431,11 @@ export class PotmLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PotmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Potx convert options
  */
@@ -5360,6 +5486,11 @@ export class PotxLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PotxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Pps convert options
  */
@@ -5410,6 +5541,11 @@ export class PpsLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PpsLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ppsm convert options
  */
@@ -5460,6 +5596,11 @@ export class PpsmLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PpsmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ppsx convert options
  */
@@ -5510,6 +5651,11 @@ export class PpsxLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PpsxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ppt convert options
  */
@@ -5560,6 +5706,11 @@ export class PptLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PptLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Pptm convert options
  */
@@ -5610,6 +5761,11 @@ export class PptmLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PptmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Pptx convert options
  */
@@ -5660,6 +5816,11 @@ export class PptxLoadOptions extends PresentationLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PptxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Psd convert options
  */
@@ -6020,6 +6181,11 @@ export class TsvLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace TsvLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Vdw load options
  */
@@ -6514,6 +6680,11 @@ export class Xls2003LoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace Xls2003LoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Xls convert options
  */
@@ -6564,6 +6735,11 @@ export class XlsLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace XlsLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Xlsb convert options
  */
@@ -6614,6 +6790,11 @@ export class XlsbLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace XlsbLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Xlsm convert options
  */
@@ -6664,6 +6845,11 @@ export class XlsmLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace XlsmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Xlsx convert options
  */
@@ -6714,6 +6900,11 @@ export class XlsxLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace XlsxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Xltm convert options
  */
@@ -6764,6 +6955,11 @@ export class XltmLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace XltmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Xltx convert options
  */
@@ -6814,6 +7010,11 @@ export class XltxLoadOptions extends SpreadsheetLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace XltxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * J2c convert options
  */
@@ -7070,6 +7271,9 @@ const enumsMap = {
     "PdfConvertOptions.RotateEnum": PdfConvertOptions.RotateEnum,
     "PdfConvertOptions.PageSizeEnum": PdfConvertOptions.PageSizeEnum,
     "PdfConvertOptions.PageOrientationEnum": PdfConvertOptions.PageOrientationEnum,
+    "PresentationLoadOptions.CommentsPositionEnum": PresentationLoadOptions.CommentsPositionEnum,
+    "PresentationLoadOptions.NotesPositionEnum": PresentationLoadOptions.NotesPositionEnum,
+    "SpreadsheetLoadOptions.PrintCommentsEnum": SpreadsheetLoadOptions.PrintCommentsEnum,
     "TxtLoadOptions.TrailingSpacesOptionsEnum": TxtLoadOptions.TrailingSpacesOptionsEnum,
     "TxtLoadOptions.LeadingSpacesOptionsEnum": TxtLoadOptions.LeadingSpacesOptionsEnum,
     "WebLoadOptions.RenderingModeEnum": WebLoadOptions.RenderingModeEnum,
