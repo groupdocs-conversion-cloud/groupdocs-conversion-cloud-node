@@ -2703,17 +2703,17 @@ export class PresentationLoadOptions extends LoadOptions {
     public clearBuiltInDocumentProperties: boolean;
     
     /**
-     * Implements GroupDocs.Conversion.Contracts.IDocumentsContainerLoadOptions.Depth     Default: 1
+     * Option to control how many levels in depth to perform conversion     Default: 1
      */
     public depth: number;
     
     /**
-     * Implements GroupDocs.Conversion.Contracts.IDocumentsContainerLoadOptions.ConvertOwned     Default is false
+     * Option to control whether the owned documents in the documents container must     be converted
      */
     public convertOwned: boolean;
     
     /**
-     * Implements GroupDocs.Conversion.Contracts.IDocumentsContainerLoadOptions.ConvertOwner     Default is true
+     * Option to control whether the documents container itself must be converted If     this property is true the documents container will be the first converted document     Default is true
      */
     public convertOwner: boolean;
     
@@ -3341,11 +3341,6 @@ export class WordProcessingLoadOptions extends LoadOptions {
             type: "string",
         },        
         {
-            name: "autoFontSubstitution",
-            baseName: "autoFontSubstitution",
-            type: "boolean",
-        },        
-        {
             name: "fontSubstitutes",
             baseName: "fontSubstitutes",
             type: "{ [key: string]: string; }",
@@ -3358,11 +3353,6 @@ export class WordProcessingLoadOptions extends LoadOptions {
         {
             name: "hideWordTrackedChanges",
             baseName: "hideWordTrackedChanges",
-            type: "boolean",
-        },        
-        {
-            name: "hideComments",
-            baseName: "hideComments",
             type: "boolean",
         },        
         {
@@ -3379,6 +3369,111 @@ export class WordProcessingLoadOptions extends LoadOptions {
             name: "expandedOutlineLevels",
             baseName: "expandedOutlineLevels",
             type: "number",
+        },        
+        {
+            name: "clearCustomDocumentProperties",
+            baseName: "clearCustomDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "clearBuiltInDocumentProperties",
+            baseName: "clearBuiltInDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "depth",
+            baseName: "depth",
+            type: "number",
+        },        
+        {
+            name: "convertOwned",
+            baseName: "convertOwned",
+            type: "boolean",
+        },        
+        {
+            name: "convertOwner",
+            baseName: "convertOwner",
+            type: "boolean",
+        },        
+        {
+            name: "autoHyphenation",
+            baseName: "autoHyphenation",
+            type: "boolean",
+        },        
+        {
+            name: "hyphenateCaps",
+            baseName: "hyphenateCaps",
+            type: "boolean",
+        },        
+        {
+            name: "pageNumbering",
+            baseName: "pageNumbering",
+            type: "boolean",
+        },        
+        {
+            name: "preserveDocumentStructure",
+            baseName: "preserveDocumentStructure",
+            type: "boolean",
+        },        
+        {
+            name: "skipExternalResources",
+            baseName: "skipExternalResources",
+            type: "boolean",
+        },        
+        {
+            name: "useTextShaper",
+            baseName: "useTextShaper",
+            type: "boolean",
+        },        
+        {
+            name: "preserveFormFields",
+            baseName: "preserveFormFields",
+            type: "boolean",
+        },        
+        {
+            name: "commentDisplayMode",
+            baseName: "commentDisplayMode",
+            type: "WordProcessingLoadOptions.CommentDisplayModeEnum",
+        },        
+        {
+            name: "keepDateFieldOriginalValue",
+            baseName: "keepDateFieldOriginalValue",
+            type: "boolean",
+        },        
+        {
+            name: "updateFields",
+            baseName: "updateFields",
+            type: "boolean",
+        },        
+        {
+            name: "updatePageLayout",
+            baseName: "updatePageLayout",
+            type: "boolean",
+        },        
+        {
+            name: "embedTrueTypeFonts",
+            baseName: "embedTrueTypeFonts",
+            type: "boolean",
+        },        
+        {
+            name: "fontInfoSubstitutionEnabled",
+            baseName: "fontInfoSubstitutionEnabled",
+            type: "boolean",
+        },        
+        {
+            name: "fontConfigSubstitutionEnabled",
+            baseName: "fontConfigSubstitutionEnabled",
+            type: "boolean",
+        },        
+        {
+            name: "fontNameSubstitutionEnabled",
+            baseName: "fontNameSubstitutionEnabled",
+            type: "boolean",
+        },        
+        {
+            name: "showFullCommenterName",
+            baseName: "showFullCommenterName",
+            type: "boolean",
         }    ];
 
     /**
@@ -3392,11 +3487,6 @@ export class WordProcessingLoadOptions extends LoadOptions {
      * Default font for Words document. The following font will be used if a font is missing.
      */
     public defaultFont: string;
-    
-    /**
-     * If AutoFontSubstitution is disabled, GroupDocs.Conversion uses the DefaultFont for the substitution of missing fonts. If AutoFontSubstitution is enabled, GroupDocs.Conversion evaluates all the related fields in FontInfo (Panose, Sig etc) for the missing font and finds the closest match among the available font sources. Note that font substitution mechanism will override the DefaultFont in cases when FontInfo for the missing font is available in the document. The default value is True.
-     */
-    public autoFontSubstitution: boolean;
     
     /**
      * Substitute specific fonts when converting Words document.
@@ -3414,11 +3504,6 @@ export class WordProcessingLoadOptions extends LoadOptions {
     public hideWordTrackedChanges: boolean;
     
     /**
-     * Hide comments
-     */
-    public hideComments: boolean;
-    
-    /**
      * Specifies the default level in the document outline at which to display Word bookmarks. Default is 0. Valid range is 0 to 9.
      */
     public bookmarksOutlineLevel: number;
@@ -3433,12 +3518,127 @@ export class WordProcessingLoadOptions extends LoadOptions {
      */
     public expandedOutlineLevels: number;
     
+    /**
+     * Clear custom document properties. Default is false.
+     */
+    public clearCustomDocumentProperties: boolean;
+    
+    /**
+     * Clear built-in document properties. Default is false.
+     */
+    public clearBuiltInDocumentProperties: boolean;
+    
+    /**
+     * Option to control how many levels in depth to perform conversion. Default: 1.
+     */
+    public depth: number;
+    
+    /**
+     * Option to control whether the owned documents in the documents container must be converted
+     */
+    public convertOwned: boolean;
+    
+    /**
+     * Option to control whether the documents container itself must be converted If this property is true the documents container will be the first converted document. Default is true.
+     */
+    public convertOwner: boolean;
+    
+    /**
+     * Gets or sets value determining whether automatic hyphenation is turned on for the document. Default value for this property is false.
+     */
+    public autoHyphenation: boolean;
+    
+    /**
+     * Gets or sets value determining whether words written in all capital letters are hyphenated. Default value for this property is true.
+     */
+    public hyphenateCaps: boolean;
+    
+    /**
+     * Enable or disable generation of page numbering in converted document. Default: false
+     */
+    public pageNumbering: boolean;
+    
+    /**
+     * Determines whether the document structure should be preserved when converting to PDF (default is false).
+     */
+    public preserveDocumentStructure: boolean;
+    
+    /**
+     * If true all external resource will not be loading. Default is true.
+     */
+    public skipExternalResources: boolean;
+    
+    /**
+     * Specifies whether to use a text shaper for better kerning display. Default is false.
+     */
+    public useTextShaper: boolean;
+    
+    /**
+     * Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text. Default is false.
+     */
+    public preserveFormFields: boolean;
+    
+    /**
+     * Specifies how comments should be displayed in the output document. Default is Balloon.
+     */
+    public commentDisplayMode: WordProcessingLoadOptions.CommentDisplayModeEnum;
+    
+    /**
+     * Keep original value of date field. Default: false
+     */
+    public keepDateFieldOriginalValue: boolean;
+    
+    /**
+     * Update fields after loading. Default: false
+     */
+    public updateFields: boolean;
+    
+    /**
+     * Update page layout after loading. Default: false
+     */
+    public updatePageLayout: boolean;
+    
+    /**
+     * If EmbedTrueTypeFonts is true, GroupDocs.Conversion Cloud embed true type fonts in the output document. Default: true
+     */
+    public embedTrueTypeFonts: boolean;
+    
+    /**
+     * Automatically substitutes missing fonts based on FontInfo in the document. Default: false.
+     */
+    public fontInfoSubstitutionEnabled: boolean;
+    
+    /**
+     * Automatically substitutes missing fonts based on FontConfig in the system. Default: false.
+     */
+    public fontConfigSubstitutionEnabled: boolean;
+    
+    /**
+     * Automatically substitutes missing fonts based on the font name. Default: false.
+     */
+    public fontNameSubstitutionEnabled: boolean;
+    
+    /**
+     * Show full commenter name in comments. Default is false.
+     */
+    public showFullCommenterName: boolean;
+    
     public constructor(init?: Partial<WordProcessingLoadOptions>) {
         super(init);
         Object.assign(this, init);
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace WordProcessingLoadOptions {
+    export enum CommentDisplayModeEnum {
+        Hidden = 'Hidden' as any,
+        Balloon = 'Balloon' as any,
+        Annotation = 'Annotation' as any,
+    }
+}
+// tslint:enable:quotemark
 /**
  * XML document load options
  */
@@ -3872,6 +4072,11 @@ export class DocLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DocLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Docm convert options
  */
@@ -3927,6 +4132,11 @@ export class DocmLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DocmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Docx convert options
  */
@@ -3982,6 +4192,11 @@ export class DocxLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DocxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dot convert options
  */
@@ -4037,6 +4252,11 @@ export class DotLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DotLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dotm convert options
  */
@@ -4092,6 +4312,11 @@ export class DotmLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DotmLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dotx convert options
  */
@@ -4147,6 +4372,11 @@ export class DotxLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace DotxLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Dwf load options
  */
@@ -4861,6 +5091,11 @@ export class MobiLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace MobiLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Msg load options
  */
@@ -5106,6 +5341,11 @@ export class OdtLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OdtLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Ost load options
  */
@@ -5296,6 +5536,11 @@ export class OttLoadOptions extends WordProcessingLoadOptions {
     }        
 }
 
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace OttLoadOptions {
+}
+// tslint:enable:quotemark
 /**
  * Plt load options
  */
@@ -7280,6 +7525,7 @@ const enumsMap = {
     "WordProcessingConvertOptions.PdfRecognitionModeEnum": WordProcessingConvertOptions.PdfRecognitionModeEnum,
     "WordProcessingConvertOptions.PageSizeEnum": WordProcessingConvertOptions.PageSizeEnum,
     "WordProcessingConvertOptions.PageOrientationEnum": WordProcessingConvertOptions.PageOrientationEnum,
+    "WordProcessingLoadOptions.CommentDisplayModeEnum": WordProcessingLoadOptions.CommentDisplayModeEnum,
     "PsdConvertOptions.ColorModeEnum": PsdConvertOptions.ColorModeEnum,
     "PsdConvertOptions.CompressionMethodEnum": PsdConvertOptions.CompressionMethodEnum,
     "TiffConvertOptions.CompressionEnum": TiffConvertOptions.CompressionEnum,
