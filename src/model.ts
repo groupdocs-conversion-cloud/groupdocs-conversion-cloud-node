@@ -1449,14 +1449,19 @@ export class CadLoadOptions extends LoadOptions {
             type: "Array<string>",
         },        
         {
-            name: "backgroundColor",
-            baseName: "backgroundColor",
-            type: "string",
-        },        
-        {
             name: "drawType",
             baseName: "drawType",
             type: "CadLoadOptions.DrawTypeEnum",
+        },        
+        {
+            name: "drawColor",
+            baseName: "drawColor",
+            type: "string",
+        },        
+        {
+            name: "backgroundColor",
+            baseName: "backgroundColor",
+            type: "string",
         }    ];
 
     /**
@@ -1472,14 +1477,19 @@ export class CadLoadOptions extends LoadOptions {
     public layoutNames: Array<string>;
     
     /**
-     * Gets or sets a background color.
-     */
-    public backgroundColor: string;
-    
-    /**
-     * Gets or sets type of drawing.
+     * A type of drawing.
      */
     public drawType: CadLoadOptions.DrawTypeEnum;
+    
+    /**
+     * A foreground color.             
+     */
+    public drawColor: string;
+    
+    /**
+     * A background color.
+     */
+    public backgroundColor: string;
     
     public constructor(init?: Partial<CadLoadOptions>) {
         super(init);
@@ -1615,38 +1625,8 @@ export class EmailLoadOptions extends LoadOptions {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            name: "displayHeader",
-            baseName: "displayHeader",
-            type: "boolean",
-        },        
-        {
-            name: "displayFromEmailAddress",
-            baseName: "displayFromEmailAddress",
-            type: "boolean",
-        },        
-        {
-            name: "displayToEmailAddress",
-            baseName: "displayToEmailAddress",
-            type: "boolean",
-        },        
-        {
-            name: "displayCcEmailAddress",
-            baseName: "displayCcEmailAddress",
-            type: "boolean",
-        },        
-        {
-            name: "displayBccEmailAddress",
-            baseName: "displayBccEmailAddress",
-            type: "boolean",
-        },        
-        {
-            name: "timeZoneOffset",
-            baseName: "timeZoneOffset",
-            type: "string",
-        },        
-        {
-            name: "convertAttachments",
-            baseName: "convertAttachments",
+            name: "preserveOriginalDate",
+            baseName: "preserveOriginalDate",
             type: "boolean",
         },        
         {
@@ -1655,9 +1635,64 @@ export class EmailLoadOptions extends LoadOptions {
             type: "Array<FieldLabel>",
         },        
         {
-            name: "preserveOriginalDate",
-            baseName: "preserveOriginalDate",
+            name: "timeZoneOffset",
+            baseName: "timeZoneOffset",
+            type: "string",
+        },        
+        {
+            name: "displaySent",
+            baseName: "displaySent",
             type: "boolean",
+        },        
+        {
+            name: "displaySubject",
+            baseName: "displaySubject",
+            type: "boolean",
+        },        
+        {
+            name: "displayAttachments",
+            baseName: "displayAttachments",
+            type: "boolean",
+        },        
+        {
+            name: "displayEmailAddresses",
+            baseName: "displayEmailAddresses",
+            type: "boolean",
+        },        
+        {
+            name: "displayBccEmailAddress",
+            baseName: "displayBccEmailAddress",
+            type: "boolean",
+        },        
+        {
+            name: "displayCcEmailAddress",
+            baseName: "displayCcEmailAddress",
+            type: "boolean",
+        },        
+        {
+            name: "displayToEmailAddress",
+            baseName: "displayToEmailAddress",
+            type: "boolean",
+        },        
+        {
+            name: "displayFromEmailAddress",
+            baseName: "displayFromEmailAddress",
+            type: "boolean",
+        },        
+        {
+            name: "displayHeader",
+            baseName: "displayHeader",
+            type: "boolean",
+        },        
+        {
+            name: "defaultFont",
+            baseName: "defaultFont",
+            type: "string",
+        },        
+        {
+            name: "fontSubstitutes",
+            baseName: "fontSubstitutes",
+            type: "{ [key: string]: string; }",
         }    ];
 
     /**
@@ -1668,39 +1703,9 @@ export class EmailLoadOptions extends LoadOptions {
     }
 
     /**
-     * Option to display or hide the email header. Default: true
+     * Defines whether need to keep original date header string in mail message when saving or not (Default value is true)
      */
-    public displayHeader: boolean;
-    
-    /**
-     * Option to display or hide \"from\" email address. Default: true
-     */
-    public displayFromEmailAddress: boolean;
-    
-    /**
-     * Option to display or hide \"to\" email address. Default: true
-     */
-    public displayToEmailAddress: boolean;
-    
-    /**
-     * Option to display or hide \"Cc\" email address. Default: false
-     */
-    public displayCcEmailAddress: boolean;
-    
-    /**
-     * Option to display or hide \"Bcc\" email address. Default: false
-     */
-    public displayBccEmailAddress: boolean;
-    
-    /**
-     * Gets or sets the Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the localtime and UTC.
-     */
-    public timeZoneOffset: string;
-    
-    /**
-     * Option to convert attachments in source email or not. Default: false.
-     */
-    public convertAttachments: boolean;
+    public preserveOriginalDate: boolean;
     
     /**
      * The mapping between email message field and field text representation
@@ -1708,9 +1713,61 @@ export class EmailLoadOptions extends LoadOptions {
     public fieldLabels: Array<FieldLabel>;
     
     /**
-     * Defines whether need to keep original date header string in mail message when saving or not (Default value is true)
+     * Gets or sets the Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the localtime and UTC.
      */
-    public preserveOriginalDate: boolean;
+    public timeZoneOffset: string;
+    
+    /**
+     * Option to display or hide sent date/time in the header. Default: true.
+     */
+    public displaySent: boolean;
+    
+    /**
+     * Option to display or hide subject in the header. Default: true.
+     */
+    public displaySubject: boolean;
+    
+    /**
+     * Option to display or hide attachments in the header. Default: true.
+     */
+    public displayAttachments: boolean;
+    
+    public displayEmailAddresses: boolean;
+    
+    /**
+     * Option to display or hide \"Bcc\" email address. Default: false
+     */
+    public displayBccEmailAddress: boolean;
+    
+    /**
+     * Option to display or hide \"Cc\" email address. Default: false
+     */
+    public displayCcEmailAddress: boolean;
+    
+    /**
+     * Option to display or hide \"to\" email address. Default: true
+     */
+    public displayToEmailAddress: boolean;
+    
+    /**
+     * Option to display or hide \"from\" email address. Default: true
+     */
+    public displayFromEmailAddress: boolean;
+    
+    /**
+     * Option to display or hide the email header. Default: true
+     */
+    public displayHeader: boolean;
+    
+    /**
+     * Default font for Email document. The following font will be used if a font is missing.
+     */
+    public defaultFont: string;
+    
+    /**
+     * List of font substitutes.
+     */
+    public fontSubstitutes: { [key: string]: string; };
     
     public constructor(init?: Partial<EmailLoadOptions>) {
         super(init);
@@ -2468,14 +2525,24 @@ export class PdfLoadOptions extends LoadOptions {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            name: "removeEmbeddedFiles",
-            baseName: "removeEmbeddedFiles",
+            name: "clearBuiltInDocumentProperties",
+            baseName: "clearBuiltInDocumentProperties",
             type: "boolean",
         },        
         {
-            name: "password",
-            baseName: "password",
-            type: "string",
+            name: "clearCustomDocumentProperties",
+            baseName: "clearCustomDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "pageNumbering",
+            baseName: "pageNumbering",
+            type: "boolean",
+        },        
+        {
+            name: "flattenAllFields",
+            baseName: "flattenAllFields",
+            type: "boolean",
         },        
         {
             name: "hidePdfAnnotations",
@@ -2483,9 +2550,29 @@ export class PdfLoadOptions extends LoadOptions {
             type: "boolean",
         },        
         {
-            name: "flattenAllFields",
-            baseName: "flattenAllFields",
+            name: "defaultFont",
+            baseName: "defaultFont",
+            type: "string",
+        },        
+        {
+            name: "password",
+            baseName: "password",
+            type: "string",
+        },        
+        {
+            name: "removeJavascript",
+            baseName: "removeJavascript",
             type: "boolean",
+        },        
+        {
+            name: "removeEmbeddedFiles",
+            baseName: "removeEmbeddedFiles",
+            type: "boolean",
+        },        
+        {
+            name: "fontSubstitutes",
+            baseName: "fontSubstitutes",
+            type: "{ [key: string]: string; }",
         }    ];
 
     /**
@@ -2496,14 +2583,24 @@ export class PdfLoadOptions extends LoadOptions {
     }
 
     /**
-     * Remove embedded files
+     * Clear built-in document properties
      */
-    public removeEmbeddedFiles: boolean;
+    public clearBuiltInDocumentProperties: boolean;
     
     /**
-     * Set password to unprotect protected document
+     * Clear custom document properties
      */
-    public password: string;
+    public clearCustomDocumentProperties: boolean;
+    
+    /**
+     * Enable or disable generation of page numbering in converted document. Default:     false
+     */
+    public pageNumbering: boolean;
+    
+    /**
+     * Flatten all the fields of the PDF form
+     */
+    public flattenAllFields: boolean;
     
     /**
      * Hide annotations in Pdf documents
@@ -2511,9 +2608,29 @@ export class PdfLoadOptions extends LoadOptions {
     public hidePdfAnnotations: boolean;
     
     /**
-     * Flatten all the fields of the PDF form
+     * Default font for Pdf document. The following font will be used if a font is missing.
      */
-    public flattenAllFields: boolean;
+    public defaultFont: string;
+    
+    /**
+     * Set password to unprotect protected document
+     */
+    public password: string;
+    
+    /**
+     * Remove javascript
+     */
+    public removeJavascript: boolean;
+    
+    /**
+     * Remove embedded files
+     */
+    public removeEmbeddedFiles: boolean;
+    
+    /**
+     * Substitute specific fonts when converting Words document.
+     */
+    public fontSubstitutes: { [key: string]: string; };
     
     public constructor(init?: Partial<PdfLoadOptions>) {
         super(init);
@@ -2833,38 +2950,43 @@ export class SpreadsheetLoadOptions extends LoadOptions {
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            name: "defaultFont",
-            baseName: "defaultFont",
+            name: "clearCustomDocumentProperties",
+            baseName: "clearCustomDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "clearBuiltInDocumentProperties",
+            baseName: "clearBuiltInDocumentProperties",
+            type: "boolean",
+        },        
+        {
+            name: "rowsPerPage",
+            baseName: "rowsPerPage",
+            type: "number",
+        },        
+        {
+            name: "columnsPerPage",
+            baseName: "columnsPerPage",
+            type: "number",
+        },        
+        {
+            name: "autoFitRows",
+            baseName: "autoFitRows",
+            type: "boolean",
+        },        
+        {
+            name: "allColumnsInOnePagePerSheet",
+            baseName: "allColumnsInOnePagePerSheet",
+            type: "boolean",
+        },        
+        {
+            name: "cultureInfo",
+            baseName: "cultureInfo",
             type: "string",
         },        
         {
-            name: "fontSubstitutes",
-            baseName: "fontSubstitutes",
-            type: "{ [key: string]: string; }",
-        },        
-        {
-            name: "showGridLines",
-            baseName: "showGridLines",
-            type: "boolean",
-        },        
-        {
-            name: "showHiddenSheets",
-            baseName: "showHiddenSheets",
-            type: "boolean",
-        },        
-        {
-            name: "onePagePerSheet",
-            baseName: "onePagePerSheet",
-            type: "boolean",
-        },        
-        {
-            name: "convertRange",
-            baseName: "convertRange",
-            type: "string",
-        },        
-        {
-            name: "skipEmptyRowsAndColumns",
-            baseName: "skipEmptyRowsAndColumns",
+            name: "checkExcelRestriction",
+            baseName: "checkExcelRestriction",
             type: "boolean",
         },        
         {
@@ -2873,9 +2995,64 @@ export class SpreadsheetLoadOptions extends LoadOptions {
             type: "string",
         },        
         {
+            name: "skipEmptyRowsAndColumns",
+            baseName: "skipEmptyRowsAndColumns",
+            type: "boolean",
+        },        
+        {
+            name: "convertRange",
+            baseName: "convertRange",
+            type: "string",
+        },        
+        {
+            name: "optimizePdfSize",
+            baseName: "optimizePdfSize",
+            type: "boolean",
+        },        
+        {
+            name: "onePagePerSheet",
+            baseName: "onePagePerSheet",
+            type: "boolean",
+        },        
+        {
+            name: "showHiddenSheets",
+            baseName: "showHiddenSheets",
+            type: "boolean",
+        },        
+        {
+            name: "showGridLines",
+            baseName: "showGridLines",
+            type: "boolean",
+        },        
+        {
+            name: "fontSubstitutes",
+            baseName: "fontSubstitutes",
+            type: "{ [key: string]: string; }",
+        },        
+        {
+            name: "defaultFont",
+            baseName: "defaultFont",
+            type: "string",
+        },        
+        {
+            name: "sheetIndexes",
+            baseName: "sheetIndexes",
+            type: "Array<number>",
+        },        
+        {
+            name: "sheets",
+            baseName: "sheets",
+            type: "Array<string>",
+        },        
+        {
             name: "printComments",
             baseName: "printComments",
             type: "SpreadsheetLoadOptions.PrintCommentsEnum",
+        },        
+        {
+            name: "resetFontFolders",
+            baseName: "resetFontFolders",
+            type: "boolean",
         }    ];
 
     /**
@@ -2886,39 +3063,44 @@ export class SpreadsheetLoadOptions extends LoadOptions {
     }
 
     /**
-     * Default font for Cells document. The following font will be used if a font is missing.
+     * Clear custom document properties. Default is false.
      */
-    public defaultFont: string;
+    public clearCustomDocumentProperties: boolean;
     
     /**
-     * Substitute specific fonts when converting Cells document.
+     * Clear built-in document properties. Default is false.
      */
-    public fontSubstitutes: { [key: string]: string; };
+    public clearBuiltInDocumentProperties: boolean;
     
     /**
-     * Show grid lines when converting Excel files
+     * Split a worksheet into pages by rows. Default is 0, no pagination.
      */
-    public showGridLines: boolean;
+    public rowsPerPage: number;
     
     /**
-     * Show hidden sheets when converting Excel files
+     * Split a worksheet into pages by columns. Default is 0, no pagination.
      */
-    public showHiddenSheets: boolean;
+    public columnsPerPage: number;
     
     /**
-     * If OnePagePerSheet is true the content of the sheet will be converted to one page in the PDF document. Default value is true.
+     * Autofits all rows when converting
      */
-    public onePagePerSheet: boolean;
+    public autoFitRows: boolean;
     
     /**
-     * Convert specific range when converting to other than cells format. Example: \"D1:F8\"
+     * If AllColumnsInOnePagePerSheet is true, all column content of one sheet will output to only one page in result. The width of paper size of pagesetup will be invalid, and the other settings of pagesetup will still take effect.             
      */
-    public convertRange: string;
+    public allColumnsInOnePagePerSheet: boolean;
     
     /**
-     * Skips empty rows and columns when converting. Default is True.
+     * System culture info at the time file is loaded
      */
-    public skipEmptyRowsAndColumns: boolean;
+    public cultureInfo: string;
+    
+    /**
+     * Whether check restriction of excel file when user modify cells related objects. For example, excel does not allow inputting string value longer than 32K. When you input a value longer than 32K, if this property is true, you will get an Exception. If this property is false, we will accept your input string value as the cell's value so that later you can output the complete string value for other file formats such as CSV. However, if you have set such kind of value that is invalid for excel file format, you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.             
+     */
+    public checkExcelRestriction: boolean;
     
     /**
      * Set password to unprotect protected document
@@ -2926,9 +3108,64 @@ export class SpreadsheetLoadOptions extends LoadOptions {
     public password: string;
     
     /**
+     * Skips empty rows and columns when converting. Default is True.
+     */
+    public skipEmptyRowsAndColumns: boolean;
+    
+    /**
+     * Convert specific range when converting to other than cells format. Example: \"D1:F8\"
+     */
+    public convertRange: string;
+    
+    /**
+     * If True and converting to Pdf the conversion is optimized for better file size than print quality.             
+     */
+    public optimizePdfSize: boolean;
+    
+    /**
+     * If OnePagePerSheet is true the content of the sheet will be converted to one page in the PDF document. Default value is true.
+     */
+    public onePagePerSheet: boolean;
+    
+    /**
+     * Show hidden sheets when converting Excel files
+     */
+    public showHiddenSheets: boolean;
+    
+    /**
+     * Show grid lines when converting Excel files
+     */
+    public showGridLines: boolean;
+    
+    /**
+     * Substitute specific fonts when converting Cells document.
+     */
+    public fontSubstitutes: { [key: string]: string; };
+    
+    /**
+     * Default font for Cells document. The following font will be used if a font is missing.
+     */
+    public defaultFont: string;
+    
+    /**
+     * List of sheet indexes to convert. The indexes must be zero-based
+     */
+    public sheetIndexes: Array<number>;
+    
+    /**
+     * List of sheet names to convert
+     */
+    public sheets: Array<string>;
+    
+    /**
      * Represents the way comments are printed with the sheet. Default is PrintNoComments.
      */
     public printComments: SpreadsheetLoadOptions.PrintCommentsEnum;
+    
+    /**
+     * Reset font folders before loading document
+     */
+    public resetFontFolders: boolean;
     
     public constructor(init?: Partial<SpreadsheetLoadOptions>) {
         super(init);
@@ -3130,9 +3367,19 @@ export class WebLoadOptions extends LoadOptions {
             type: "boolean",
         },        
         {
+            name: "basePath",
+            baseName: "basePath",
+            type: "string",
+        },        
+        {
             name: "encoding",
             baseName: "encoding",
             type: "string",
+        },        
+        {
+            name: "skipExternalResources",
+            baseName: "skipExternalResources",
+            type: "boolean",
         },        
         {
             name: "usePdf",
@@ -3143,6 +3390,21 @@ export class WebLoadOptions extends LoadOptions {
             name: "renderingMode",
             baseName: "renderingMode",
             type: "WebLoadOptions.RenderingModeEnum",
+        },        
+        {
+            name: "zoom",
+            baseName: "zoom",
+            type: "number",
+        },        
+        {
+            name: "pageLayout",
+            baseName: "pageLayout",
+            type: "WebLoadOptions.PageLayoutEnum",
+        },        
+        {
+            name: "customCssStyle",
+            baseName: "customCssStyle",
+            type: "string",
         }    ];
 
     /**
@@ -3158,9 +3420,19 @@ export class WebLoadOptions extends LoadOptions {
     public pageNumbering: boolean;
     
     /**
+     * The base path/url for the html
+     */
+    public basePath: string;
+    
+    /**
      * Get or sets the encoding to be used when loading the web document. If the property is null the encoding will be determined from document character set attribute
      */
     public encoding: string;
+    
+    /**
+     * If true all external resource will not be loading
+     */
+    public skipExternalResources: boolean;
     
     /**
      * Use pdf for the conversion. Default: false
@@ -3171,6 +3443,15 @@ export class WebLoadOptions extends LoadOptions {
      * Controls how HTML content is rendered. Default: AbsolutePositioning
      */
     public renderingMode: WebLoadOptions.RenderingModeEnum;
+    
+    public zoom: number;
+    
+    /**
+     * Specifies the page layout options when loading web documents
+     */
+    public pageLayout: WebLoadOptions.PageLayoutEnum;
+    
+    public customCssStyle: string;
     
     public constructor(init?: Partial<WebLoadOptions>) {
         super(init);
@@ -3184,6 +3465,11 @@ export namespace WebLoadOptions {
     export enum RenderingModeEnum {
         Flow = 'Flow' as any,
         AbsolutePositioning = 'AbsolutePositioning' as any,
+    }
+    export enum PageLayoutEnum {
+        None = 'None' as any,
+        ScaleToPageWidth = 'ScaleToPageWidth' as any,
+        ScaleToPageHeight = 'ScaleToPageHeight' as any,
     }
 }
 // tslint:enable:quotemark
@@ -7522,6 +7808,7 @@ const enumsMap = {
     "TxtLoadOptions.TrailingSpacesOptionsEnum": TxtLoadOptions.TrailingSpacesOptionsEnum,
     "TxtLoadOptions.LeadingSpacesOptionsEnum": TxtLoadOptions.LeadingSpacesOptionsEnum,
     "WebLoadOptions.RenderingModeEnum": WebLoadOptions.RenderingModeEnum,
+    "WebLoadOptions.PageLayoutEnum": WebLoadOptions.PageLayoutEnum,
     "WordProcessingConvertOptions.PdfRecognitionModeEnum": WordProcessingConvertOptions.PdfRecognitionModeEnum,
     "WordProcessingConvertOptions.PageSizeEnum": WordProcessingConvertOptions.PageSizeEnum,
     "WordProcessingConvertOptions.PageOrientationEnum": WordProcessingConvertOptions.PageOrientationEnum,
