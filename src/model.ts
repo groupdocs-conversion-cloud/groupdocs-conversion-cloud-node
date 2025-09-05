@@ -3990,61 +3990,6 @@ export namespace BmpConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Bmp load options
- */
-// tslint:disable: completed-docs
-export class BmpLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(BmpLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<BmpLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Cf2 load options
- */
-// tslint:disable: completed-docs
-export class Cf2LoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(Cf2LoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<Cf2LoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace Cf2LoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Csv document load options
  */
 // tslint:disable: completed-docs
@@ -4164,61 +4109,6 @@ export namespace DcmConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Dcm load options
- */
-// tslint:disable: completed-docs
-export class DcmLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DcmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DcmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Dgn load options
- */
-// tslint:disable: completed-docs
-export class DgnLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DgnLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DgnLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DgnLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Djvu convert options
  */
 // tslint:disable: completed-docs
@@ -4279,31 +4169,6 @@ export namespace DngConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Dng load options
- */
-// tslint:disable: completed-docs
-export class DngLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DngLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DngLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Doc convert options
  */
 // tslint:disable: completed-docs
@@ -4331,36 +4196,6 @@ export class DocConvertOptions extends WordProcessingConvertOptions {
 // tslint:disable:quotemark
 // tslint:disable-next-line:no-namespace
 export namespace DocConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Doc load options
- */
-// tslint:disable: completed-docs
-export class DocLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DocLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DocLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DocLoadOptions {
 }
 // tslint:enable:quotemark
 /**
@@ -4394,36 +4229,6 @@ export namespace DocmConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Docm load options
- */
-// tslint:disable: completed-docs
-export class DocmLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DocmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DocmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DocmLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Docx convert options
  */
 // tslint:disable: completed-docs
@@ -4451,36 +4256,6 @@ export class DocxConvertOptions extends WordProcessingConvertOptions {
 // tslint:disable:quotemark
 // tslint:disable-next-line:no-namespace
 export namespace DocxConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Docx load options
- */
-// tslint:disable: completed-docs
-export class DocxLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DocxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DocxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DocxLoadOptions {
 }
 // tslint:enable:quotemark
 /**
@@ -4514,36 +4289,6 @@ export namespace DotConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Dot load options
- */
-// tslint:disable: completed-docs
-export class DotLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DotLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DotLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DotLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Dotm convert options
  */
 // tslint:disable: completed-docs
@@ -4571,36 +4316,6 @@ export class DotmConvertOptions extends WordProcessingConvertOptions {
 // tslint:disable:quotemark
 // tslint:disable-next-line:no-namespace
 export namespace DotmConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dotm load options
- */
-// tslint:disable: completed-docs
-export class DotmLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DotmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DotmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DotmLoadOptions {
 }
 // tslint:enable:quotemark
 /**
@@ -4634,186 +4349,6 @@ export namespace DotxConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Dotx load options
- */
-// tslint:disable: completed-docs
-export class DotxLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DotxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DotxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DotxLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dwf load options
- */
-// tslint:disable: completed-docs
-export class DwfLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DwfLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DwfLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DwfLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dwfx load options
- */
-// tslint:disable: completed-docs
-export class DwfxLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DwfxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DwfxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DwfxLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dwg load options
- */
-// tslint:disable: completed-docs
-export class DwgLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DwgLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DwgLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DwgLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dwt load options
- */
-// tslint:disable: completed-docs
-export class DwtLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DwtLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DwtLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DwtLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dxf load options
- */
-// tslint:disable: completed-docs
-export class DxfLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DxfLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DxfLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DxfLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Emf convert options
  */
 // tslint:disable: completed-docs
@@ -4843,81 +4378,6 @@ export class EmfConvertOptions extends ImageConvertOptions {
 export namespace EmfConvertOptions {
 }
 // tslint:enable:quotemark
-/**
- * Emf load options
- */
-// tslint:disable: completed-docs
-export class EmfLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(EmfLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<EmfLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Eml load options
- */
-// tslint:disable: completed-docs
-export class EmlLoadOptions extends EmailLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(EmlLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<EmlLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Emlx load options
- */
-// tslint:disable: completed-docs
-export class EmlxLoadOptions extends EmailLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(EmlxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<EmlxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
 /**
  * Gif convert options
  */
@@ -4949,31 +4409,6 @@ export namespace GifConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Gif load options
- */
-// tslint:disable: completed-docs
-export class GifLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(GifLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<GifLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Ico convert options
  */
 // tslint:disable: completed-docs
@@ -5003,216 +4438,6 @@ export class IcoConvertOptions extends ImageConvertOptions {
 export namespace IcoConvertOptions {
 }
 // tslint:enable:quotemark
-/**
- * Ico load options
- */
-// tslint:disable: completed-docs
-export class IcoLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(IcoLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<IcoLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ifc load options
- */
-// tslint:disable: completed-docs
-export class IfcLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(IfcLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<IfcLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace IfcLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Igs load options
- */
-// tslint:disable: completed-docs
-export class IgsLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(IgsLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<IgsLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace IgsLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * J2c load options
- */
-// tslint:disable: completed-docs
-export class J2cLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(J2cLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<J2cLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * J2k load options
- */
-// tslint:disable: completed-docs
-export class J2kLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(J2kLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<J2kLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Jp2 load options
- */
-// tslint:disable: completed-docs
-export class Jp2LoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(Jp2LoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<Jp2LoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Jpeg load options
- */
-// tslint:disable: completed-docs
-export class JpegLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpegLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpegLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Jpf load options
- */
-// tslint:disable: completed-docs
-export class JpfLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpfLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpfLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
 /**
  * Jpg convert options
  */
@@ -5253,161 +4478,6 @@ export namespace JpgConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Jpg load options
- */
-// tslint:disable: completed-docs
-export class JpgLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpgLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpgLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Jpm load options
- */
-// tslint:disable: completed-docs
-export class JpmLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Jpx load options
- */
-// tslint:disable: completed-docs
-export class JpxLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Mht load options
- */
-// tslint:disable: completed-docs
-export class MhtLoadOptions extends EmailLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(MhtLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<MhtLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Mobi load options
- */
-// tslint:disable: completed-docs
-export class MobiLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(MobiLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<MobiLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace MobiLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Msg load options
- */
-// tslint:disable: completed-docs
-export class MsgLoadOptions extends EmailLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(MsgLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<MsgLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Odg convert options
  */
 // tslint:disable: completed-docs
@@ -5438,31 +4508,6 @@ export namespace OdgConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Odg load options
- */
-// tslint:disable: completed-docs
-export class OdgLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdgLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdgLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Odp convert options
  */
 // tslint:disable: completed-docs
@@ -5488,36 +4533,6 @@ export class OdpConvertOptions extends PresentationConvertOptions {
 }
 
 /**
- * Odp load options
- */
-// tslint:disable: completed-docs
-export class OdpLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdpLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdpLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OdpLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Ods convert options
  */
 // tslint:disable: completed-docs
@@ -5542,36 +4557,6 @@ export class OdsConvertOptions extends SpreadsheetConvertOptions {
     }        
 }
 
-/**
- * Ods load options
- */
-// tslint:disable: completed-docs
-export class OdsLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdsLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdsLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OdsLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Odt convert options
  */
@@ -5603,61 +4588,6 @@ export namespace OdtConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Odt load options
- */
-// tslint:disable: completed-docs
-export class OdtLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdtLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdtLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OdtLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Ost load options
- */
-// tslint:disable: completed-docs
-export class OstLoadOptions extends EmailLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OstLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OstLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Otp convert options
  */
 // tslint:disable: completed-docs
@@ -5683,36 +4613,6 @@ export class OtpConvertOptions extends PresentationConvertOptions {
 }
 
 /**
- * Otp load options
- */
-// tslint:disable: completed-docs
-export class OtpLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OtpLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OtpLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OtpLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Ots convert options
  */
 // tslint:disable: completed-docs
@@ -5737,36 +4637,6 @@ export class OtsConvertOptions extends SpreadsheetConvertOptions {
     }        
 }
 
-/**
- * Ots load options
- */
-// tslint:disable: completed-docs
-export class OtsLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OtsLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OtsLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OtsLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Ott convert options
  */
@@ -5795,66 +4665,6 @@ export class OttConvertOptions extends WordProcessingConvertOptions {
 // tslint:disable:quotemark
 // tslint:disable-next-line:no-namespace
 export namespace OttConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Ott load options
- */
-// tslint:disable: completed-docs
-export class OttLoadOptions extends WordProcessingLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OttLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OttLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OttLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Plt load options
- */
-// tslint:disable: completed-docs
-export class PltLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PltLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PltLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PltLoadOptions {
 }
 // tslint:enable:quotemark
 /**
@@ -5888,31 +4698,6 @@ export namespace PngConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Png load options
- */
-// tslint:disable: completed-docs
-export class PngLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PngLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PngLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Potm convert options
  */
 // tslint:disable: completed-docs
@@ -5937,36 +4722,6 @@ export class PotmConvertOptions extends PresentationConvertOptions {
     }        
 }
 
-/**
- * Potm load options
- */
-// tslint:disable: completed-docs
-export class PotmLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PotmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PotmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PotmLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Potx convert options
  */
@@ -5993,36 +4748,6 @@ export class PotxConvertOptions extends PresentationConvertOptions {
 }
 
 /**
- * Potx load options
- */
-// tslint:disable: completed-docs
-export class PotxLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PotxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PotxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PotxLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Pps convert options
  */
 // tslint:disable: completed-docs
@@ -6047,36 +4772,6 @@ export class PpsConvertOptions extends PresentationConvertOptions {
     }        
 }
 
-/**
- * Pps load options
- */
-// tslint:disable: completed-docs
-export class PpsLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PpsLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PpsLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PpsLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Ppsm convert options
  */
@@ -6103,36 +4798,6 @@ export class PpsmConvertOptions extends PresentationConvertOptions {
 }
 
 /**
- * Ppsm load options
- */
-// tslint:disable: completed-docs
-export class PpsmLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PpsmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PpsmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PpsmLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Ppsx convert options
  */
 // tslint:disable: completed-docs
@@ -6157,36 +4822,6 @@ export class PpsxConvertOptions extends PresentationConvertOptions {
     }        
 }
 
-/**
- * Ppsx load options
- */
-// tslint:disable: completed-docs
-export class PpsxLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PpsxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PpsxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PpsxLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Ppt convert options
  */
@@ -6213,36 +4848,6 @@ export class PptConvertOptions extends PresentationConvertOptions {
 }
 
 /**
- * Ppt load options
- */
-// tslint:disable: completed-docs
-export class PptLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PptLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PptLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PptLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Pptm convert options
  */
 // tslint:disable: completed-docs
@@ -6268,36 +4873,6 @@ export class PptmConvertOptions extends PresentationConvertOptions {
 }
 
 /**
- * Pptm load options
- */
-// tslint:disable: completed-docs
-export class PptmLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PptmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PptmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PptmLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Pptx convert options
  */
 // tslint:disable: completed-docs
@@ -6322,36 +4897,6 @@ export class PptxConvertOptions extends PresentationConvertOptions {
     }        
 }
 
-/**
- * Pptx load options
- */
-// tslint:disable: completed-docs
-export class PptxLoadOptions extends PresentationLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PptxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PptxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PptxLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Psd convert options
  */
@@ -6448,56 +4993,6 @@ export namespace PsdConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Psd load options
- */
-// tslint:disable: completed-docs
-export class PsdLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PsdLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PsdLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Pst load options
- */
-// tslint:disable: completed-docs
-export class PstLoadOptions extends EmailLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PstLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PstLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Rtf convert options
  */
 // tslint:disable: completed-docs
@@ -6536,61 +5031,6 @@ export class RtfConvertOptions extends WordProcessingConvertOptions {
 export namespace RtfConvertOptions {
 }
 // tslint:enable:quotemark
-/**
- * Stl load options
- */
-// tslint:disable: completed-docs
-export class StlLoadOptions extends CadLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(StlLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<StlLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace StlLoadOptions {
-}
-// tslint:enable:quotemark
-/**
- * Tif load options
- */
-// tslint:disable: completed-docs
-export class TifLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(TifLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<TifLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
 /**
  * Tiff convert options
  */
@@ -6637,31 +5077,6 @@ export namespace TiffConvertOptions {
     }
 }
 // tslint:enable:quotemark
-/**
- * Tiff load options
- */
-// tslint:disable: completed-docs
-export class TiffLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(TiffLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<TiffLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
 /**
  * Tsv convert options
  */
@@ -6718,331 +5133,6 @@ export namespace TsvLoadOptions {
 }
 // tslint:enable:quotemark
 /**
- * Vdw load options
- */
-// tslint:disable: completed-docs
-export class VdwLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VdwLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VdwLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vdx load options
- */
-// tslint:disable: completed-docs
-export class VdxLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VdxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VdxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vsd load options
- */
-// tslint:disable: completed-docs
-export class VsdLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VsdLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VsdLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vsdm load options
- */
-// tslint:disable: completed-docs
-export class VsdmLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VsdmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VsdmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vsdx load options
- */
-// tslint:disable: completed-docs
-export class VsdxLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VsdxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VsdxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vss load options
- */
-// tslint:disable: completed-docs
-export class VssLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VssLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VssLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vssm load options
- */
-// tslint:disable: completed-docs
-export class VssmLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VssmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VssmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vssx load options
- */
-// tslint:disable: completed-docs
-export class VssxLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VssxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VssxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vst load options
- */
-// tslint:disable: completed-docs
-export class VstLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VstLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VstLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vstm load options
- */
-// tslint:disable: completed-docs
-export class VstmLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VstmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VstmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vstx load options
- */
-// tslint:disable: completed-docs
-export class VstxLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VstxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VstxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vsx load options
- */
-// tslint:disable: completed-docs
-export class VsxLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VsxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VsxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Vtx load options
- */
-// tslint:disable: completed-docs
-export class VtxLoadOptions extends DiagramLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(VtxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<VtxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Webp convert options
  */
 // tslint:disable: completed-docs
@@ -7082,31 +5172,6 @@ export namespace WebpConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Webp load options
- */
-// tslint:disable: completed-docs
-export class WebpLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(WebpLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<WebpLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Wmf convert options
  */
 // tslint:disable: completed-docs
@@ -7137,31 +5202,6 @@ export namespace WmfConvertOptions {
 }
 // tslint:enable:quotemark
 /**
- * Wmf load options
- */
-// tslint:disable: completed-docs
-export class WmfLoadOptions extends ImageLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(WmfLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<WmfLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Xls2003 convert options
  */
 // tslint:disable: completed-docs
@@ -7186,36 +5226,6 @@ export class Xls2003ConvertOptions extends SpreadsheetConvertOptions {
     }        
 }
 
-/**
- * Xls2003 load options
- */
-// tslint:disable: completed-docs
-export class Xls2003LoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(Xls2003LoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<Xls2003LoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace Xls2003LoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Xls convert options
  */
@@ -7242,36 +5252,6 @@ export class XlsConvertOptions extends SpreadsheetConvertOptions {
 }
 
 /**
- * Xls load options
- */
-// tslint:disable: completed-docs
-export class XlsLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace XlsLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Xlsb convert options
  */
 // tslint:disable: completed-docs
@@ -7296,36 +5276,6 @@ export class XlsbConvertOptions extends SpreadsheetConvertOptions {
     }        
 }
 
-/**
- * Xlsb load options
- */
-// tslint:disable: completed-docs
-export class XlsbLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsbLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsbLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace XlsbLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Xlsm convert options
  */
@@ -7352,36 +5302,6 @@ export class XlsmConvertOptions extends SpreadsheetConvertOptions {
 }
 
 /**
- * Xlsm load options
- */
-// tslint:disable: completed-docs
-export class XlsmLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace XlsmLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Xlsx convert options
  */
 // tslint:disable: completed-docs
@@ -7406,36 +5326,6 @@ export class XlsxConvertOptions extends SpreadsheetConvertOptions {
     }        
 }
 
-/**
- * Xlsx load options
- */
-// tslint:disable: completed-docs
-export class XlsxLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace XlsxLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * Xltm convert options
  */
@@ -7462,36 +5352,6 @@ export class XltmConvertOptions extends SpreadsheetConvertOptions {
 }
 
 /**
- * Xltm load options
- */
-// tslint:disable: completed-docs
-export class XltmLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XltmLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XltmLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace XltmLoadOptions {
-}
-// tslint:enable:quotemark
-/**
  * Xltx convert options
  */
 // tslint:disable: completed-docs
@@ -7516,36 +5376,6 @@ export class XltxConvertOptions extends SpreadsheetConvertOptions {
     }        
 }
 
-/**
- * Xltx load options
- */
-// tslint:disable: completed-docs
-export class XltxLoadOptions extends SpreadsheetLoadOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XltxLoadOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XltxLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace XltxLoadOptions {
-}
-// tslint:enable:quotemark
 /**
  * J2c convert options
  */
@@ -7865,129 +5695,50 @@ const typeMap = {
             WordProcessingLoadOptions,
             XmlLoadOptions,
             BmpConvertOptions,
-            BmpLoadOptions,
-            Cf2LoadOptions,
             CsvLoadOptions,
             DcmConvertOptions,
-            DcmLoadOptions,
-            DgnLoadOptions,
             DjvuConvertOptions,
             DngConvertOptions,
-            DngLoadOptions,
             DocConvertOptions,
-            DocLoadOptions,
             DocmConvertOptions,
-            DocmLoadOptions,
             DocxConvertOptions,
-            DocxLoadOptions,
             DotConvertOptions,
-            DotLoadOptions,
             DotmConvertOptions,
-            DotmLoadOptions,
             DotxConvertOptions,
-            DotxLoadOptions,
-            DwfLoadOptions,
-            DwfxLoadOptions,
-            DwgLoadOptions,
-            DwtLoadOptions,
-            DxfLoadOptions,
             EmfConvertOptions,
-            EmfLoadOptions,
-            EmlLoadOptions,
-            EmlxLoadOptions,
             GifConvertOptions,
-            GifLoadOptions,
             IcoConvertOptions,
-            IcoLoadOptions,
-            IfcLoadOptions,
-            IgsLoadOptions,
-            J2cLoadOptions,
-            J2kLoadOptions,
-            Jp2LoadOptions,
-            JpegLoadOptions,
-            JpfLoadOptions,
             JpgConvertOptions,
-            JpgLoadOptions,
-            JpmLoadOptions,
-            JpxLoadOptions,
-            MhtLoadOptions,
-            MobiLoadOptions,
-            MsgLoadOptions,
             OdgConvertOptions,
-            OdgLoadOptions,
             OdpConvertOptions,
-            OdpLoadOptions,
             OdsConvertOptions,
-            OdsLoadOptions,
             OdtConvertOptions,
-            OdtLoadOptions,
-            OstLoadOptions,
             OtpConvertOptions,
-            OtpLoadOptions,
             OtsConvertOptions,
-            OtsLoadOptions,
             OttConvertOptions,
-            OttLoadOptions,
-            PltLoadOptions,
             PngConvertOptions,
-            PngLoadOptions,
             PotmConvertOptions,
-            PotmLoadOptions,
             PotxConvertOptions,
-            PotxLoadOptions,
             PpsConvertOptions,
-            PpsLoadOptions,
             PpsmConvertOptions,
-            PpsmLoadOptions,
             PpsxConvertOptions,
-            PpsxLoadOptions,
             PptConvertOptions,
-            PptLoadOptions,
             PptmConvertOptions,
-            PptmLoadOptions,
             PptxConvertOptions,
-            PptxLoadOptions,
             PsdConvertOptions,
-            PsdLoadOptions,
-            PstLoadOptions,
             RtfConvertOptions,
-            StlLoadOptions,
-            TifLoadOptions,
             TiffConvertOptions,
-            TiffLoadOptions,
             TsvConvertOptions,
             TsvLoadOptions,
-            VdwLoadOptions,
-            VdxLoadOptions,
-            VsdLoadOptions,
-            VsdmLoadOptions,
-            VsdxLoadOptions,
-            VssLoadOptions,
-            VssmLoadOptions,
-            VssxLoadOptions,
-            VstLoadOptions,
-            VstmLoadOptions,
-            VstxLoadOptions,
-            VsxLoadOptions,
-            VtxLoadOptions,
             WebpConvertOptions,
-            WebpLoadOptions,
             WmfConvertOptions,
-            WmfLoadOptions,
             Xls2003ConvertOptions,
-            Xls2003LoadOptions,
             XlsConvertOptions,
-            XlsLoadOptions,
             XlsbConvertOptions,
-            XlsbLoadOptions,
             XlsmConvertOptions,
-            XlsmLoadOptions,
             XlsxConvertOptions,
-            XlsxLoadOptions,
             XltmConvertOptions,
-            XltmLoadOptions,
             XltxConvertOptions,
-            XltxLoadOptions,
             J2cConvertOptions,
             J2kConvertOptions,
             Jp2ConvertOptions,

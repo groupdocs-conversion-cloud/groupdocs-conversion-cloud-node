@@ -34,7 +34,7 @@ import {
         ConvertSettings,
         PdfConvertOptions,
         JpgConvertOptions,         
-        DocxLoadOptions} from "../../src/model";
+        WordProcessingLoadOptions} from "../../src/model";
 
 describe("test_conversion_api", () => {
     
@@ -142,7 +142,7 @@ describe("test_conversion_api", () => {
             var format = "pdf";
             let filebuf = TestContext.getTestFileBuffer(TestFile.PasswordProtectedDocx);
 
-            let loadOptions = new DocxLoadOptions();
+            let loadOptions = new WordProcessingLoadOptions();
             loadOptions.format = "docx";
             loadOptions.password = TestFile.PasswordProtectedDocx.password;
 
