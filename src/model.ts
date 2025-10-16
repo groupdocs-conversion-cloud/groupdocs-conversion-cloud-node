@@ -1507,6 +1507,65 @@ export namespace CadLoadOptions {
 }
 // tslint:enable:quotemark
 /**
+ * Options for loading compression documents
+ */
+// tslint:disable: completed-docs
+export class CompressionLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "password",
+            baseName: "password",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(CompressionLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Set password to load protected document.
+     */
+    public password: string;
+    
+    public constructor(init?: Partial<CompressionLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for loading Database documents
+ */
+// tslint:disable: completed-docs
+export class DatabaseLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(DatabaseLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<DatabaseLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Diagram document load options
  */
 // tslint:disable: completed-docs
@@ -1614,6 +1673,31 @@ export namespace EBookConvertOptions {
     }
 }
 // tslint:enable:quotemark
+/**
+ * Options for loading e-book documents
+ */
+// tslint:disable: completed-docs
+export class EBookLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(EBookLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<EBookLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
 /**
  * Options for loading Email documents
  */
@@ -1820,6 +1904,100 @@ export class FileVersion extends StorageFile {
 }
 
 /**
+ * Options for loading Finance documents
+ */
+// tslint:disable: completed-docs
+export class FinanceLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(FinanceLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<FinanceLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for loading Font documents
+ */
+// tslint:disable: completed-docs
+export class FontLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(FontLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<FontLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for loading Gis documents
+ */
+// tslint:disable: completed-docs
+export class GisLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "width",
+            baseName: "width",
+            type: "number",
+        },        
+        {
+            name: "height",
+            baseName: "height",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GisLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Page width for converting GIS document. Default is 1000.
+     */
+    public width: number;
+    
+    /**
+     * Page height for converting GIS document. Default is 1000.
+     */
+    public height: number;
+    
+    public constructor(init?: Partial<GisLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for to Image conversion
  */
 // tslint:disable: completed-docs
@@ -2009,10 +2187,35 @@ export class ImageLoadOptions extends LoadOptions {
 }
 
 /**
+ * Options for loading Mbox documents
+ */
+// tslint:disable: completed-docs
+export class MboxLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(MboxLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<MboxLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * One document load options
  */
 // tslint:disable: completed-docs
-export class OneLoadOptions extends LoadOptions {
+export class NoteLoadOptions extends LoadOptions {
 
     /**
      * Attribute type map
@@ -2038,7 +2241,7 @@ export class OneLoadOptions extends LoadOptions {
      * Returns attribute type map
      */
     public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OneLoadOptions.attributeTypeMap);
+        return super.getAttributeTypeMap().concat(NoteLoadOptions.attributeTypeMap);
     }
 
     /**
@@ -2056,7 +2259,41 @@ export class OneLoadOptions extends LoadOptions {
      */
     public password: string;
     
-    public constructor(init?: Partial<OneLoadOptions>) {
+    public constructor(init?: Partial<NoteLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for loading Olm documents
+ */
+// tslint:disable: completed-docs
+export class OlmLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "folder",
+            baseName: "folder",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(OlmLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * Folder which to be processed Default is Inbox
+     */
+    public folder: string;
+    
+    public constructor(init?: Partial<OlmLoadOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -2639,6 +2876,31 @@ export class PdfLoadOptions extends LoadOptions {
 }
 
 /**
+ * Options for loading Pdl documents
+ */
+// tslint:disable: completed-docs
+export class PdlLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(PdlLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<PdlLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for loading personal storage documents.
  */
 // tslint:disable: completed-docs
@@ -2885,6 +3147,31 @@ export namespace PresentationLoadOptions {
     }
 }
 // tslint:enable:quotemark
+/**
+ * Options for loading Pub documents
+ */
+// tslint:disable: completed-docs
+export class PubLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(PubLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<PubLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
 /**
  * Spreadsheet сonvert options class 
  */
@@ -3185,6 +3472,31 @@ export namespace SpreadsheetLoadOptions {
 }
 // tslint:enable:quotemark
 /**
+ * Options for loading 3d documents
+ */
+// tslint:disable: completed-docs
+export class ThreeDLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(ThreeDLoadOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<ThreeDLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Txt convert options
  */
 // tslint:disable: completed-docs
@@ -3287,6 +3599,40 @@ export namespace TxtLoadOptions {
     }
 }
 // tslint:enable:quotemark
+/**
+ * Options for loading Vcf documents
+ */
+// tslint:disable: completed-docs
+export class VcfLoadOptions extends LoadOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "encoding",
+            baseName: "encoding",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(VcfLoadOptions.attributeTypeMap);
+    }
+
+    /**
+     * The encoding that will be used when loading Vcf document. Can be null. Default is null.
+     */
+    public encoding: string;
+    
+    public constructor(init?: Partial<VcfLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
 /**
  * Options for to Html conversion
  */
@@ -5672,23 +6018,35 @@ const typeMap = {
             SupportedFormat,
             WatermarkOptions,
             CadLoadOptions,
+            CompressionLoadOptions,
+            DatabaseLoadOptions,
             DiagramLoadOptions,
             EBookConvertOptions,
+            EBookLoadOptions,
             EmailLoadOptions,
             FileVersion,
+            FinanceLoadOptions,
+            FontLoadOptions,
+            GisLoadOptions,
             ImageConvertOptions,
             ImageLoadOptions,
-            OneLoadOptions,
+            MboxLoadOptions,
+            NoteLoadOptions,
+            OlmLoadOptions,
             PDLConvertOptions,
             PdfConvertOptions,
             PdfLoadOptions,
+            PdlLoadOptions,
             PersonalStorageLoadOptions,
             PresentationConvertOptions,
             PresentationLoadOptions,
+            PubLoadOptions,
             SpreadsheetConvertOptions,
             SpreadsheetLoadOptions,
+            ThreeDLoadOptions,
             TxtConvertOptions,
             TxtLoadOptions,
+            VcfLoadOptions,
             WebConvertOptions,
             WebLoadOptions,
             WordProcessingConvertOptions,
