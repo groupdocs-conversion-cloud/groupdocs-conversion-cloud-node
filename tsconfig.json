@@ -13,6 +13,7 @@
         "lib": [
             "es5",
             "es6",
+            "DOM",
             "scripthost"
         ],
         "outDir": "lib"
