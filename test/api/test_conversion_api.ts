@@ -33,11 +33,11 @@ import {
         ConvertDocumentDirectRequest,
         ConvertSettings,
         PdfConvertOptions,
-        JpgConvertOptions,         
+        ImageConvertOptions,         
         WordProcessingLoadOptions} from "../../src/model";
 
-describe("test_conversion_api", () => {
-    
+describe("test_conversion_api", function() {
+    this.timeout(120000);
     before(async () => {
         //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
         await TestContext.uploadTestFiles();
@@ -88,7 +88,7 @@ describe("test_conversion_api", () => {
 
         it("convert document", () => {            
             const api = TestContext.getConvertApi();
-            var options = new JpgConvertOptions();
+            var options = new ImageConvertOptions();
             var settings = new ConvertSettings();
             settings.filePath = TestFile.FourPagesDocx.GetPath();
             settings.format = "jpg";

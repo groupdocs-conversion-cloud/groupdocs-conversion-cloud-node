@@ -35,8 +35,8 @@ import { DeleteFileRequest,
 import * as TestContext from "../test_context";
 import { TestFile } from "../test_file";
 
-describe("file_api", () => {
-    
+describe("file_api", function() {
+    this.timeout(120000);
     before(async () => {
         //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
         await TestContext.uploadTestFiles();
@@ -46,9 +46,10 @@ describe("file_api", () => {
         await TestContext.cleanupTempFiles();
     });
 
-    describe("test_file_api", () => {
-
-        it("TestDeleteFile", async () => {  
+    describe("test_file_api", function() {
+        this.timeout(120000);
+        it("TestDeleteFile", async function() {
+            this.timeout(120000);
             var testFile = TestFile.FourPagesDocx;
             var deleteRequest = new DeleteFileRequest(testFile.GetPath());
             var existsRequest = new ObjectExistsRequest(testFile.GetPath());
@@ -62,7 +63,8 @@ describe("file_api", () => {
             expect(result.exists).equal(true);
         });
 
-        it("TestDownloadFile", async () => {  
+        it("TestDownloadFile", async function() {
+            this.timeout(120000);
             var testFile = TestFile.FourPagesDocx;
             var dlRequest = new DownloadFileRequest(testFile.GetPath());
 
@@ -70,7 +72,8 @@ describe("file_api", () => {
             expect(result.length).greaterThan(0);
         });
 
-        it("TestCopyMoveFile", async () => {  
+        it("TestCopyMoveFile", async function() {
+            this.timeout(120000);
             var testFile = TestFile.FourPagesDocx;
 
             // Create temp folder

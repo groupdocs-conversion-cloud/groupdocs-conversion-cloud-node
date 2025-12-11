@@ -84,6 +84,8 @@ async function invokeApiMethodInternal(requestOptions: RawAxiosRequestConfig, co
         await auth.applyToRequest(requestOptions, config);
     }
 
+    requestOptions.timeout = config.timeout; // Use timeout from configuration
+
     return new Promise<AxiosResponse>((resolve, reject) => {
         axios(requestOptions)
         .then((response) => {

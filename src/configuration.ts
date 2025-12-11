@@ -59,6 +59,11 @@ export class Configuration {
     public debugging: boolean;
 
     /**
+     * Request timeout in milliseconds
+     */
+    public timeout: number = 120000; // Default timeout
+
+    /**
      * @param appSid Application identifier (App SID)
      * @param appKey Application private key (App Key)
      */

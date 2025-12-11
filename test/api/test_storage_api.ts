@@ -43,8 +43,8 @@ describe("storage_api", () => {
         await TestContext.cleanupTempFiles();
     });
 
-    describe("test_storage_api", () => {
-
+    describe("test_storage_api", function() {
+        this.timeout(120000);
         it("TestGetDiscUsage", async () => {              
             var request = new GetDiscUsageRequest();
             var response = await TestContext.getStorageApi().getDiscUsage(request);            

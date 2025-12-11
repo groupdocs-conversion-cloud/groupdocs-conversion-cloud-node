@@ -758,6 +758,40 @@ export class FilesUploadResult {
 }
 
 /**
+ * Jpg convert options
+ */
+// tslint:disable: completed-docs
+export class JpgConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "quality",
+            baseName: "quality",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return JpgConvertOptions.attributeTypeMap;
+    }
+
+    /**
+     * Desired image quality when converting to Jpeg. The value must be between 0 and 100. The default value is 100.
+     */
+    public quality: number;
+    
+    public constructor(init?: Partial<JpgConvertOptions>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Current license information
  */
 // tslint:disable: completed-docs
@@ -1044,6 +1078,135 @@ export namespace OperationResult {
 }
 // tslint:enable:quotemark
 /**
+ * Psd convert options
+ */
+// tslint:disable: completed-docs
+export class PsdConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "channelBitsCount",
+            baseName: "channelBitsCount",
+            type: "number",
+        },        
+        {
+            name: "channelsCount",
+            baseName: "channelsCount",
+            type: "number",
+        },        
+        {
+            name: "colorMode",
+            baseName: "colorMode",
+            type: "PsdConvertOptions.ColorModeEnum",
+        },        
+        {
+            name: "compressionMethod",
+            baseName: "compressionMethod",
+            type: "PsdConvertOptions.CompressionMethodEnum",
+        },        
+        {
+            name: "version",
+            baseName: "version",
+            type: "number",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return PsdConvertOptions.attributeTypeMap;
+    }
+
+    /**
+     * Bits count per color channel
+     */
+    public channelBitsCount: number;
+    
+    /**
+     * Color channels count
+     */
+    public channelsCount: number;
+    
+    /**
+     * Psd color mode
+     */
+    public colorMode: PsdConvertOptions.ColorModeEnum;
+    
+    /**
+     * Psd compression method
+     */
+    public compressionMethod: PsdConvertOptions.CompressionMethodEnum;
+    
+    /**
+     * Psd file version
+     */
+    public version: number;
+    
+    public constructor(init?: Partial<PsdConvertOptions>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace PsdConvertOptions {
+    export enum ColorModeEnum {
+        Bitmap = 'Bitmap' as any,
+        Grayscale = 'Grayscale' as any,
+        Indexed = 'Indexed' as any,
+        Rgb = 'Rgb' as any,
+        Cmyk = 'Cmyk' as any,
+        Multichannel = 'Multichannel' as any,
+        Duotone = 'Duotone' as any,
+        Lab = 'Lab' as any,
+    }
+    export enum CompressionMethodEnum {
+        Raw = 'Raw' as any,
+        Rle = 'Rle' as any,
+        ZipWithoutPrediction = 'ZipWithoutPrediction' as any,
+        ZipWithPrediction = 'ZipWithPrediction' as any,
+    }
+}
+// tslint:enable:quotemark
+/**
+ * Rtf convert options
+ */
+// tslint:disable: completed-docs
+export class RtfConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "exportImagesForOldReaders",
+            baseName: "exportImagesForOldReaders",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return RtfConvertOptions.attributeTypeMap;
+    }
+
+    /**
+     * Specifies whether the keywords for \"old readers\" are written to RTF or not. This can significantly affect the size of the RTF document. Default is False.
+     */
+    public exportImagesForOldReaders: boolean;
+    
+    public constructor(init?: Partial<RtfConvertOptions>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Storage exists
  */
 // tslint:disable: completed-docs
@@ -1260,6 +1423,52 @@ export class SupportedFormat {
 }
 
 /**
+ * Tiff convert options
+ */
+// tslint:disable: completed-docs
+export class TiffConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "compression",
+            baseName: "compression",
+            type: "TiffConvertOptions.CompressionEnum",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return TiffConvertOptions.attributeTypeMap;
+    }
+
+    /**
+     * Set Tiff compression
+     */
+    public compression: TiffConvertOptions.CompressionEnum;
+    
+    public constructor(init?: Partial<TiffConvertOptions>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace TiffConvertOptions {
+    export enum CompressionEnum {
+        Lzw = 'Lzw' as any,
+        None = 'None' as any,
+        Ccitt3 = 'Ccitt3' as any,
+        Ccitt4 = 'Ccitt4' as any,
+        Rle = 'Rle' as any,
+    }
+}
+// tslint:enable:quotemark
+/**
  * Options for settings watermark to the converted document
  */
 // tslint:disable: completed-docs
@@ -1434,6 +1643,119 @@ export class WatermarkOptions {
 }
 
 /**
+ * Webp convert options
+ */
+// tslint:disable: completed-docs
+export class WebpConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "lossless",
+            baseName: "lossless",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return WebpConvertOptions.attributeTypeMap;
+    }
+
+    /**
+     * Indicates if the compression of the converted file will be lossless
+     */
+    public lossless: boolean;
+    
+    public constructor(init?: Partial<WebpConvertOptions>) {
+        
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for to Cad conversion
+ */
+// tslint:disable: completed-docs
+export class CadConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "width",
+            baseName: "width",
+            type: "number",
+        },        
+        {
+            name: "height",
+            baseName: "height",
+            type: "number",
+        },        
+        {
+            name: "pageSize",
+            baseName: "pageSize",
+            type: "CadConvertOptions.PageSizeEnum",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(CadConvertOptions.attributeTypeMap);
+    }
+
+    /**
+     * Desired page width after conversion
+     */
+    public width: number;
+    
+    /**
+     * Desired page height after conversion
+     */
+    public height: number;
+    
+    /**
+     * Page size
+     */
+    public pageSize: CadConvertOptions.PageSizeEnum;
+    
+    public constructor(init?: Partial<CadConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+// tslint:disable:quotemark
+// tslint:disable-next-line:no-namespace
+export namespace CadConvertOptions {
+    export enum PageSizeEnum {
+        Default = 'Default' as any,
+        A3 = 'A3' as any,
+        Statement = 'Statement' as any,
+        Quarto = 'Quarto' as any,
+        Paper11x17 = 'Paper11x17' as any,
+        Paper10x14 = 'Paper10x14' as any,
+        Letter = 'Letter' as any,
+        Legal = 'Legal' as any,
+        Ledger = 'Ledger' as any,
+        Folio = 'Folio' as any,
+        Executive = 'Executive' as any,
+        EnvelopeDL = 'EnvelopeDL' as any,
+        Custom = 'Custom' as any,
+        B5 = 'B5' as any,
+        B4 = 'B4' as any,
+        A5 = 'A5' as any,
+        A4 = 'A4' as any,
+        Tabloid = 'Tabloid' as any,
+    }
+}
+// tslint:enable:quotemark
+/**
  * Options for loading CAD documents
  */
 // tslint:disable: completed-docs
@@ -1507,6 +1829,40 @@ export namespace CadLoadOptions {
 }
 // tslint:enable:quotemark
 /**
+ * Options for to zip conversion
+ */
+// tslint:disable: completed-docs
+export class CompressionConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "password",
+            baseName: "password",
+            type: "string",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(CompressionConvertOptions.attributeTypeMap);
+    }
+
+    /**
+     * Set this property if you want to protect the converted document with a password
+     */
+    public password: string;
+    
+    public constructor(init?: Partial<CompressionConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for loading compression documents
  */
 // tslint:disable: completed-docs
@@ -1560,6 +1916,40 @@ export class DatabaseLoadOptions extends LoadOptions {
     }
 
     public constructor(init?: Partial<DatabaseLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for to Diagram conversion
+ */
+// tslint:disable: completed-docs
+export class DiagramConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            name: "autoFitPageToDrawingContent",
+            baseName: "autoFitPageToDrawingContent",
+            type: "boolean",
+        }    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(DiagramConvertOptions.attributeTypeMap);
+    }
+
+    /**
+     * Gets or sets a value indicating whether to enlarge the page to fit the drawing content.
+     */
+    public autoFitPageToDrawingContent: boolean;
+    
+    public constructor(init?: Partial<DiagramConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -1693,6 +2083,31 @@ export class EBookLoadOptions extends LoadOptions {
     }
 
     public constructor(init?: Partial<EBookLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for to Email conversion
+ */
+// tslint:disable: completed-docs
+export class EmailConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(EmailConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<EmailConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -1904,6 +2319,31 @@ export class FileVersion extends StorageFile {
 }
 
 /**
+ * Options for to Finance conversion
+ */
+// tslint:disable: completed-docs
+export class FinanceConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(FinanceConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<FinanceConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for loading Finance documents
  */
 // tslint:disable: completed-docs
@@ -1929,6 +2369,31 @@ export class FinanceLoadOptions extends LoadOptions {
 }
 
 /**
+ * Options for to Font conversion
+ */
+// tslint:disable: completed-docs
+export class FontConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(FontConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<FontConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for loading Font documents
  */
 // tslint:disable: completed-docs
@@ -1948,6 +2413,31 @@ export class FontLoadOptions extends LoadOptions {
     }
 
     public constructor(init?: Partial<FontLoadOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
+ * Options for to Gis conversion
+ */
+// tslint:disable: completed-docs
+export class GisConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(GisConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<GisConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -2066,6 +2556,26 @@ export class ImageConvertOptions extends ConvertOptions {
             name: "backgroundColor",
             baseName: "backgroundColor",
             type: "string",
+        },        
+        {
+            name: "jpegOptions",
+            baseName: "jpegOptions",
+            type: "JpgConvertOptions",
+        },        
+        {
+            name: "psdOptions",
+            baseName: "psdOptions",
+            type: "PsdConvertOptions",
+        },        
+        {
+            name: "tiffOptions",
+            baseName: "tiffOptions",
+            type: "TiffConvertOptions",
+        },        
+        {
+            name: "webpOptions",
+            baseName: "webpOptions",
+            type: "WebpConvertOptions",
         }    ];
 
     /**
@@ -2134,6 +2644,26 @@ export class ImageConvertOptions extends ConvertOptions {
      * Gets or sets a background color.
      */
     public backgroundColor: string;
+    
+    /**
+     * Options for converting to Jpeg-compatible image
+     */
+    public jpegOptions: JpgConvertOptions;
+    
+    /**
+     * Options for converting to PSD-compatible image
+     */
+    public psdOptions: PsdConvertOptions;
+    
+    /**
+     * Options for converting to Tiff-compatible image
+     */
+    public tiffOptions: TiffConvertOptions;
+    
+    /**
+     * Options for converting to WebP-compatible image
+     */
+    public webpOptions: WebpConvertOptions;
     
     public constructor(init?: Partial<ImageConvertOptions>) {
         super(init);
@@ -2300,7 +2830,7 @@ export class OlmLoadOptions extends LoadOptions {
 }
 
 /**
- * Page description langusge convert options
+ * Page description language convert options
  */
 // tslint:disable: completed-docs
 export class PDLConvertOptions extends ConvertOptions {
@@ -2309,7 +2839,16 @@ export class PDLConvertOptions extends ConvertOptions {
      * Attribute type map
      */
     public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
+        {
+            name: "width",
+            baseName: "width",
+            type: "number",
+        },        
+        {
+            name: "height",
+            baseName: "height",
+            type: "number",
+        }    ];
 
     /**
      * Returns attribute type map
@@ -2318,6 +2857,16 @@ export class PDLConvertOptions extends ConvertOptions {
         return super.getAttributeTypeMap().concat(PDLConvertOptions.attributeTypeMap);
     }
 
+    /**
+     * Desired page width after conversion.
+     */
+    public width: number;
+    
+    /**
+     * Desired page height after conversion.
+     */
+    public height: number;
+    
     public constructor(init?: Partial<PDLConvertOptions>) {
         super(init);
         Object.assign(this, init);
@@ -3148,6 +3697,31 @@ export namespace PresentationLoadOptions {
 }
 // tslint:enable:quotemark
 /**
+ * Options for to ProjectManagement conversion
+ */
+// tslint:disable: completed-docs
+export class ProjectManagementConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(ProjectManagementConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<ProjectManagementConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for loading Pub documents
  */
 // tslint:disable: completed-docs
@@ -3191,11 +3765,6 @@ export class SpreadsheetConvertOptions extends ConvertOptions {
             name: "zoom",
             baseName: "zoom",
             type: "number",
-        },        
-        {
-            name: "usePdf",
-            baseName: "usePdf",
-            type: "boolean",
         }    ];
 
     /**
@@ -3214,11 +3783,6 @@ export class SpreadsheetConvertOptions extends ConvertOptions {
      * Specifies the zoom level in percentage. Default is 100.
      */
     public zoom: number;
-    
-    /**
-     * If true, the input firstly is converted to PDF and after that to desired format
-     */
-    public usePdf: boolean;
     
     public constructor(init?: Partial<SpreadsheetConvertOptions>) {
         super(init);
@@ -3472,6 +4036,31 @@ export namespace SpreadsheetLoadOptions {
 }
 // tslint:enable:quotemark
 /**
+ * Options for to 3d conversion
+ */
+// tslint:disable: completed-docs
+export class ThreeDConvertOptions extends ConvertOptions {
+
+    /**
+     * Attribute type map
+     */
+    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+    ];
+
+    /**
+     * Returns attribute type map
+     */
+    public static getAttributeTypeMap() {
+        return super.getAttributeTypeMap().concat(ThreeDConvertOptions.attributeTypeMap);
+    }
+
+    public constructor(init?: Partial<ThreeDConvertOptions>) {
+        super(init);
+        Object.assign(this, init);
+    }        
+}
+
+/**
  * Options for loading 3d documents
  */
 // tslint:disable: completed-docs
@@ -3491,31 +4080,6 @@ export class ThreeDLoadOptions extends LoadOptions {
     }
 
     public constructor(init?: Partial<ThreeDLoadOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Txt convert options
- */
-// tslint:disable: completed-docs
-export class TxtConvertOptions extends ConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(TxtConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<TxtConvertOptions>) {
         super(init);
         Object.assign(this, init);
     }        
@@ -3868,6 +4432,11 @@ export class WordProcessingConvertOptions extends ConvertOptions {
             name: "pageOrientation",
             baseName: "pageOrientation",
             type: "WordProcessingConvertOptions.PageOrientationEnum",
+        },        
+        {
+            name: "rtfOptions",
+            baseName: "rtfOptions",
+            type: "RtfConvertOptions",
         }    ];
 
     /**
@@ -3916,6 +4485,11 @@ export class WordProcessingConvertOptions extends ConvertOptions {
      * Specifies page orientation
      */
     public pageOrientation: WordProcessingConvertOptions.PageOrientationEnum;
+    
+    /**
+     * RTF specific convert options
+     */
+    public rtfOptions: RtfConvertOptions;
     
     public constructor(init?: Partial<WordProcessingConvertOptions>) {
         super(init);
@@ -4306,36 +4880,6 @@ export class XmlLoadOptions extends LoadOptions {
 }
 
 /**
- * Bmp convert options
- */
-// tslint:disable: completed-docs
-export class BmpConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(BmpConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<BmpConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace BmpConvertOptions {
-}
-// tslint:enable:quotemark
-/**
  * Csv document load options
  */
 // tslint:disable: completed-docs
@@ -4425,1030 +4969,6 @@ export namespace CsvLoadOptions {
 }
 // tslint:enable:quotemark
 /**
- * Dcm convert options
- */
-// tslint:disable: completed-docs
-export class DcmConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DcmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DcmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DcmConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Djvu convert options
- */
-// tslint:disable: completed-docs
-export class DjvuConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DjvuConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DjvuConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DjvuConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dng convert options
- */
-// tslint:disable: completed-docs
-export class DngConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DngConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DngConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DngConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Doc convert options
- */
-// tslint:disable: completed-docs
-export class DocConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DocConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DocConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DocConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Docm convert options
- */
-// tslint:disable: completed-docs
-export class DocmConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DocmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DocmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DocmConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Docx convert options
- */
-// tslint:disable: completed-docs
-export class DocxConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DocxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DocxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DocxConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dot convert options
- */
-// tslint:disable: completed-docs
-export class DotConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DotConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DotConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DotConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dotm convert options
- */
-// tslint:disable: completed-docs
-export class DotmConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DotmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DotmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DotmConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Dotx convert options
- */
-// tslint:disable: completed-docs
-export class DotxConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(DotxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<DotxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace DotxConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Emf convert options
- */
-// tslint:disable: completed-docs
-export class EmfConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(EmfConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<EmfConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace EmfConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Gif convert options
- */
-// tslint:disable: completed-docs
-export class GifConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(GifConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<GifConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace GifConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Ico convert options
- */
-// tslint:disable: completed-docs
-export class IcoConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(IcoConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<IcoConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace IcoConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Jpg convert options
- */
-// tslint:disable: completed-docs
-export class JpgConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "quality",
-            baseName: "quality",
-            type: "number",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpgConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Desired image quality when converting to Jpeg. The value must be between 0 and 100. The default value is 100.
-     */
-    public quality: number;
-    
-    public constructor(init?: Partial<JpgConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace JpgConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Odg convert options
- */
-// tslint:disable: completed-docs
-export class OdgConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdgConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdgConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OdgConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Odp convert options
- */
-// tslint:disable: completed-docs
-export class OdpConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdpConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdpConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ods convert options
- */
-// tslint:disable: completed-docs
-export class OdsConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdsConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdsConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Odt convert options
- */
-// tslint:disable: completed-docs
-export class OdtConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OdtConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OdtConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OdtConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Otp convert options
- */
-// tslint:disable: completed-docs
-export class OtpConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OtpConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OtpConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ots convert options
- */
-// tslint:disable: completed-docs
-export class OtsConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OtsConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OtsConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ott convert options
- */
-// tslint:disable: completed-docs
-export class OttConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(OttConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<OttConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace OttConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Png convert options
- */
-// tslint:disable: completed-docs
-export class PngConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PngConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PngConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PngConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Potm convert options
- */
-// tslint:disable: completed-docs
-export class PotmConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PotmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PotmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Potx convert options
- */
-// tslint:disable: completed-docs
-export class PotxConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PotxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PotxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Pps convert options
- */
-// tslint:disable: completed-docs
-export class PpsConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PpsConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PpsConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ppsm convert options
- */
-// tslint:disable: completed-docs
-export class PpsmConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PpsmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PpsmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ppsx convert options
- */
-// tslint:disable: completed-docs
-export class PpsxConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PpsxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PpsxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Ppt convert options
- */
-// tslint:disable: completed-docs
-export class PptConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PptConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PptConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Pptm convert options
- */
-// tslint:disable: completed-docs
-export class PptmConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PptmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PptmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Pptx convert options
- */
-// tslint:disable: completed-docs
-export class PptxConvertOptions extends PresentationConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PptxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<PptxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Psd convert options
- */
-// tslint:disable: completed-docs
-export class PsdConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "channelBitsCount",
-            baseName: "channelBitsCount",
-            type: "number",
-        },        
-        {
-            name: "channelsCount",
-            baseName: "channelsCount",
-            type: "number",
-        },        
-        {
-            name: "colorMode",
-            baseName: "colorMode",
-            type: "PsdConvertOptions.ColorModeEnum",
-        },        
-        {
-            name: "compressionMethod",
-            baseName: "compressionMethod",
-            type: "PsdConvertOptions.CompressionMethodEnum",
-        },        
-        {
-            name: "version",
-            baseName: "version",
-            type: "number",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(PsdConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Bits count per color channel
-     */
-    public channelBitsCount: number;
-    
-    /**
-     * Color channels count
-     */
-    public channelsCount: number;
-    
-    /**
-     * Psd color mode
-     */
-    public colorMode: PsdConvertOptions.ColorModeEnum;
-    
-    /**
-     * Psd compression method
-     */
-    public compressionMethod: PsdConvertOptions.CompressionMethodEnum;
-    
-    /**
-     * Psd file version
-     */
-    public version: number;
-    
-    public constructor(init?: Partial<PsdConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace PsdConvertOptions {
-    export enum ColorModeEnum {
-        Bitmap = 'Bitmap' as any,
-        Grayscale = 'Grayscale' as any,
-        Indexed = 'Indexed' as any,
-        Rgb = 'Rgb' as any,
-        Cmyk = 'Cmyk' as any,
-        Multichannel = 'Multichannel' as any,
-        Duotone = 'Duotone' as any,
-        Lab = 'Lab' as any,
-    }
-    export enum CompressionMethodEnum {
-        Raw = 'Raw' as any,
-        Rle = 'Rle' as any,
-        ZipWithoutPrediction = 'ZipWithoutPrediction' as any,
-        ZipWithPrediction = 'ZipWithPrediction' as any,
-    }
-}
-// tslint:enable:quotemark
-/**
- * Rtf convert options
- */
-// tslint:disable: completed-docs
-export class RtfConvertOptions extends WordProcessingConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "exportImagesForOldReaders",
-            baseName: "exportImagesForOldReaders",
-            type: "boolean",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(RtfConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Specifies whether the keywords for \"old readers\" are written to RTF or not. This can significantly affect the size of the RTF document. Default is False.
-     */
-    public exportImagesForOldReaders: boolean;
-    
-    public constructor(init?: Partial<RtfConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace RtfConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Tiff convert options
- */
-// tslint:disable: completed-docs
-export class TiffConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "compression",
-            baseName: "compression",
-            type: "TiffConvertOptions.CompressionEnum",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(TiffConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Set Tiff compression
-     */
-    public compression: TiffConvertOptions.CompressionEnum;
-    
-    public constructor(init?: Partial<TiffConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace TiffConvertOptions {
-    export enum CompressionEnum {
-        Lzw = 'Lzw' as any,
-        None = 'None' as any,
-        Ccitt3 = 'Ccitt3' as any,
-        Ccitt4 = 'Ccitt4' as any,
-        Rle = 'Rle' as any,
-    }
-}
-// tslint:enable:quotemark
-/**
- * Tsv convert options
- */
-// tslint:disable: completed-docs
-export class TsvConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(TsvConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<TsvConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
  * Tsv load options
  */
 // tslint:disable: completed-docs
@@ -5478,494 +4998,14 @@ export class TsvLoadOptions extends SpreadsheetLoadOptions {
 export namespace TsvLoadOptions {
 }
 // tslint:enable:quotemark
-/**
- * Webp convert options
- */
-// tslint:disable: completed-docs
-export class WebpConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            name: "lossless",
-            baseName: "lossless",
-            type: "boolean",
-        }    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(WebpConvertOptions.attributeTypeMap);
-    }
-
-    /**
-     * Indicates if the compression of the converted file will be lossless
-     */
-    public lossless: boolean;
-    
-    public constructor(init?: Partial<WebpConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace WebpConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Wmf convert options
- */
-// tslint:disable: completed-docs
-export class WmfConvertOptions extends ImageConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(WmfConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<WmfConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace WmfConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Xls2003 convert options
- */
-// tslint:disable: completed-docs
-export class Xls2003ConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(Xls2003ConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<Xls2003ConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Xls convert options
- */
-// tslint:disable: completed-docs
-export class XlsConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Xlsb convert options
- */
-// tslint:disable: completed-docs
-export class XlsbConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsbConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsbConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Xlsm convert options
- */
-// tslint:disable: completed-docs
-export class XlsmConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Xlsx convert options
- */
-// tslint:disable: completed-docs
-export class XlsxConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XlsxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XlsxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Xltm convert options
- */
-// tslint:disable: completed-docs
-export class XltmConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XltmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XltmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * Xltx convert options
- */
-// tslint:disable: completed-docs
-export class XltxConvertOptions extends SpreadsheetConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(XltxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<XltxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-/**
- * J2c convert options
- */
-// tslint:disable: completed-docs
-export class J2cConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(J2cConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<J2cConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace J2cConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * J2k convert options
- */
-// tslint:disable: completed-docs
-export class J2kConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(J2kConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<J2kConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace J2kConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Jp2 convert options
- */
-// tslint:disable: completed-docs
-export class Jp2ConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(Jp2ConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<Jp2ConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace Jp2ConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Jpeg convert options
- */
-// tslint:disable: completed-docs
-export class JpegConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpegConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpegConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace JpegConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Jpf convert options
- */
-// tslint:disable: completed-docs
-export class JpfConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpfConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpfConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace JpfConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Jpm convert options
- */
-// tslint:disable: completed-docs
-export class JpmConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpmConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpmConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace JpmConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Jpx convert options
- */
-// tslint:disable: completed-docs
-export class JpxConvertOptions extends JpgConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(JpxConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<JpxConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace JpxConvertOptions {
-}
-// tslint:enable:quotemark
-/**
- * Tif convert options
- */
-// tslint:disable: completed-docs
-export class TifConvertOptions extends TiffConvertOptions {
-
-    /**
-     * Attribute type map
-     */
-    public static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-    ];
-
-    /**
-     * Returns attribute type map
-     */
-    public static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(TifConvertOptions.attributeTypeMap);
-    }
-
-    public constructor(init?: Partial<TifConvertOptions>) {
-        super(init);
-        Object.assign(this, init);
-    }        
-}
-
-// tslint:disable:quotemark
-// tslint:disable-next-line:no-namespace
-export namespace TifConvertOptions {
-}
-// tslint:enable:quotemark
 const enumsMap = {
     "FieldLabel.FieldEnum": FieldLabel.FieldEnum,
     "OperationResult.MethodEnum": OperationResult.MethodEnum,
     "OperationResult.StatusEnum": OperationResult.StatusEnum,
+    "PsdConvertOptions.ColorModeEnum": PsdConvertOptions.ColorModeEnum,
+    "PsdConvertOptions.CompressionMethodEnum": PsdConvertOptions.CompressionMethodEnum,
+    "TiffConvertOptions.CompressionEnum": TiffConvertOptions.CompressionEnum,
+    "CadConvertOptions.PageSizeEnum": CadConvertOptions.PageSizeEnum,
     "CadLoadOptions.DrawTypeEnum": CadLoadOptions.DrawTypeEnum,
     "EBookConvertOptions.PageSizeEnum": EBookConvertOptions.PageSizeEnum,
     "EBookConvertOptions.PageOrientationEnum": EBookConvertOptions.PageOrientationEnum,
@@ -5989,9 +5029,6 @@ const enumsMap = {
     "WordProcessingConvertOptions.PageSizeEnum": WordProcessingConvertOptions.PageSizeEnum,
     "WordProcessingConvertOptions.PageOrientationEnum": WordProcessingConvertOptions.PageOrientationEnum,
     "WordProcessingLoadOptions.CommentDisplayModeEnum": WordProcessingLoadOptions.CommentDisplayModeEnum,
-    "PsdConvertOptions.ColorModeEnum": PsdConvertOptions.ColorModeEnum,
-    "PsdConvertOptions.CompressionMethodEnum": PsdConvertOptions.CompressionMethodEnum,
-    "TiffConvertOptions.CompressionEnum": TiffConvertOptions.CompressionEnum,
 };
 
 const typeMap = {
@@ -6007,26 +5044,38 @@ const typeMap = {
             FileVersions,
             FilesList,
             FilesUploadResult,
+            JpgConvertOptions,
             LicenseInfo,
             LoadOptions,
             ModelError,
             ObjectExist,
             OperationResult,
+            PsdConvertOptions,
+            RtfConvertOptions,
             StorageExist,
             StorageFile,
             StoredConvertedResult,
             SupportedFormat,
+            TiffConvertOptions,
             WatermarkOptions,
+            WebpConvertOptions,
+            CadConvertOptions,
             CadLoadOptions,
+            CompressionConvertOptions,
             CompressionLoadOptions,
             DatabaseLoadOptions,
+            DiagramConvertOptions,
             DiagramLoadOptions,
             EBookConvertOptions,
             EBookLoadOptions,
+            EmailConvertOptions,
             EmailLoadOptions,
             FileVersion,
+            FinanceConvertOptions,
             FinanceLoadOptions,
+            FontConvertOptions,
             FontLoadOptions,
+            GisConvertOptions,
             GisLoadOptions,
             ImageConvertOptions,
             ImageLoadOptions,
@@ -6040,11 +5089,12 @@ const typeMap = {
             PersonalStorageLoadOptions,
             PresentationConvertOptions,
             PresentationLoadOptions,
+            ProjectManagementConvertOptions,
             PubLoadOptions,
             SpreadsheetConvertOptions,
             SpreadsheetLoadOptions,
+            ThreeDConvertOptions,
             ThreeDLoadOptions,
-            TxtConvertOptions,
             TxtLoadOptions,
             VcfLoadOptions,
             WebConvertOptions,
@@ -6052,59 +5102,8 @@ const typeMap = {
             WordProcessingConvertOptions,
             WordProcessingLoadOptions,
             XmlLoadOptions,
-            BmpConvertOptions,
             CsvLoadOptions,
-            DcmConvertOptions,
-            DjvuConvertOptions,
-            DngConvertOptions,
-            DocConvertOptions,
-            DocmConvertOptions,
-            DocxConvertOptions,
-            DotConvertOptions,
-            DotmConvertOptions,
-            DotxConvertOptions,
-            EmfConvertOptions,
-            GifConvertOptions,
-            IcoConvertOptions,
-            JpgConvertOptions,
-            OdgConvertOptions,
-            OdpConvertOptions,
-            OdsConvertOptions,
-            OdtConvertOptions,
-            OtpConvertOptions,
-            OtsConvertOptions,
-            OttConvertOptions,
-            PngConvertOptions,
-            PotmConvertOptions,
-            PotxConvertOptions,
-            PpsConvertOptions,
-            PpsmConvertOptions,
-            PpsxConvertOptions,
-            PptConvertOptions,
-            PptmConvertOptions,
-            PptxConvertOptions,
-            PsdConvertOptions,
-            RtfConvertOptions,
-            TiffConvertOptions,
-            TsvConvertOptions,
             TsvLoadOptions,
-            WebpConvertOptions,
-            WmfConvertOptions,
-            Xls2003ConvertOptions,
-            XlsConvertOptions,
-            XlsbConvertOptions,
-            XlsmConvertOptions,
-            XlsxConvertOptions,
-            XltmConvertOptions,
-            XltxConvertOptions,
-            J2cConvertOptions,
-            J2kConvertOptions,
-            Jp2ConvertOptions,
-            JpegConvertOptions,
-            JpfConvertOptions,
-            JpmConvertOptions,
-            JpxConvertOptions,
-            TifConvertOptions,
 };
 
 export {enumsMap, typeMap};

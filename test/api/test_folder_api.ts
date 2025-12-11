@@ -33,8 +33,8 @@ import {
     MoveFolderRequest} from "../../src/model";
 import * as TestContext from "../test_context";
 
-describe("folder_api", () => {
-    
+describe("folder_api", function() {
+    this.timeout(120000);
     before(async () => {
         //process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = "0"
         await TestContext.uploadTestFiles();
@@ -46,14 +46,15 @@ describe("folder_api", () => {
 
     describe("test_folder_api", () => {
 
-        it("TestGetFilesList", async () => {  
+        it("TestGetFilesList", async function() {
+            this.timeout(120000);
             var request = new GetFilesListRequest("WordProcessing");
             var response = await TestContext.getFolderApi().getFilesList(request);
             expect(response.value.length).greaterThan(0);
         });
 
-        it("TestCopyMoveFolder", async () => {  
-
+        it("TestCopyMoveFolder", async function() {
+            this.timeout(120000);
             // Create temp folder
             var cRequest = new CreateFolderRequest("temp");
             await TestContext.getFolderApi().createFolder(cRequest);

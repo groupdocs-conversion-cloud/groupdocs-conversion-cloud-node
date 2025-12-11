@@ -31,7 +31,7 @@ export class TestFile {
      * DOCX file with one page
      */
     public static OnePageDocx: TestFile =
-        new TestFile("one-page.docx", "WordProcessing\\");
+        new TestFile("one-page.docx", "WordProcessing/");
 
     /**
      * DOCX file that should not exists in storage
@@ -43,13 +43,13 @@ export class TestFile {
      * Password-protected DOCX file
      */
     public static PasswordProtectedDocx: TestFile =
-        new TestFile("password-protected.docx", "WordProcessing\\", "password");
+        new TestFile("password-protected.docx", "WordProcessing/", "password");
 
     /**
      * DOCX file with four pages
      */
     public static FourPagesDocx: TestFile =
-        new TestFile("four-pages.docx", "WordProcessing\\");
+        new TestFile("four-pages.docx", "WordProcessing/");
 
     /**
      * File name
