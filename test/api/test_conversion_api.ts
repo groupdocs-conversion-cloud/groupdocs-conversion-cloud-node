@@ -64,7 +64,9 @@ describe("test_conversion_api", function() {
             let response = await TestContext.getInfoApi().getDocumentMetadata(new GetDocumentMetadataRequest(TestFile.NotExist.GetPath()));
             expect(response.pageCount).equal(1);
         } catch (error) {
-            expect(error.message).to.be.a('string').and.satisfy((msg: string) => msg.startsWith('AmazonS3 Storage exception: The specified key does not exist.'));
+            expect(error.message).to.be.a('string');
+            expect(error.message).to.contain('AmazonS3 Storage exception');
+            expect(error.message).to.contain(TestFile.NotExist.fileName);
         }
     });                 
 
